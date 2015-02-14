@@ -13,7 +13,7 @@ using namespace std;
 void displayInfo(void);
 void displayMenu(void);
 int displayDigitInfoUpdateRussellJew(void);
-void recieveIntegers(int[], int);
+void storeIntegers(int[], int);
 void trackDigitOccurence(int[], int[], int);
 void displayExistingDigitsOccurence(int[]);
 void displayEvenDigitsOccurence(int[]);
@@ -65,7 +65,7 @@ int displayDigitInfoUpdateRussellJew()
     int option;
     int numIntegers;
     int* array1 = nullptr;
-    int digits[10] = {0};
+    int digitsArray[10] = {0};
 
     cout << "Select an option (1 or 2): ";
     cin >> option;
@@ -82,31 +82,31 @@ int displayDigitInfoUpdateRussellJew()
             array1 = new int[numIntegers];
 
             //Store Integers into array
-            recieveIntegers(array1, numIntegers);
+            storeIntegers(array1, numIntegers);
             
             //Track occurence of each digit
-            trackDigitOccurence(array1, digits, numIntegers);
+            trackDigitOccurence(array1, digitsArray, numIntegers);
 
             //Display occurence of existing digits
-            displayExistingDigitsOccurence(digits);
+            displayExistingDigitsOccurence(digitsArray);
 
             //Display occurence of even digits
-            displayEvenDigitsOccurence(digits);
+            displayEvenDigitsOccurence(digitsArray);
 
             //Display largest even occurence
-            displayLargestEvenOccurence(digits);  
+            displayLargestEvenOccurence(digitsArray);  
 
             //Display smallest even occurence
-            displaySmallestEvenOccurence(digits);
+            displaySmallestEvenOccurence(digitsArray);
 
             //Display occurence of odd digits
-            displayOddDigitsOccurence(digits);
+            displayOddDigitsOccurence(digitsArray);
 
             //Display largest odd occurence
-            displayLargestOddOccurence(digits);
+            displayLargestOddOccurence(digitsArray);
 
             //Display smallest odd occurence
-            displaySmallestOddOccurence(digits);
+            displaySmallestOddOccurence(digitsArray);
 
             //Free dynamically allocated memory
             delete[] array1;
@@ -118,7 +118,7 @@ int displayDigitInfoUpdateRussellJew()
             cout << "  Having Fun ..." << endl;
             break;
         default:
-            cout << "WRONG OPTION!" << endl << endl <<endl;
+            cout << "WRONG OPTION!\n\n\n";
     }
 
     return option;
@@ -126,7 +126,7 @@ int displayDigitInfoUpdateRussellJew()
 
 //Function Definitions
 
-void recieveIntegers(int array[], int numIntegers)
+void storeIntegers(int array[], int numIntegers)
 {
     //Store integers in array
     for (int count = 0; count < numIntegers; count++)
@@ -136,7 +136,7 @@ void recieveIntegers(int array[], int numIntegers)
     }
 }
 
-void trackDigitOccurence(int array1[], int digits[], int numIntegers)
+void trackDigitOccurence(int array1[], int digitsArray[], int numIntegers)
 {
     int* tempArray = nullptr;
     int count;
@@ -155,41 +155,43 @@ void trackDigitOccurence(int array1[], int digits[], int numIntegers)
         do
         {
             digit = tempArray[count] % 10;
-            digits[digit]++;
+            digitsArray[digit]++;
             tempArray[count] /= 10;
         } while (tempArray[count] != 0);
     }
 
     delete[] tempArray;
+
+    tempArray = nullptr;
 }
 
-void displayExistingDigitsOccurence(int digits[])
+void displayExistingDigitsOccurence(int digitsArray[])
 {
     cout << "\nOccurrence of all exisiting digits --" << endl;
     for (int number = 0; number < 10; number++)
     {
-        if (digits[number] != 0)
+        if (digitsArray[number] != 0)
         {
-            cout << "  Digit " << number << " : " << digits[number];
+            cout << "  Digit " << number << " : " << digitsArray[number];
             cout << endl;
         }
     }
 }
 
-void displayEvenDigitsOccurence(int digits[])
+void displayEvenDigitsOccurence(int digitsArray[])
 {
     cout << "\nOccurence of all existing EVEN digits --" << endl;
     for (int number = 0; number < 10; number += 2)
     {
-        if (digits[number] != 0)
+        if (digitsArray[number] != 0)
         {
-            cout << "  Digit " << number << " : " << digits[number];
+            cout << "  Digit " << number << " : " << digitsArray[number];
             cout << endl;
         }
     }
 }
 
-void displayLargestEvenOccurence(int digits[])
+void displayLargestEvenOccurence(int digitsArray[])
 {
     int largestEvenOccurence = 0;
     int number;
@@ -197,7 +199,7 @@ void displayLargestEvenOccurence(int digits[])
     //Find number with largest even occurence
     for (number = 2; number < 10; number += 2)
     {
-        if (digits[number] > digits[largestEvenOccurence])
+        if (digitsArray[number] > digitsArray[largestEvenOccurence])
         {
             largestEvenOccurence = number;
         }
@@ -208,16 +210,16 @@ void displayLargestEvenOccurence(int digits[])
     //Display numbers with the same largest even occurence
     for (number = 0; number < 10; number += 2)
     {
-        if (digits[number] == digits[largestEvenOccurence])
+        if (digitsArray[number] == digitsArray[largestEvenOccurence])
         {
             cout << "  " << number << endl;
         }
     }
 
-        cout << "With the number of occurence(s) : " << digits[largestEvenOccurence] << endl << endl;
+        cout << "With the number of occurence(s) : " << digitsArray[largestEvenOccurence] << endl << endl;
 }
 
-void displaySmallestEvenOccurence(int digits[])
+void displaySmallestEvenOccurence(int digitsArray[])
 {
     int smallestEvenOccurence = 0;
     int number;
@@ -225,7 +227,7 @@ void displaySmallestEvenOccurence(int digits[])
     //Find number with smallest even occurence
     for (number = 2; number < 10; number += 2)
     {
-        if (digits[number] < digits[smallestEvenOccurence] && digits[number] != 0)
+        if (digitsArray[number] < digitsArray[smallestEvenOccurence] && digitsArray[number] != 0)
         {
             smallestEvenOccurence = number;
         }
@@ -236,29 +238,29 @@ void displaySmallestEvenOccurence(int digits[])
     //Display numbers with the same smallest even occurence
     for (number = 0; number < 10; number += 2)
     {
-            if (digits[number] == digits[smallestEvenOccurence])
+            if (digitsArray[number] == digitsArray[smallestEvenOccurence])
             {
                 cout << "  " << number << endl;
             }
     }
 
-    cout << "With the number of occurence(s) : " << digits[smallestEvenOccurence] << endl << endl;
+    cout << "With the number of occurence(s) : " << digitsArray[smallestEvenOccurence] << endl << endl;
 }
 
-void displayOddDigitsOccurence(int digits[])
+void displayOddDigitsOccurence(int digitsArray[])
 {
     cout << "Occurence of all existing ODD digits --" << endl;
     for (int number = 1; number < 10; number += 2)
     {
-        if (digits[number] != 0)
+        if (digitsArray[number] != 0)
         {
-            cout << "  Digit " << number << " : " << digits[number];
+            cout << "  Digit " << number << " : " << digitsArray[number];
             cout << endl;
         }
     }
 }
 
-void displayLargestOddOccurence(int digits[])
+void displayLargestOddOccurence(int digitsArray[])
 {
     int largestOddOccurence = 1;
     int number;
@@ -266,7 +268,7 @@ void displayLargestOddOccurence(int digits[])
     //Find number with largest odd occurence
     for (number = 3; number < 10; number += 2)
     {
-        if (digits[number] > digits[largestOddOccurence])
+        if (digitsArray[number] > digitsArray[largestOddOccurence])
         {
             largestOddOccurence = number;
         }
@@ -277,16 +279,16 @@ void displayLargestOddOccurence(int digits[])
     //Display numbers with the same largest odd occurence
     for (number = 1; number < 10; number += 2)
     {
-        if (digits[number] == digits[largestOddOccurence])
+        if (digitsArray[number] == digitsArray[largestOddOccurence])
         {
             cout << "  " << number << endl;
         }
     }
 
-    cout << "With the number of occurence(s) : " << digits[largestOddOccurence] << endl << endl;
+    cout << "With the number of occurence(s) : " << digitsArray[largestOddOccurence] << endl << endl;
 }
 
-void displaySmallestOddOccurence(int digits[])
+void displaySmallestOddOccurence(int digitsArray[])
 {
     int smallestOddOccurence = 1;
     int number;
@@ -294,7 +296,7 @@ void displaySmallestOddOccurence(int digits[])
     //Find number with smallest odd occurence
     for (number = 3; number < 10; number += 2)
     {
-        if (digits[number] < digits[smallestOddOccurence] && digits[number] != 0)
+        if (digitsArray[number] < digitsArray[smallestOddOccurence] && digitsArray[number] != 0)
         {
             smallestOddOccurence = number;
         }
@@ -305,13 +307,13 @@ void displaySmallestOddOccurence(int digits[])
     //Display numbers with the same largest odd occurence
     for (number = 1; number < 10; number += 2)
         {
-            if (digits[number] == digits[smallestOddOccurence])
+            if (digitsArray[number] == digitsArray[smallestOddOccurence])
             {
                 cout << "  " << number << endl;
             }
         }
 
-        cout << "With the number of occurence(s) : " << digits[smallestOddOccurence] << endl << endl;
+        cout << "With the number of occurence(s) : " << digitsArray[smallestOddOccurence] << endl << endl;
 }
 
 /*  PROGRAM OUTPUT
