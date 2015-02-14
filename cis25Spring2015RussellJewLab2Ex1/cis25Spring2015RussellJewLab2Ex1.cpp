@@ -139,6 +139,8 @@ void trackDigitOccurence(int array1[], int digits[], int numIntegers)
     int index;
     int digit;
 
+    tempArray = new int[numIntegers];
+
     for (count = 0; count < numIntegers; count++)
     {
         tempArray[count] = (array1[count] < 0) ? -array1[count] : array1[count];
