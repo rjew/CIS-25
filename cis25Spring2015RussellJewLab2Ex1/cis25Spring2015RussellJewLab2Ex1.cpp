@@ -202,22 +202,15 @@ void displayLargestEvenOccurence(int digits[])
     cout << "\nThe even digit(s) that has/have the largest occurence --" << endl;
 
     //Display numbers with the same largest even occurence
-    if (digits[largestEvenOccurence] == 0)
+    for (number = 0; number < 10; number += 2)
     {
-        cout << "No even digits!" << endl;
-    }
-    else
-    {
-        for (number = 0; number < 10; number += 2)
+        if (digits[number] == digits[largestEvenOccurence])
         {
-            if (digits[number] == digits[largestEvenOccurence])
-            {
-                cout << "  " << number << endl;
-            }
+            cout << "  " << number << endl;
         }
+    }
 
         cout << "With the number of occurence(s) : " << digits[largestEvenOccurence] << endl << endl;
-    }
 }
 
 void displaySmallestEvenOccurence(int digits[])
@@ -265,22 +258,15 @@ void displayLargestOddOccurence(int digits[])
     cout << "The odd digit(s) that has/have the largest occurence --" << endl;
 
     //Display numbers with the same largest odd occurence
-    if (digits[largestOddOccurence] == 0)
+    for (number = 1; number < 10; number += 2)
     {
-        cout << "No odd digits!" << endl;
-    }
-    else
-    {
-        for (number = 1; number < 10; number += 2)
+        if (digits[number] == digits[largestOddOccurence])
         {
-            if (digits[number] == digits[largestOddOccurence])
-            {
-                cout << "  " << number << endl;
-            }
+            cout << "  " << number << endl;
         }
-
-        cout << "With the number of occurence(s) : " << digits[largestOddOccurence] << endl << endl;
     }
+
+    cout << "With the number of occurence(s) : " << digits[largestOddOccurence] << endl << endl;
 }
 
 void displaySmallestOddOccurence(int digits[])
