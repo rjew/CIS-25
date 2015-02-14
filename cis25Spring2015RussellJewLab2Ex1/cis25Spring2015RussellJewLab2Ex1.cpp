@@ -64,7 +64,7 @@ int displayDigitInfoUpdateRussellJew()
 {
     int option;
     int numIntegers;
-    int* array1 = nullptr;
+    int* iAry = nullptr;
     int digitsArray[10] = {0};
 
     cout << "Select an option (1 or 2): ";
@@ -79,13 +79,13 @@ int displayDigitInfoUpdateRussellJew()
             cin >> numIntegers;
             
             //Create array to store integers
-            array1 = new int[numIntegers];
+            iAry = new int[numIntegers];
 
             //Store Integers into array
-            storeIntegers(array1, numIntegers);
+            storeIntegers(iAry, numIntegers);
             
             //Track occurence of each digit
-            trackDigitOccurence(array1, digitsArray, numIntegers);
+            trackDigitOccurence(iAry, digitsArray, numIntegers);
 
             //Display occurence of existing digits
             displayExistingDigitsOccurence(digitsArray);
@@ -109,9 +109,8 @@ int displayDigitInfoUpdateRussellJew()
             displaySmallestOddOccurence(digitsArray);
 
             //Free dynamically allocated memory
-            delete[] array1;
-
-            array1 = nullptr;
+            delete[] iAry;
+            iAry = nullptr;
 
             break;
         case 2:
@@ -126,7 +125,7 @@ int displayDigitInfoUpdateRussellJew()
 
 //Function Definitions
 
-void storeIntegers(int array[], int numIntegers)
+void storeIntegers(int iAry[], int numIntegers)
 {
     int count;
 
@@ -134,11 +133,11 @@ void storeIntegers(int array[], int numIntegers)
     for (count = 0; count < numIntegers; count++)
     {
         cout << "    Enter integer #" << (count + 1) << ": ";
-        cin >> array[count];
+        cin >> iAry[count];
     }
 }
 
-void trackDigitOccurence(int array1[], int digitsArray[], int numIntegers)
+void trackDigitOccurence(int iAry[], int digitsArray[], int numIntegers)
 {
     int* tempArray = nullptr;
     int count;
@@ -149,7 +148,7 @@ void trackDigitOccurence(int array1[], int digitsArray[], int numIntegers)
 
     for (count = 0; count < numIntegers; count++)
     {
-        tempArray[count] = (array1[count] < 0) ? -array1[count] : array1[count];
+        tempArray[count] = (iAry[count] < 0) ? -iAry[count] : iAry[count];
     }
 
     for (count = 0; count < numIntegers; count++)
@@ -163,7 +162,6 @@ void trackDigitOccurence(int array1[], int digitsArray[], int numIntegers)
     }
 
     delete[] tempArray;
-
     tempArray = nullptr;
 }
 
