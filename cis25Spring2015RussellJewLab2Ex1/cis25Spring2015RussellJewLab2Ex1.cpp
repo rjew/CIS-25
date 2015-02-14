@@ -161,8 +161,7 @@ void trackDigitOccurence(int array1[], int digits[], int numIntegers)
 
 void displayExistingDigitsOccurence(int digits[])
 {
-    cout << endl;
-    cout << "Occurrence of all exisiting digits --" << endl;
+    cout << "\nOccurrence of all exisiting digits --" << endl;
     for (int number = 0; number < 10; number++)
     {
         if (digits[number] != 0)
@@ -175,8 +174,7 @@ void displayExistingDigitsOccurence(int digits[])
 
 void displayEvenDigitsOccurence(int digits[])
 {
-    cout << endl;
-    cout << "Occurence of all existing EVEN digits --" << endl;
+    cout << "\nOccurence of all existing EVEN digits --" << endl;
     for (int number = 0; number < 10; number += 2)
     {
         if (digits[number] != 0)
@@ -201,8 +199,7 @@ void displayLargestEvenOccurence(int digits[])
         }
     }
 
-    cout << endl;
-    cout << "The even digit(s) that has/have the largest occurence --" << endl;
+    cout << "\nThe even digit(s) that has/have the largest occurence --" << endl;
 
     //Display numbers with the same largest even occurence
     if (digits[largestEvenOccurence] == 0)
