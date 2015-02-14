@@ -128,8 +128,10 @@ int displayDigitInfoUpdateRussellJew()
 
 void storeIntegers(int array[], int numIntegers)
 {
+    int count;
+
     //Store integers in array
-    for (int count = 0; count < numIntegers; count++)
+    for (count = 0; count < numIntegers; count++)
     {
         cout << "    Enter integer #" << (count + 1) << ": ";
         cin >> array[count];
@@ -167,8 +169,10 @@ void trackDigitOccurence(int array1[], int digitsArray[], int numIntegers)
 
 void displayExistingDigitsOccurence(int digitsArray[])
 {
+    int number;
+
     cout << "\nOccurrence of all exisiting digits --" << endl;
-    for (int number = 0; number < 10; number++)
+    for (number = 0; number < 10; number++)
     {
         if (digitsArray[number] != 0)
         {
@@ -180,8 +184,10 @@ void displayExistingDigitsOccurence(int digitsArray[])
 
 void displayEvenDigitsOccurence(int digitsArray[])
 {
+    int number;
+
     cout << "\nOccurence of all existing EVEN digits --" << endl;
-    for (int number = 0; number < 10; number += 2)
+    for (number = 0; number < 10; number += 2)
     {
         if (digitsArray[number] != 0)
         {
@@ -249,8 +255,10 @@ void displaySmallestEvenOccurence(int digitsArray[])
 
 void displayOddDigitsOccurence(int digitsArray[])
 {
+    int number;
+
     cout << "Occurence of all existing ODD digits --" << endl;
-    for (int number = 1; number < 10; number += 2)
+    for (number = 1; number < 10; number += 2)
     {
         if (digitsArray[number] != 0)
         {
