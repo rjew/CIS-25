@@ -78,37 +78,26 @@ int displayDigitInfoUpdateRussellJew()
             cout << "  How many integers (to be worked on)? ";
             cin >> numIntegers;
             
-            //Create array to store integers
             iAry = new int[numIntegers];
 
-            //Store Integers into array
             storeIntegers(iAry, numIntegers);
             
-            //Track occurence of each digit
             trackDigitOccurence(iAry, digitsArray, numIntegers);
 
-            //Display occurence of existing digits
             displayExistingDigitsOccurence(digitsArray);
 
-            //Display occurence of even digits
             displayEvenDigitsOccurence(digitsArray);
 
-            //Display largest even occurence
             displayLargestEvenOccurence(digitsArray);  
 
-            //Display smallest even occurence
             displaySmallestEvenOccurence(digitsArray);
 
-            //Display occurence of odd digits
             displayOddDigitsOccurence(digitsArray);
 
-            //Display largest odd occurence
             displayLargestOddOccurence(digitsArray);
 
-            //Display smallest odd occurence
             displaySmallestOddOccurence(digitsArray);
 
-            //Free dynamically allocated memory
             delete[] iAry;
             iAry = nullptr;
 
@@ -129,7 +118,6 @@ void storeIntegers(int iAry[], int numIntegers)
 {
     int count;
 
-    //Store integers in array
     for (count = 0; count < numIntegers; count++)
     {
         cout << "    Enter integer #" << (count + 1) << ": ";
