@@ -115,7 +115,7 @@ int displayDigitInfoUpdateRussellJew()
 
             break;
         case 2:
-            cout << "Having Fun ..." << endl;
+            cout << "  Having Fun ..." << endl;
             break;
         default:
             cout << "WRONG OPTION!" << endl << endl <<endl;
@@ -247,7 +247,7 @@ void displaySmallestEvenOccurence(int digits[])
 
 void displayOddDigitsOccurence(int digits[])
 {
-    cout << "\nOccurence of all existing ODD digits --" << endl;
+    cout << "Occurence of all existing ODD digits --" << endl;
     for (int number = 1; number < 10; number += 2)
     {
         if (digits[number] != 0)
@@ -272,7 +272,7 @@ void displayLargestOddOccurence(int digits[])
         }
     }
 
-    cout << "The odd digit(s) that has/have the largest occurence --" << endl;
+    cout << "\nThe odd digit(s) that has/have the largest occurence --" << endl;
 
     //Display numbers with the same largest odd occurence
     for (number = 1; number < 10; number += 2)
