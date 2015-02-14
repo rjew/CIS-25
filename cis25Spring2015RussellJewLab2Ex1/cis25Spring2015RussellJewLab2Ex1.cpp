@@ -2,7 +2,7 @@
  * Program Name:    cis25Spring2015RussellJewLab2Ex1.cpp
  * Discussion:		Lab 2 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/02/08
+ * Date Modified:	2015/02/14
  */
 
 #include <iostream>
@@ -14,8 +14,6 @@ void displayInfo(void);
 void displayMenu(void);
 int displayDigitInfoUpdateRussellJew(void);
 void recieveIntegers(int[], int);
-int calculateNumDigits(int[], int);
-void storeDigits(int[], int[], int);
 void trackDigitOccurence(int[], int[], int);
 void displayExistingDigitsOccurence(int[]);
 void displayEvenDigitsOccurence(int[]);
@@ -65,12 +63,8 @@ int displayDigitInfoUpdateRussellJew()
 {
     int option;
     int numIntegers;
-    int count;
-    int *array1 = nullptr;
-    int *array2 = nullptr;
-    int *seperatedDigits = nullptr;
-    int totalDigits;
-    int digits[10];
+    int* array1 = nullptr;
+    int digits[10] = {0};
 
     cout << "Select an option (1 or 2): ";
     cin >> option;
@@ -85,28 +79,12 @@ int displayDigitInfoUpdateRussellJew()
             
             //Create array to store integers
             array1 = new int[numIntegers];
-            array2 = new int[numIntegers];
 
             //Store Integers into array
             recieveIntegers(array1, numIntegers);
-
-            //Copy array contents
-            for (count = 0; count < numIntegers; count++)
-            {
-                array2[count] = array1[count];
-            }
-
-            //Calculate total number of digits
-            totalDigits = calculateNumDigits(array1, numIntegers);
-
-            //Create an array to hold each digit of all the numbers
-            seperatedDigits = new int[totalDigits];
-            
-            //Store each digit from all the numbers in an array
-            storeDigits(seperatedDigits, array2, numIntegers);
             
             //Track occurence of each digit
-            trackDigitOccurence(digits, seperatedDigits, totalDigits);
+            trackDigitOccurence(array1, digits, numIntegers);
 
             //Display occurence of existing digits
             displayExistingDigitsOccurence(digits);
@@ -128,12 +106,8 @@ int displayDigitInfoUpdateRussellJew()
 
             //Free dynamically allocated memory
             delete[] array1;
-            delete[] array2;
-            delete[] seperatedDigits;
 
             array1 = nullptr;
-            array2 = nullptr;
-            seperatedDigits = nullptr;
 
             break;
         case 2:
@@ -158,62 +132,29 @@ void recieveIntegers(int array[], int numIntegers)
     }
 }
 
-int calculateNumDigits(int array[], int numIntegers)
+void trackDigitOccurence(int array1[], int digits[], int numIntegers)
 {
-    int *numDigits = nullptr;
-    int totalDigits = 0;
+    int* tempArray = nullptr;
+    int count;
+    int index;
+    int digit;
 
-    //Calculate number of digits in each number to allocate an array large enough to hold each digit
-    numDigits = new int[numIntegers];
-
-    for (int count = 0; count < numIntegers; count++)
+    for (count = 0; count < numIntegers; count++)
     {
-        numDigits[count] = 0;
-
-        do
-        {
-            array[count] /= 10;
-            numDigits[count]++;
-        } while (array[count] != 0);
-    }
-    //Add up number of digits in each number to get the total number of digits from all the numbers
-    for (int count = 0; count < numIntegers; count++)
-    {
-        totalDigits += numDigits[count];
+        tempArray[count] = (array1[count] < 0) ? -array1[count] : array1[count];
     }
 
-    return totalDigits;
-}
-
-void storeDigits(int seperatedDigits[], int array2[], int numIntegers)
-{
-    int index = 0;
-
-    for (int count = 0; count < numIntegers; count++)
+    for (count = 0; count < numIntegers; count++)
     {
         do
         {
-            seperatedDigits[index] = array2[count] % 10;
-            array2[count] /= 10;
-            index++;
-        } while (array2[count] != 0);
+            digit = tempArray[count] % 10;
+            digits[digit]++;
+            tempArray[count] /= 10;
+        } while (tempArray[count] != 0);
     }
-}
 
-void trackDigitOccurence(int digits[], int seperatedDigits[], int totalDigits)
-{
-    for (int number = 0; number < 10; number++)
-    {
-        digits[number] = 0;
-
-        for (int count = 0; count < totalDigits; count++)
-        {
-            if (seperatedDigits[count] == number)
-            {
-                digits[number]++;
-            }
-        }
-    }
+    delete[] tempArray;
 }
 
 void displayExistingDigitsOccurence(int digits[])
