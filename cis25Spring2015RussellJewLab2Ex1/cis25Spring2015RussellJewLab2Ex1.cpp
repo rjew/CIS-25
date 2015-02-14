@@ -19,6 +19,7 @@ void displayExistingDigitsOccurence(int[]);
 void displayEvenDigitsOccurence(int[]);
 void displayLargestEvenOccurence(int[]);
 void displaySmallestEvenOccurence(int[]);
+void displayOddDigitsOccurence(int[]);
 void displayLargestOddOccurence(int[]);
 void displaySmallestOddOccurence(int[]);
 
@@ -97,6 +98,9 @@ int displayDigitInfoUpdateRussellJew()
 
             //Display smallest even occurence
             displaySmallestEvenOccurence(digits);
+
+            //Display occurence of odd digits
+            displayOddDigitsOccurence(digits);
 
             //Display largest odd occurence
             displayLargestOddOccurence(digits);
@@ -239,6 +243,19 @@ void displaySmallestEvenOccurence(int digits[])
     }
 
     cout << "With the number of occurence(s) : " << digits[smallestEvenOccurence] << endl << endl;
+}
+
+void displayOddDigitsOccurence(int digits[])
+{
+    cout << "\nOccurence of all existing ODD digits --" << endl;
+    for (int number = 1; number < 10; number += 2)
+    {
+        if (digits[number] != 0)
+        {
+            cout << "  Digit " << number << " : " << digits[number];
+            cout << endl;
+        }
+    }
 }
 
 void displayLargestOddOccurence(int digits[])
