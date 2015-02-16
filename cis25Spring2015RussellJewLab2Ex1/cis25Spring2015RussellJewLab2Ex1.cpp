@@ -130,7 +130,6 @@ void trackDigitOccurence(int iAry[], int digitsArray[], int numIntegers)
 {
     int* tempArray = nullptr;
     int count;
-    int index;
     int digit;
 
     tempArray = new int[numIntegers];
