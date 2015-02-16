@@ -208,7 +208,7 @@ void displayLargestEvenOccurence(int digitsArray[])
         }
     }
 
-        cout << "With the number of occurence(s) : " << digitsArray[largestEvenOccurence] << endl << endl;
+    cout << "With the number of occurence(s) : " << digitsArray[largestEvenOccurence] << endl << endl;
 }
 
 void displaySmallestEvenOccurence(int digitsArray[])
@@ -330,8 +330,8 @@ void displaySmallestOddOccurence(int digitsArray[])
                 cout << "  " << number << endl;
             }
         }
-
-        cout << "With the number of occurence(s) : " << digitsArray[smallestOddOccurence] << endl << endl;
+    
+    cout << "With the number of occurence(s) : " << digitsArray[smallestOddOccurence] << endl << endl;
 }
 
 /*  PROGRAM OUTPUT
