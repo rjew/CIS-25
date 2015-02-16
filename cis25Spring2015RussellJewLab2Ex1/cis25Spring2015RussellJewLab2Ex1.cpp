@@ -2,7 +2,7 @@
  * Program Name:    cis25Spring2015RussellJewLab2Ex1.cpp
  * Discussion:		Lab 2 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/02/15
+ * Date Modified:	2015/02/16
  */
 
 #include <iostream>
@@ -68,6 +68,7 @@ int displayMenu()
     {
         case 1:
             displayDigitInfoUpdateRussellJew();
+            cout << endl;
             break;
         case 2:
             cout << "  Having Fun ..." << endl;
@@ -216,7 +217,8 @@ void displaySmallestEvenOccurence(int digitsArray[])
     int smallestEvenOccurence = 0;
     int number;
 
-    //If occurence of the number zero is 0
+    //If occurence of the number zero is 0, assign smallestEvenOccurence 
+    //to an even number that occurs at least once
     if (digitsArray[smallestEvenOccurence] == 0)
     {
         for (number = 2; number < 10; number += 2)
@@ -299,7 +301,8 @@ void displaySmallestOddOccurence(int digitsArray[])
     int smallestOddOccurence = 1;
     int number;
 
-    //If occurence of the number one is 0
+    //If occurence of the number one is 0, assign smallestOddOccurence
+    //to an odd number that occurs at least once
     if (digitsArray[smallestOddOccurence] == 0)
     {
         for (number = 3; number < 10; number += 2)
@@ -322,7 +325,7 @@ void displaySmallestOddOccurence(int digitsArray[])
 
     cout << "The odd digit(s) that has/have the smallest occurence --" << endl;
 
-    //Display numbers with the same largest odd occurence
+    //Display numbers with the same smallest odd occurence
     for (number = 1; number < 10; number += 2)
         {
             if (digitsArray[number] == digitsArray[smallestOddOccurence])
@@ -410,6 +413,7 @@ The odd digit(s) that has/have the smallest occurence --
   7
 With the number of occurence(s) : 1
 
+
 *************************************************
 *             MENU 02 -- Arrays & Digits        *
 * 1. Calling displayDigitInfoUpdateRussellJew() *
@@ -464,6 +468,7 @@ With the number of occurence(s) : 3
 The odd digit(s) that has/have the smallest occurence --
   5
 With the number of occurence(s) : 1
+
 
 *************************************************
 *             MENU 02 -- Arrays & Digits        *
