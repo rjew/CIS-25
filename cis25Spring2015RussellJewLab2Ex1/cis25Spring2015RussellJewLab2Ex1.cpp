@@ -11,8 +11,8 @@ using namespace std;
 //Function Prototype
 
 void displayInfo(void);
-void displayMenu(void);
-int displayDigitInfoUpdateRussellJew(void);
+int displayMenu(void);
+void displayDigitInfoUpdateRussellJew(void);
 void storeIntegers(int[], int);
 void trackDigitOccurence(int[], int[], int);
 void displayExistingDigitsOccurence(int[]);
@@ -31,8 +31,7 @@ int main()
     
     do
     {
-        displayMenu();
-        option = displayDigitInfoUpdateRussellJew();
+        option = displayMenu();
     } while (option != 2);
 
     return 0;
@@ -51,21 +50,15 @@ void displayInfo()
     cout << "  Due Date:           2015/02/17" << endl << endl;
 }
 
-void displayMenu()
+int displayMenu()
 {
+    int option;
+
     cout << "*************************************************" << endl;
     cout << "*             MENU 02 -- Arrays & Digits        *" << endl;
     cout << "* 1. Calling displayDigitInfoUpdateRussellJew() *" << endl;
     cout << "* 2. Quit                                       *" << endl;
     cout << "*************************************************" << endl;
-}
-
-int displayDigitInfoUpdateRussellJew()
-{
-    int option;
-    int numIntegers;
-    int* iAry = nullptr;
-    int digitsArray[10] = {0};
 
     cout << "Select an option (1 or 2): ";
     cin >> option;
@@ -73,43 +66,51 @@ int displayDigitInfoUpdateRussellJew()
 
     switch (option)
     {
-        case 1:
-            cout << "Calling displayDigitInfoUpdateRussellJew() --" << endl;
-            cout << "  How many integers (to be worked on)? ";
-            cin >> numIntegers;
-            
-            iAry = new int[numIntegers];
-
-            storeIntegers(iAry, numIntegers);
-            
-            trackDigitOccurence(iAry, digitsArray, numIntegers);
-
-            displayExistingDigitsOccurence(digitsArray);
-
-            displayEvenDigitsOccurence(digitsArray);
-
-            displayLargestEvenOccurence(digitsArray);  
-
-            displaySmallestEvenOccurence(digitsArray);
-
-            displayOddDigitsOccurence(digitsArray);
-
-            displayLargestOddOccurence(digitsArray);
-
-            displaySmallestOddOccurence(digitsArray);
-
-            delete[] iAry;
-            iAry = nullptr;
-
-            break;
-        case 2:
-            cout << "  Having Fun ..." << endl;
-            break;
-        default:
-            cout << "WRONG OPTION!\n\n\n";
+    case 1:
+        displayDigitInfoUpdateRussellJew();
+        break;
+    case 2:
+        cout << "  Having Fun ..." << endl;
+        break;
+    default:
+        cout << "WRONG OPTION!\n\n\n";
     }
 
     return option;
+}
+
+void displayDigitInfoUpdateRussellJew()
+{
+    int numIntegers;
+    int* iAry = nullptr;
+    int digitsArray[10] = {0};
+
+    cout << "Calling displayDigitInfoUpdateRussellJew() --" << endl;
+    cout << "  How many integers (to be worked on)? ";
+    cin >> numIntegers;
+
+    iAry = new int[numIntegers];
+
+    storeIntegers(iAry, numIntegers);
+
+    trackDigitOccurence(iAry, digitsArray, numIntegers);
+
+    displayExistingDigitsOccurence(digitsArray);
+
+    displayEvenDigitsOccurence(digitsArray);
+
+    displayLargestEvenOccurence(digitsArray);
+
+    displaySmallestEvenOccurence(digitsArray);
+
+    displayOddDigitsOccurence(digitsArray);
+
+    displayLargestOddOccurence(digitsArray);
+
+    displaySmallestOddOccurence(digitsArray);
+
+    delete[] iAry;
+    iAry = nullptr;
 }
 
 //Function Definitions
