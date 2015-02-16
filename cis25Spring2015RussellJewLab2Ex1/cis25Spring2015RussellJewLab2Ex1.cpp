@@ -216,6 +216,18 @@ void displaySmallestEvenOccurence(int digitsArray[])
     int smallestEvenOccurence = 0;
     int number;
 
+    //If occurence of the number zero is 0
+    if (digitsArray[smallestEvenOccurence] == 0)
+    {
+        for (number = 2; number < 10; number += 2)
+        {
+            if (digitsArray[number] != 0)
+            {
+                smallestEvenOccurence = number;
+            }
+        }
+    }
+
     //Find number with smallest even occurence
     for (number = 2; number < 10; number += 2)
     {
@@ -286,6 +298,18 @@ void displaySmallestOddOccurence(int digitsArray[])
 {
     int smallestOddOccurence = 1;
     int number;
+
+    //If occurence of the number one is 0
+    if (digitsArray[smallestOddOccurence] == 0)
+    {
+        for (number = 3; number < 10; number += 2)
+        {
+            if (digitsArray[number] != 0)
+            {
+                smallestOddOccurence = number;
+            }
+        }
+    }
 
     //Find number with smallest odd occurence
     for (number = 3; number < 10; number += 2)
