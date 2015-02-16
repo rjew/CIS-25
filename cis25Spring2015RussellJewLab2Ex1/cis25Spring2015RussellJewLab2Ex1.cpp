@@ -313,13 +313,13 @@ void displaySmallestOddOccurence(int digitsArray[])
 
 /*  PROGRAM OUTPUT
 Class Information --
-CIS 25 - C++ Programming
-Laney College
+  CIS 25 - C++ Programming
+  Laney College
 
 Assignment Information --
-Assignment Number:  Lab 02 - Exercise #1
-Written by:         Russell Jew
-Due Date:           2015/02/17
+  Assignment Number:  Lab 02 - Exercise #1
+  Written by:         Russell Jew
+  Due Date:           2015/02/17
 
 *************************************************
 *             MENU 02 -- Arrays & Digits        *
@@ -339,52 +339,52 @@ WRONG OPTION!
 Select an option (1 or 2): 1
 
 Calling displayDigitInfoUpdateRussellJew() --
-How many integers (to be worked on)? 2
-Enter integer #1: 1230476
-Enter integer #2: 10034850
+  How many integers (to be worked on)? 2
+    Enter integer #1: 1230476
+    Enter integer #2: 10034850
 
 Occurrence of all exisiting digits --
-Digit 0 : 4
-Digit 1 : 2
-Digit 2 : 1
-Digit 3 : 2
-Digit 4 : 2
-Digit 5 : 1
-Digit 6 : 1
-Digit 7 : 1
-Digit 8 : 1
+  Digit 0 : 4
+  Digit 1 : 2
+  Digit 2 : 1
+  Digit 3 : 2
+  Digit 4 : 2
+  Digit 5 : 1
+  Digit 6 : 1
+  Digit 7 : 1
+  Digit 8 : 1
 
 Occurence of all existing EVEN digits --
-Digit 0 : 4
-Digit 2 : 1
-Digit 4 : 2
-Digit 6 : 1
-Digit 8 : 1
+  Digit 0 : 4
+  Digit 2 : 1
+  Digit 4 : 2
+  Digit 6 : 1
+  Digit 8 : 1
 
 The even digit(s) that has/have the largest occurence --
-0
+  0
 With the number of occurence(s) : 4
 
 The even digit(s) that has/have the smallest occurence --
-2
-6
-8
+  2
+  6
+  8
 With the number of occurence(s) : 1
 
 Occurence of all existing ODD digits --
-Digit 1 : 2
-Digit 3 : 2
-Digit 5 : 1
-Digit 7 : 1
+  Digit 1 : 2
+  Digit 3 : 2
+  Digit 5 : 1
+  Digit 7 : 1
 
 The odd digit(s) that has/have the largest occurence --
-1
-3
+  1
+  3
 With the number of occurence(s) : 2
 
 The odd digit(s) that has/have the smallest occurence --
-5
-7
+  5
+  7
 With the number of occurence(s) : 1
 
 *************************************************
@@ -395,51 +395,51 @@ With the number of occurence(s) : 1
 Select an option (1 or 2): 1
 
 Calling displayDigitInfoUpdateRussellJew() --
-How many integers (to be worked on)? 3
-Enter integer #1: 1230476
-Enter integer #2: 10434950
-Enter integer #3: 9023497
+  How many integers (to be worked on)? 3
+    Enter integer #1: 1230476
+    Enter integer #2: 10434950
+    Enter integer #3: 9023497
 
 Occurrence of all exisiting digits --
-Digit 0 : 4
-Digit 1 : 2
-Digit 2 : 2
-Digit 3 : 3
-Digit 4 : 4
-Digit 5 : 1
-Digit 6 : 1
-Digit 7 : 2
-Digit 9 : 3
+  Digit 0 : 4
+  Digit 1 : 2
+  Digit 2 : 2
+  Digit 3 : 3
+  Digit 4 : 4
+  Digit 5 : 1
+  Digit 6 : 1
+  Digit 7 : 2
+  Digit 9 : 3
 
 Occurence of all existing EVEN digits --
-Digit 0 : 4
-Digit 2 : 2
-Digit 4 : 4
-Digit 6 : 1
+  Digit 0 : 4
+  Digit 2 : 2
+  Digit 4 : 4
+  Digit 6 : 1
 
 The even digit(s) that has/have the largest occurence --
-0
-4
+  0
+  4
 With the number of occurence(s) : 4
 
 The even digit(s) that has/have the smallest occurence --
-6
+  6
 With the number of occurence(s) : 1
 
 Occurence of all existing ODD digits --
-Digit 1 : 2
-Digit 3 : 3
-Digit 5 : 1
-Digit 7 : 2
-Digit 9 : 3
+  Digit 1 : 2
+  Digit 3 : 3
+  Digit 5 : 1
+  Digit 7 : 2
+  Digit 9 : 3
 
 The odd digit(s) that has/have the largest occurence --
-3
-9
+  3
+  9
 With the number of occurence(s) : 3
 
 The odd digit(s) that has/have the smallest occurence --
-5
+  5
 With the number of occurence(s) : 1
 
 *************************************************
@@ -449,7 +449,7 @@ With the number of occurence(s) : 1
 *************************************************
 Select an option (1 or 2): 2
 
-Having Fun ...
+  Having Fun ...
 */
 
 /*  PROGRAM OUTPUT COMMENTS
