@@ -66,14 +66,14 @@ int displayMenu()
 
     switch (option)
     {
-    case 1:
-        displayDigitInfoUpdateRussellJew();
-        break;
-    case 2:
-        cout << "  Having Fun ..." << endl;
-        break;
-    default:
-        cout << "WRONG OPTION!\n\n\n";
+        case 1:
+            displayDigitInfoUpdateRussellJew();
+            break;
+        case 2:
+            cout << "  Having Fun ..." << endl;
+            break;
+        default:
+            cout << "WRONG OPTION!\n\n\n";
     }
 
     return option;
