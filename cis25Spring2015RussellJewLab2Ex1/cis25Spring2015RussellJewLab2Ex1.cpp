@@ -327,12 +327,12 @@ void displaySmallestOddOccurence(int digitsArray[])
 
     //Display numbers with the same smallest odd occurence
     for (number = 1; number < 10; number += 2)
+    {
+        if (digitsArray[number] == digitsArray[smallestOddOccurence])
         {
-            if (digitsArray[number] == digitsArray[smallestOddOccurence])
-            {
-                cout << "  " << number << endl;
-            }
+            cout << "  " << number << endl;
         }
+    }
     
     cout << "With the number of occurence(s) : " << digitsArray[smallestOddOccurence] << endl << endl;
 }
