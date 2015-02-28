@@ -15,7 +15,8 @@ int displayMenu(void);
 void arrangeArrayRussellJew(void);
 void storeArrayElements(int*, int);
 void displayArrays(int*, int, int*, int);
-int swapAndCount(int*, int, int*, int);
+int swapAndCount(int*, int, int*, int, int*, int*);
+void displaySwappingInfo(int*, int*, int);
 
 int main()
 {
@@ -65,7 +66,7 @@ int displayMenu()
         cout << endl;
         break;
     case 2:
-        cout << "  Having Fun ..." << endl;
+        cout << "\n  Having Fun ..." << endl;
         break;
     default:
         cout << "WRONG OPTION!\n\n\n";
@@ -76,11 +77,13 @@ int displayMenu()
 
 void arrangeArrayRussellJew()
 {
-    int* iPtr1 = nullptr;
-    int* iPtr2 = nullptr;
+    int* iPtr1;
+    int* iPtr2;
     int size1;
     int size2;
-    int count;
+    int swaps;
+    int* swappedValue1;
+    int* swappedValue2;
 
     cout << "Creating first array -" << endl;
     cout << "Enter the array size: ";
@@ -100,13 +103,36 @@ void arrangeArrayRussellJew()
     cout << "  Original Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
 
-    count = swapAndCount(iPtr1, size1, iPtr2, size2);
+    //Create an array to store the indices of the swapped values.
+    //The maximum number of swaps is the smallest array size.
+    if (size1 < size2)
+    {
+        swappedValue1 = new int[size1];
+        swappedValue2 = new int[size1];
+    }
+    else
+    {
+        swappedValue1 = new int[size2];
+        swappedValue2 = new int[size2];
+    }
+
+    swaps = swapAndCount(iPtr1, size1, iPtr2, size2, swappedValue1, swappedValue2);
 
     cout << "\n  Updated Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
 
+    if (swaps != 0)
+    {
+        cout << "\n  Swapping Info -" << endl;
+        displaySwappingInfo(swappedValue1, swappedValue2, swaps);
+    }
+
+    cout << "\nThere is/are " << swaps << " swap(s)." << endl << endl;
+
     delete[] iPtr1;
     delete[] iPtr2;
+    delete[] swappedValue1;
+    delete[] swappedValue2;
 }
 
 
@@ -141,13 +167,15 @@ void displayArrays(int* iPtr1, int size1, int* iPtr2, int size2)
     cout << endl;
 }
 
-int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2) 
+int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2, int* swappedValue1, int*swappedValue2) 
 {
     int count = 0;
     int i;
     int j = 0;
+    int k = 0;
     int temp;
     bool swapped;
+    bool stored;
 
     for (i = 0; i < size1; i++) 
     {
@@ -165,6 +193,14 @@ int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2)
 
                     count++;
                     swapped = true;
+                    stored = false;
+
+                    for ( ; stored == false; k++)
+                    {
+                        *(swappedValue1 + k) = *(iPtr2 + j);
+                        *(swappedValue2 + k) = *(iPtr1 + i);
+                        stored = true;
+                    }
                 }
             }
         }
@@ -174,6 +210,17 @@ int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2)
     }
 
     return count;
+}
+
+void displaySwappingInfo(int* swappedValue1, int* swappedValue2, int swaps)
+{
+    int i;
+
+    for (i = 0; i < swaps; i++)
+    {
+        cout << "    Array #1 value " << *(swappedValue1 + i) << " swapped with Array #2 value ";
+        cout << *(swappedValue2 + i) << endl;
+    }
 }
 
 /*  PROGRAM OUTPUT
