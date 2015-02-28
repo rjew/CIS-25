@@ -15,6 +15,7 @@ int displayMenu(void);
 void arrangeArrayRussellJew(void);
 void storeArrayElements(int*, int);
 void displayArrays(int*, int, int*, int);
+int swapAndCount(int*, int, int*, int);
 
 int main()
 {
@@ -79,6 +80,7 @@ void arrangeArrayRussellJew()
     int* iPtr2 = nullptr;
     int size1;
     int size2;
+    int count;
 
     cout << "Creating first array -" << endl;
     cout << "Enter the array size: ";
@@ -97,6 +99,8 @@ void arrangeArrayRussellJew()
     cout << "\nCalling arrangeArrayRussellJew() --" << endl;
     cout << "  Original Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
+
+    count = swapAndCount(iPtr1, size1, iPtr2, size2);
 
     cout << "  \nUpdated Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
@@ -135,6 +139,37 @@ void displayArrays(int* iPtr1, int size1, int* iPtr2, int size2)
         cout << *(iPtr2 + i) << "  ";
     }
     cout << endl;
+}
+
+int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2) 
+{
+    int count = 0;
+    int i, j;
+    int temp;
+
+    for (i = 0; i < size1; i++) 
+    {
+        if (*(iPtr1 + i) % 2 != 0) 
+        {
+            for (j = 0; j < size2; j++) 
+            {
+                if (*(iPtr2 + j) % 2 == 0) 
+                {
+                    temp = *(iPtr2 + i);
+                    *(iPtr1 + i) = *(iPtr2 + j);
+                    *(iPtr2 + j) = temp;
+
+                    count++;
+                    //Stop loop for only one value
+                    j = size2;
+                    i = size1;
+                }
+            }
+        }
+    }
+
+    //Can use a while loop with stop flag to stop loop
+    return count;
 }
 
 /*  PROGRAM OUTPUT
