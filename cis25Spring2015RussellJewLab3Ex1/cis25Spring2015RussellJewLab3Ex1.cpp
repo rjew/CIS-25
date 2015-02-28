@@ -102,7 +102,7 @@ void arrangeArrayRussellJew()
 
     count = swapAndCount(iPtr1, size1, iPtr2, size2);
 
-    cout << "  \nUpdated Arrays" << endl;
+    cout << "\n  Updated Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
 
     delete[] iPtr1;
@@ -144,31 +144,35 @@ void displayArrays(int* iPtr1, int size1, int* iPtr2, int size2)
 int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2) 
 {
     int count = 0;
-    int i, j;
+    int i;
+    int j = 0;
     int temp;
+    bool swapped;
 
     for (i = 0; i < size1; i++) 
     {
         if (*(iPtr1 + i) % 2 != 0) 
         {
-            for (j = 0; j < size2; j++) 
+            swapped = false;
+
+            for ( ; j < size2 && swapped == false; j++)
             {
                 if (*(iPtr2 + j) % 2 == 0) 
                 {
-                    temp = *(iPtr2 + i);
+                    temp = *(iPtr1 + i);
                     *(iPtr1 + i) = *(iPtr2 + j);
                     *(iPtr2 + j) = temp;
 
                     count++;
-                    //Stop loop for only one value
-                    j = size2;
-                    i = size1;
+                    swapped = true;
                 }
             }
         }
+
+        if (j == size2)
+            i = size1;
     }
 
-    //Can use a while loop with stop flag to stop loop
     return count;
 }
 
