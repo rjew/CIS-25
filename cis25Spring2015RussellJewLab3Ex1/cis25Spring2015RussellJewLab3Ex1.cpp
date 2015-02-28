@@ -13,7 +13,8 @@ using namespace std;
 void displayInfo(void);
 int displayMenu(void);
 void arrangeArrayRussellJew(void);
-void createArray(int*);
+void storeArrayElements(int*, int);
+void displayArrays(int*, int, int*, int);
 
 int main()
 {
@@ -76,24 +77,38 @@ void arrangeArrayRussellJew()
 {
     int* iPtr1 = nullptr;
     int* iPtr2 = nullptr;
+    int size1;
+    int size2;
 
     cout << "Creating first array -" << endl;
-    createArray(iPtr1);
+    cout << "Enter the array size: ";
+    cin >> size1;
+
+    iPtr1 = new int[size1];
+    storeArrayElements(iPtr1, size1);
 
     cout << "\nCreating second array -" << endl;
-    createArray(iPtr2);
+    cout << "Enter the array size: ";
+    cin >> size2;
+
+    iPtr2 = new int[size2];
+    storeArrayElements(iPtr2, size2);
+
+    cout << "\nCalling arrangeArrayRussellJew() --" << endl;
+    cout << "  Original Arrays" << endl;
+    displayArrays(iPtr1, size1, iPtr2, size2);
+
+    cout << "  \nUpdated Arrays" << endl;
+    displayArrays(iPtr1, size1, iPtr2, size2);
+
+    delete[] iPtr1;
+    delete[] iPtr2;
 }
 
 
-void createArray(int* iPtr)
+void storeArrayElements(int* iPtr, int size)
 {
-    int size;
     int i;
-
-    cout << "Enter the array size: ";
-    cin >> size;
-
-    iPtr = new int[size];
 
     cout << "Enter value for" << endl;
     for (i = 0; i < size; i++)
@@ -101,6 +116,25 @@ void createArray(int* iPtr)
         cout << "  Index " << i << " : ";
         cin >> *(iPtr + i);
     }
+}
+
+void displayArrays(int* iPtr1, int size1, int* iPtr2, int size2)
+{
+    int i;
+
+    cout << "    Array #1:  ";
+    for (i = 0; i < size1; i++)
+    {
+        cout << *(iPtr1 + i) << "  ";
+    }
+    cout << endl;
+
+    cout << "    Array #2:  ";
+    for (i = 0; i < size2; i++)
+    {
+        cout << *(iPtr2 + i) << "  ";
+    }
+    cout << endl;
 }
 
 /*  PROGRAM OUTPUT
