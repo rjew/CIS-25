@@ -228,5 +228,8 @@ void displaySwappingInfo(int* swappedValue1, int* swappedValue2, int swaps)
 */
 
 /*  PROGRAM OUTPUT COMMENTS
-
+    Could changed the way the swapped value info are stored. Could
+    calculate the number of swaps first then dynamically allocate
+    two arrays to store the swapped values and repeat the loop
+    only this time actually swapping the values.
 */
