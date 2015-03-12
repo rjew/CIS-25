@@ -2,7 +2,7 @@
  * Program Name:    cis25Spring2015RussellJewLab3Ex1.cpp
  * Discussion:		Lab 3 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/02/27
+ * Date Modified:	2015/03/12
  */
 
 #include <iostream>
@@ -42,7 +42,7 @@ void displayInfo()
     cout << "Assignment Information --" << endl;
     cout << "  Assignment Number:  Lab 03 - Exercise #1" << endl;
     cout << "  Written by:         Russell Jew" << endl;
-    cout << "  Due Date:           2015/03/12" << endl << endl;
+    cout << "  Due Date:           2015/03/19" << endl << endl;
 }
 
 int displayMenu()
@@ -103,7 +103,7 @@ void arrangeArrayRussellJew()
     cout << "  Original Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
 
-    //Create an array to store the indices of the swapped values.
+    //Create an array to store the swapped values.
     //The maximum number of swaps is the smallest array size.
     if (size1 < size2)
     {
@@ -224,10 +224,188 @@ void displaySwappingInfo(int* swappedValue1, int* swappedValue2, int swaps)
 }
 
 /*  PROGRAM OUTPUT
+Class Information --
+  CIS 25 - C++ Programming
+  Laney College
 
+Assignment Information --
+  Assignment Number:  Lab 03 - Exercise #1
+  Written by:         Russell Jew
+  Due Date:           2015/03/19
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 4
+
+WRONG OPTION!
+
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 1
+
+Creating first array -
+Enter the array size: 4
+Enter value for
+  Index 0 : 2
+  Index 1 : 4
+  Index 2 : -2
+  Index 3 : 8
+
+Creating second array -
+Enter the array size: 2
+Enter value for
+  Index 0 : 1
+  Index 1 : 4
+
+Calling arrangeArrayRussellJew() --
+  Original Arrays
+    Array #1:  2  4  -2  8
+    Array #2:  1  4
+
+  Updated Arrays
+    Array #1:  2  4  -2  8
+    Array #2:  1  4
+
+There is/are 0 swap(s).
+
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 1
+
+Creating first array -
+Enter the array size: 5
+Enter value for
+  Index 0 : 2
+  Index 1 : 4
+  Index 2 : -2
+  Index 3 : 81
+  Index 4 : 8
+
+Creating second array -
+Enter the array size: 2
+Enter value for
+  Index 0 : 1
+  Index 1 : 4
+
+Calling arrangeArrayRussellJew() --
+  Original Arrays
+    Array #1:  2  4  -2  81  8
+    Array #2:  1  4
+
+  Updated Arrays
+    Array #1:  2  4  -2  4  8
+    Array #2:  1  81
+
+  Swapping Info -
+    Array #1 value 81 swapped with Array #2 value 4
+
+There is/are 1 swap(s).
+
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 1
+
+Creating first array -
+Enter the array size: 2
+Enter value for
+  Index 0 : 1
+  Index 1 : -1
+
+Creating second array -
+Enter the array size: 5
+Enter value for
+  Index 0 : 2
+  Index 1 : 3
+  Index 2 : -2
+  Index 3 : 81
+  Index 4 : 8
+
+Calling arrangeArrayRussellJew() --
+  Original Arrays
+    Array #1:  1  -1
+    Array #2:  2  3  -2  81  8
+
+  Updated Arrays
+    Array #1:  2  -2
+    Array #2:  1  3  -1  81  8
+
+  Swapping Info -
+    Array #1 value 1 swapped with Array #2 value 2
+    Array #1 value -1 swapped with Array #2 value -2
+
+There is/are 2 swap(s).
+
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 1
+
+Creating first array -
+Enter the array size: 5
+Enter value for
+  Index 0 : 21
+  Index 1 : 41
+  Index 2 : -2
+  Index 3 : 81
+  Index 4 : 8
+
+Creating second array -
+Enter the array size: 4
+Enter value for
+  Index 0 : 10
+  Index 1 : 4
+  Index 2 : 18
+  Index 3 : 4
+
+Calling arrangeArrayRussellJew() --
+  Original Arrays
+    Array #1:  21  41  -2  81  8
+    Array #2:  10  4  18  4
+
+  Updated Arrays
+    Array #1:  10  4  -2  18  8
+    Array #2:  21  41  81  4
+
+  Swapping Info -
+    Array #1 value 21 swapped with Array #2 value 10
+    Array #1 value 41 swapped with Array #2 value 4
+    Array #1 value 81 swapped with Array #2 value 18
+
+There is/are 3 swap(s).
+
+
+***************************************
+*          MENU 03 -- Arrays          *
+* 1. Calling arrangeArrayRussellJew() *
+* 2. Quit                             *
+***************************************
+Select an option (1 or 2): 2
+
+
+  Having Fun ...
 */
 
 /*  PROGRAM OUTPUT COMMENTS
+    The program runs sucessfully and produces the required
+    output.
     Could changed the way the swapped value info are stored. Could
     calculate the number of swaps first then dynamically allocate
     two arrays to store the swapped values and repeat the loop
