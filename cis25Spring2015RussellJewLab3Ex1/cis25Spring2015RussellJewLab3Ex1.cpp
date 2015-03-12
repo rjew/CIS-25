@@ -172,10 +172,8 @@ int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2, int* swappedValue
     int count = 0;
     int i;
     int j = 0;
-    int k = 0;
     int temp;
     bool swapped;
-    bool stored;
 
     for (i = 0; i < size1; i++) 
     {
@@ -191,22 +189,17 @@ int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2, int* swappedValue
                     *(iPtr1 + i) = *(iPtr2 + j);
                     *(iPtr2 + j) = temp;
 
+                    *(swappedValue1 + count) = *(iPtr2 + j);
+                    *(swappedValue2 + count) = *(iPtr1 + i);
                     count++;
-                    swapped = true;
-                    stored = false;
 
-                    for ( ; stored == false; k++)
-                    {
-                        *(swappedValue1 + k) = *(iPtr2 + j);
-                        *(swappedValue2 + k) = *(iPtr1 + i);
-                        stored = true;
-                    }
+                    swapped = true;
                 }
             }
-        }
 
-        if (j == size2)
-            i = size1;
+            if (j == size2)
+                i = size1;
+        }
     }
 
     return count;
@@ -405,9 +398,7 @@ Select an option (1 or 2): 2
 
 /*  PROGRAM OUTPUT COMMENTS
     The program runs sucessfully and produces the required
-    output.
-    Could changed the way the swapped value info are stored. Could
-    calculate the number of swaps first then dynamically allocate
-    two arrays to store the swapped values and repeat the loop
-    only this time actually swapping the values.
+    output. However, the program may not be the most efficient
+    as there may be a better way to store the swapped values
+    than dynamically allocating an array.
 */
