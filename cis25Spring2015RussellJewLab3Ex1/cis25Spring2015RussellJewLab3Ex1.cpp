@@ -167,7 +167,7 @@ void displayArrays(int* iPtr1, int size1, int* iPtr2, int size2)
     cout << endl;
 }
 
-int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2, int* swappedValue1, int*swappedValue2) 
+int swapAndCount(int* iPtr1, int size1, int* iPtr2, int size2, int* swappedValue1, int* swappedValue2) 
 {
     int count = 0;
     int i;
