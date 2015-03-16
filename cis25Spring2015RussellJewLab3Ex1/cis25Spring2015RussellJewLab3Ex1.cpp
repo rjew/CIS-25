@@ -2,7 +2,7 @@
  * Program Name:    cis25Spring2015RussellJewLab3Ex1.cpp
  * Discussion:		Lab 3 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/03/12
+ * Date Modified:	2015/03/15
  */
 
 #include <iostream>
@@ -12,7 +12,7 @@ using namespace std;
 
 void displayInfo(void);
 int displayMenu(void);
-void arrangeArrayRussellJew(void);
+void arrangeArrayRussellJew(int*, int, int*, int);
 void storeArrayElements(int*, int);
 void displayArrays(int*, int, int*, int);
 int swapAndCount(int*, int, int*, int, int*, int*);
@@ -48,6 +48,10 @@ void displayInfo()
 int displayMenu()
 {
     int option;
+    int* iPtr1;
+    int* iPtr2;
+    int size1;
+    int size2;
 
     cout << "***************************************" << endl;
     cout << "*          MENU 03 -- Arrays          *" << endl;
@@ -62,8 +66,28 @@ int displayMenu()
     switch (option)
     {
     case 1:
-        arrangeArrayRussellJew();
+        cout << "Creating first array -" << endl;
+        cout << "Enter the array size: ";
+        cin >> size1;
+
+        iPtr1 = new int[size1];
+        storeArrayElements(iPtr1, size1);
+
+        cout << "\nCreating second array -" << endl;
+        cout << "Enter the array size: ";
+        cin >> size2;
+
+        iPtr2 = new int[size2];
+        storeArrayElements(iPtr2, size2);
+
+        cout << "\nCalling arrangeArrayRussellJew() --" << endl;
+
+        arrangeArrayRussellJew(iPtr1, size1, iPtr2, size2);
         cout << endl;
+
+        delete[] iPtr1;
+        delete[] iPtr2;
+
         break;
     case 2:
         cout << "\n  Having Fun ..." << endl;
@@ -75,31 +99,12 @@ int displayMenu()
     return option;
 }
 
-void arrangeArrayRussellJew()
+void arrangeArrayRussellJew(int* iPtr1, int size1, int* iPtr2, int size2)
 {
-    int* iPtr1;
-    int* iPtr2;
-    int size1;
-    int size2;
     int swaps;
     int* swappedValue1;
     int* swappedValue2;
 
-    cout << "Creating first array -" << endl;
-    cout << "Enter the array size: ";
-    cin >> size1;
-
-    iPtr1 = new int[size1];
-    storeArrayElements(iPtr1, size1);
-
-    cout << "\nCreating second array -" << endl;
-    cout << "Enter the array size: ";
-    cin >> size2;
-
-    iPtr2 = new int[size2];
-    storeArrayElements(iPtr2, size2);
-
-    cout << "\nCalling arrangeArrayRussellJew() --" << endl;
     cout << "  Original Arrays" << endl;
     displayArrays(iPtr1, size1, iPtr2, size2);
 
@@ -129,8 +134,6 @@ void arrangeArrayRussellJew()
 
     cout << "\nThere is/are " << swaps << " swap(s)." << endl << endl;
 
-    delete[] iPtr1;
-    delete[] iPtr2;
     delete[] swappedValue1;
     delete[] swappedValue2;
 }
