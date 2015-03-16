@@ -75,6 +75,7 @@ void displayDigitProblem3RussellJew(int* iPtr, int size) {
     int digit;
     int *iPtrTemp;
     int numberOfUncommonEvenDigits = 0;
+    bool flag[10]; //To prevent numbers from being uncommon if they appear twice in the same number
 
     iPtrTemp = new int[size];
 
@@ -83,15 +84,21 @@ void displayDigitProblem3RussellJew(int* iPtr, int size) {
     }
 
     for (i = 0; i < size; i++) {
+        for (int j = 0; j < 10; j++) {
+            flag[j] = {false};
+        }
+        
         do {
             digit = *(iPtrTemp + i) % 10;
             
             if (digit % 2 == 0) {
-                if (digits[digit] > 0)
+                if (digits[digit] > 0 && flag[digit] == false) //false means it was greater than one before the for loop
                     digits[digit] = -digits[digit];
 
-                if (digits[digit] == 0)
+                if (digits[digit] == 0) {
                     digits[digit]++;
+                    flag[digit] = true;
+                }
             }
 
             *(iPtrTemp + i) /= 10;
