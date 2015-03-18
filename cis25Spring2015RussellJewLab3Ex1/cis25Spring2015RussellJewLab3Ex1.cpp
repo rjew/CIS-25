@@ -2,7 +2,7 @@
  * Program Name:    cis25Spring2015RussellJewLab3Ex1.cpp
  * Discussion:		Lab 3 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/03/15
+ * Date Modified:	2015/03/17
  */
 
 #include <iostream>
@@ -37,7 +37,7 @@ void displayInfo()
     cout << "Assignment Information --" << endl;
     cout << "  Assignment Number:  Lab 03 - Exercise #1" << endl;
     cout << "  Written by:         Russell Jew" << endl;
-    cout << "  Due Date:           2015/03/19" << endl << endl;
+    cout << "  Due Date:           2015/03/24" << endl << endl;
 }
 
 void displayMenu()
@@ -223,7 +223,7 @@ Class Information --
 Assignment Information --
   Assignment Number:  Lab 03 - Exercise #1
   Written by:         Russell Jew
-  Due Date:           2015/03/19
+  Due Date:           2015/03/24
 
 ***************************************
 *          MENU 03 -- Arrays          *
