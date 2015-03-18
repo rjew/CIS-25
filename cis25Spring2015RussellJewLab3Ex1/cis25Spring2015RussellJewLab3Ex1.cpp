@@ -11,7 +11,7 @@ using namespace std;
 //Function Prototype
 
 void displayInfo(void);
-int displayMenu(void);
+void displayMenu(void);
 void arrangeArrayRussellJew(int*, int, int*, int);
 void storeArrayElements(int*, int);
 void displayArrays(int*, int, int*, int);
@@ -20,14 +20,9 @@ void displaySwappingInfo(int*, int*, int);
 
 int main()
 {
-    int option;
-
     displayInfo();
 
-    do
-    {
-        option = displayMenu();
-    } while (option != 2);
+    displayMenu();
 
     return 0;
 }
@@ -45,58 +40,59 @@ void displayInfo()
     cout << "  Due Date:           2015/03/19" << endl << endl;
 }
 
-int displayMenu()
+void displayMenu()
 {
     int option;
     int* iPtr1;
     int* iPtr2;
     int size1;
     int size2;
-
-    cout << "***************************************" << endl;
-    cout << "*          MENU 03 -- Arrays          *" << endl;
-    cout << "* 1. Calling arrangeArrayRussellJew() *" << endl;
-    cout << "* 2. Quit                             *" << endl;
-    cout << "***************************************" << endl;
-
-    cout << "Select an option (1 or 2): ";
-    cin >> option;
-    cout << endl;
-
-    switch (option)
+    
+    do 
     {
-    case 1:
-        cout << "Creating first array -" << endl;
-        cout << "Enter the array size: ";
-        cin >> size1;
+        cout << "***************************************" << endl;
+        cout << "*          MENU 03 -- Arrays          *" << endl;
+        cout << "* 1. Calling arrangeArrayRussellJew() *" << endl;
+        cout << "* 2. Quit                             *" << endl;
+        cout << "***************************************" << endl;
 
-        iPtr1 = new int[size1];
-        storeArrayElements(iPtr1, size1);
-
-        cout << "\nCreating second array -" << endl;
-        cout << "Enter the array size: ";
-        cin >> size2;
-
-        iPtr2 = new int[size2];
-        storeArrayElements(iPtr2, size2);
-
-        cout << "\nCalling arrangeArrayRussellJew() --" << endl;
-
-        arrangeArrayRussellJew(iPtr1, size1, iPtr2, size2);
+        cout << "Select an option (1 or 2): ";
+        cin >> option;
         cout << endl;
 
-        delete[] iPtr1;
-        delete[] iPtr2;
+        switch (option)
+        {
+        case 1:
+            cout << "Creating first array -" << endl;
+            cout << "Enter the array size: ";
+            cin >> size1;
 
-        break;
-    case 2:
-        cout << "\n  Having Fun ..." << endl;
-        break;
-    default:
-        cout << "WRONG OPTION!\n\n\n";
-    }
+            iPtr1 = new int[size1];
+            storeArrayElements(iPtr1, size1);
 
-    return option;
+            cout << "\nCreating second array -" << endl;
+            cout << "Enter the array size: ";
+            cin >> size2;
+
+            iPtr2 = new int[size2];
+            storeArrayElements(iPtr2, size2);
+
+            cout << "\nCalling arrangeArrayRussellJew() --" << endl;
+
+            arrangeArrayRussellJew(iPtr1, size1, iPtr2, size2);
+            cout << endl;
+
+            delete[] iPtr1;
+            delete[] iPtr2;
+
+            break;
+        case 2:
+            cout << "\n  Having Fun ..." << endl;
+            break;
+        default:
+            cout << "WRONG OPTION!\n\n\n";
+        }
+    } while (option != 2);
 }
 
 void arrangeArrayRussellJew(int* iPtr1, int size1, int* iPtr2, int size2)
