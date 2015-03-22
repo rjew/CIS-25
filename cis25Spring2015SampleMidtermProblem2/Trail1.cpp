@@ -95,6 +95,7 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
     int digits[10] = {0};
     int digitsTemp[10] = {0};
     int* iPtrTemp;
+    int* iPtrTemp2;
     int i, j, k;
     int digit;
     int temp;
@@ -132,6 +133,14 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
         *(swaps + i) = false;
     }
 
+    iPtrTemp2 = new int[size];
+    for (j = 0; j < size; j++)
+    {
+        *(iPtrTemp2 + j) =  (*(iPtr + j));
+    }
+    
+    int l = 0;
+
     for (i = 0; i < numEvenDigits; i++)
     {
         mostSeenEvenDigit = 0;
@@ -144,7 +153,7 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
 
         for (j = 0; j < size; j++)
         {
-            *(iPtrTemp + j) = (*(iPtr + j) < 0) ? -(*(iPtr + j)) : (*(iPtr + j));
+            *(iPtrTemp + j) = (*(iPtrTemp2 + j) < 0) ? -(*(iPtrTemp2 + j)) : (*(iPtrTemp2 + j));
         }
 
         for (j = 0; j < size; j++)
@@ -158,7 +167,8 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
 
             if (digitsTemp[mostSeenEvenDigit] > 0 && *(swaps + j) == false)
             {
-                cout << *(iPtr + j) << endl;
+                *(iPtr + l) = *(iPtrTemp2 + j);
+                l++;
                 *(swaps + j) = true;
             }
 
@@ -174,9 +184,11 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
     
     for (j = 0; j < size; j++)
     {
-        *(iPtrTemp + j) = (*(iPtr + j) < 0) ? -(*(iPtr + j)) : (*(iPtr + j));
+        *(iPtrTemp + j) = (*(iPtrTemp2 + j) < 0) ? -(*(iPtrTemp2 + j)) : (*(iPtrTemp2 + j));
     }
     
+    l = 0;
+
     for (j = 0; j < size; j++)
     {
         do
@@ -188,7 +200,8 @@ void updateArrayProblem2RussellJew(int* iPtr, int size)
 
         if (digitsTemp[0] == 0 && digitsTemp[2] == 0 && digitsTemp[4] == 0 && digitsTemp[6] == 0 && digitsTemp[8] == 0)
         {
-            cout << *(iPtr + j) << endl;
+            *(iPtr + (size - l)) = *(iPtrTemp2 + j);
+            l++;
         }
 
         for (k = 0; k < 10; k++)
