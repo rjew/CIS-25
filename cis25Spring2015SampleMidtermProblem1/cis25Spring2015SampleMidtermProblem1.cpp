@@ -60,6 +60,7 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[]) {
 
     //Should negate temp if negative
 
+    //extract the digits from the integer
     do {
         digit = temp % 10;
         digits[digit]++;
@@ -67,6 +68,7 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[]) {
         temp /= 10;
     } while (temp != 0);
 
+    //cycle through digits array and count number of even digits
     for (i = 0; i < 10; i++) {
         if (digits[i] != 0 && i % 2 == 0)
             numberOfEvenDigits++;
@@ -77,20 +79,23 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[]) {
 
     cout << "    With the " << numberOfEvenDigits << " even digits," << endl << endl;
     
+    //copy digits array into tempDigits
     for (i = 0; i < 10; i++) {
         tempDigits[i] = digits[i];
     }
 
+    //repeat displaying the message until all even digits are displayed
     for (i = 0; i < numberOfEvenDigits; i++) {
-        for (j = 0; j < 10; j += 2) {
+        for (j = 0; j < 10; j += 2) { // find the even digit that occurs the most
             if (tempDigits[largestEvenOccurence] < tempDigits[j])
                 largestEvenOccurence = j;
         }
 
         cout << "      " << largestEvenOccurence << " occurs " << tempDigits[largestEvenOccurence] << " time(s)" << endl;
-        tempDigits[largestEvenOccurence] = 0;
+        tempDigits[largestEvenOccurence] = 0; // set that even digit occurence to 0 to skip it in the next iteration
     }
 
+    //find the digit that has the largest occurence (even or odd)
     for (i = 1; i < 10; i++) {
         if (digits[largestOccurence] < digits[i])
             largestOccurence = i;

@@ -63,6 +63,7 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[])
     if (integer < 0)
         integer = -integer;
 
+    //extract the digits from the integer
     do
     {
         digit = temp % 10;
@@ -71,11 +72,13 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[])
         numDigits++;
     } while (temp != 0);
 
+    //make a copy of the digits array
     for (i = 0; i < 10; i++)
     {
         digitsCopy[i] = digits[i];
     }
 
+    //loop through the digits array counting how many even digits there are
     for (i = 0; i < 10; i += 2)
     {
         //numEvenDigits += digits[i]; ERROR: counts how many times all the even digits occur
@@ -89,9 +92,12 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[])
     cout << "With the " << numEvenDigits
         << " even digit,\n" << endl;
 
+    //display the message as much as how many even digits there are
     for (i = 0; i < numEvenDigits; i++)
     {
-        largestEvenOccurence = 0;
+        largestEvenOccurence = 0; //set the largest even occurence index to 0 to start from beginning
+        
+        //find the largest even occcurence
         for (j = 0; j < 10; j += 2)
         {
             if (digitsCopy[largestEvenOccurence] < digitsCopy[j])
@@ -101,9 +107,11 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[])
         cout << "    " << largestEvenOccurence << " occurs" << digitsCopy[largestEvenOccurence]
             << " time(s)" << endl;
 
+        //set the largest even occurence to 0 in order to find the next largest even occurence
         digitsCopy[largestEvenOccurence] = 0;
     }
 
+    //set the largest occurence to zero to start from beginning
     largestOccurence = 0;
 
     /*
@@ -115,6 +123,7 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[])
     ERROR: digits array has been altered, need to make a copy of the digits array
     */
 
+    // find the largest digit occurence (even or odd)
     for (i = 0; i < 10; i++)
     {
         if (digits[largestOccurence] < digits[i])
