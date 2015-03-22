@@ -58,6 +58,8 @@ int extractMostSeenEvenDigitProblem1RussellJew(int integer, int digits[]) {
     int largestEvenOccurence = 0;
     int tempDigits[10];
 
+    //Should negate temp if negative
+
     do {
         digit = temp % 10;
         digits[digit]++;
