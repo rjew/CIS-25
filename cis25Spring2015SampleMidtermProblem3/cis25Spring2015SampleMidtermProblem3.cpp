@@ -79,25 +79,26 @@ void displayDigitProblem3RussellJew(int* iPtr, int size) {
 
     iPtrTemp = new int[size];
 
+    //initialize iptrTemp
     for (i = 0; i < size; i++) {
         *(iPtrTemp + i) = (*(iPtr + i) < 0) ? -(*(iPtr + i)) : *(iPtr + i);
     }
 
     for (i = 0; i < size; i++) {
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 10; j++) { //initialize flag array
             flag[j] = {false};
         }
         
         do {
             digit = *(iPtrTemp + i) % 10;
             
-            if (digit % 2 == 0) {
+            if (digit % 2 == 0) { // if digit is even
                 if (digits[digit] > 0 && flag[digit] == false) //false means it was greater than one before the for loop
-                    digits[digit] = -digits[digit];
+                    digits[digit] = -digits[digit]; // negative means it is not uncommon
 
-                if (digits[digit] == 0) {
+                if (digits[digit] == 0) { // if digit is a first time encountered
                     digits[digit]++;
-                    flag[digit] = true;
+                    flag[digit] = true; // so that if the digit occurs twice in a number it won't become negative
                 }
             }
 
@@ -105,6 +106,7 @@ void displayDigitProblem3RussellJew(int* iPtr, int size) {
         } while (*(iPtrTemp + i) != 0);
     }
 
+    //count up the number of uncommon even digits
     for (i = 0; i < 10; i += 2) {
         if (digits[i] > 0)
             numberOfUncommonEvenDigits++;
@@ -114,6 +116,7 @@ void displayDigitProblem3RussellJew(int* iPtr, int size) {
     cout << "\n      There is/are " << numberOfUncommonEvenDigits << " uncommon even digit(s)." << endl;
     cout << "\n      The uncommon even digit(s) is/are" << endl;
 
+    //loop through displaying uncommmon even digits
     for (i = 0; i < 10; i += 2) {
         if (digits[i] > 0)
             cout << "        " << i << endl;

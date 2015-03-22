@@ -18,7 +18,7 @@
     <ClCompile Include="cis25Spring2015SampleMidtermProblem3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trail1cpp.cpp">
+    <ClCompile Include="Trail1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
