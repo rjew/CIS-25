@@ -20,7 +20,7 @@ public:
     int getDenom(void) const;
     void setDenom(int);
 
-    void printFraction(void) const;
+    void printFraction(void);
 private:
     int num;
     int denom;

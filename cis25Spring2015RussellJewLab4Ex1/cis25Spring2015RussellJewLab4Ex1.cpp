@@ -70,6 +70,11 @@ void displayMenu() {
         switch (option) {
         case 1:
             cout << "Calling init() --" << endl << endl;
+            if (!frPtr1) {
+                frPtr1 = new FractionRussellJ();
+                frPtr2 = new FractionRussellJ();
+                frPtr3 = new FractionRussellJ();
+            }
             init(frPtr1, frPtr2, frPtr3);
             break;
         case 2:
@@ -96,7 +101,7 @@ void displayMenu() {
             cout << "Having Fun ...!" << endl;
             break;
         default:
-            cout << "WRONG OPTION!\n\n\n";
+            cout << "WRONG OPTION!\n" << endl;
         }
     } while (option != 7);
 
@@ -108,23 +113,17 @@ void displayMenu() {
 void init(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
     int num1, num2, denom1, denom2;
 
-    if (!frPtr1) {
-        frPtr1 = new FractionRussellJ();
-        frPtr2 = new FractionRussellJ();
-        frPtr3 = new FractionRussellJ();
-    }
-
     cout << "  Enter num1: ";
     cin >> num1;
     (*frPtr1).setNum(num1);
 
     cout << "  Enter denom1: ";
     cin >> denom1;
-    (*frPtr2).setDenom(denom1);
+    (*frPtr1).setDenom(denom1);
 
     cout << "  Enter num2: ";
     cin >> num2;
-    (*frPtr1).setNum(num2);
+    (*frPtr2).setNum(num2);
 
     cout << "  Enter denom2: ";
     cin >> denom2;
@@ -150,7 +149,7 @@ void add(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* f
         (*frPtr3).setNum(num);
         (*frPtr3).setDenom(denom);
 
-        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+        cout << "  Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
     }
     else
         cout << "  Not a proper call as no Fractions are available!\n" << endl;
@@ -173,7 +172,7 @@ void subtract(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussel
         (*frPtr3).setNum(num);
         (*frPtr3).setDenom(denom);
 
-        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+        cout << "  Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
     }
     else
         cout << "  Not a proper call as no Fractions are available!\n" << endl;
@@ -196,7 +195,7 @@ void multiply(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussel
         (*frPtr3).setNum(num);
         (*frPtr3).setDenom(denom);
 
-        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+        cout << "  Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
     }
     else
         cout << "  Not a proper call as no Fractions are available!\n" << endl;
@@ -219,7 +218,7 @@ void divide(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ
         (*frPtr3).setNum(num);
         (*frPtr3).setDenom(denom);
 
-        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+        cout << "  Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
     }
     else
         cout << "  Not a proper call as no Fractions are available!\n" << endl;
@@ -227,8 +226,11 @@ void divide(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ
 
 void print(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
     if (frPtr1) {
-        cout << "Fraction 1: " << (*frPtr1).getNum() << "/" << (*frPtr1).getDenom() << endl;
-        cout << "Fraction 2: " << (*frPtr2).getNum() << "/" << (*frPtr2).getDenom() << endl << endl;
+        cout << "  Fraction 1: ";
+        (*frPtr1).printFraction();
+        cout << "  Fraction 2: ";
+        (*frPtr2).printFraction();
+        cout << endl;
     }
     else
         cout << "  No Fractions are available!\n" << endl;
