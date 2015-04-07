@@ -2,66 +2,24 @@
  * Program Name:    cis25Spring2015RussellJewLab4Ex1.cpp
  * Discussion:		Lab 4 - Exercise #1
  * Written by:		Russell Jew
- * Date Modified:	2015/03/18
+ * Date Modified:	2015/04/06
  */
 
 #include <iostream>
+#include "cis25Spring2015RussellJewFractionRussellJ.h"
 using namespace std;
-
-// Class Definitions
-
-class FractionRussellJ {
-private:
-    int num;
-    int denom;
-
-public:
-    //Constructors
-
-    //Default
-    FractionRussellJ() {
-        num = 0;
-        denom = 1;
-    }
-    
-    //Copy
-    FractionRussellJ(const FractionRussellJ& ref) {
-        num = ref.num;
-        denom = ref.denom;
-    }
-
-    //Convert
-
-    //Set Functions
-    void setNum(int arg) {
-        num = arg;
-    }
-
-    void setDenom(int arg) {
-        denom = arg;
-    }
-
-    //Get Functions
-
-    int getNum() {
-        return num;
-    }
-
-    int getDenom() {
-        return denom;
-    }
-
-    //Print Function
-
-    void printFraction(){
-
-    }
-};
 
 //Function Prototype
 
 void displayInfo(void);
 void displayMenu(void);
+void init(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
+void add(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
+void subtract(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
+void multiply(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
+void divide(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
+void print(FractionRussellJ*, FractionRussellJ*);
+int getGCD(int, int);
 
 int main() {
     displayInfo();
@@ -81,15 +39,15 @@ void displayInfo() {
     cout << "  Assignment Number:  Lab 04," << endl;
     cout << "                      Exercise #1" << endl;
     cout << "  Written by:         Russell Jew" << endl;
-    cout << "  Due Date:           2015/03/26" << endl << endl;
+    cout << "  Due Date:           2015/04/09" << endl << endl;
 }
 
 void displayMenu() {
     int option;
-    int* iPtr1;
-    int* iPtr2;
-    int size1;
-    int size2;
+    
+    FractionRussellJ* frPtr1 = nullptr;
+    FractionRussellJ* frPtr2 = nullptr;
+    FractionRussellJ* frPtr3 = nullptr;
 
     do {
         cout << "***************************" << endl;
@@ -112,21 +70,27 @@ void displayMenu() {
         switch (option) {
         case 1:
             cout << "Calling init() --" << endl << endl;
+            init(frPtr1, frPtr2, frPtr3);
             break;
         case 2:
             cout << "Calling add() --" << endl << endl;
+            add(frPtr1, frPtr2, frPtr3);
             break;
         case 3:
             cout << "Calling subtract() --" << endl << endl;
+            subtract(frPtr1, frPtr2, frPtr3);
             break;
         case 4:
             cout << "Calling multiply() --" << endl << endl;
+            multiply(frPtr1, frPtr2, frPtr3);
             break;
         case 5:
             cout << "Calling divide() --" << endl << endl;
+            divide(frPtr1, frPtr2, frPtr3);
             break;
         case 6:
             cout << "Calling print() --" << endl << endl;
+            print(frPtr1, frPtr2);
             break;
         case 7:
             cout << "Having Fun ...!" << endl;
@@ -135,30 +99,152 @@ void displayMenu() {
             cout << "WRONG OPTION!\n\n\n";
         }
     } while (option != 7);
+
+    delete[] frPtr1;
+    delete[] frPtr2;
+    delete[] frPtr3;
 }
 
-void init() {
+void init(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
+    int num1, num2, denom1, denom2;
 
+    if (!frPtr1) {
+        frPtr1 = new FractionRussellJ();
+        frPtr2 = new FractionRussellJ();
+        frPtr3 = new FractionRussellJ();
+    }
+
+    cout << "  Enter num1: ";
+    cin >> num1;
+    (*frPtr1).setNum(num1);
+
+    cout << "  Enter denom1: ";
+    cin >> denom1;
+    (*frPtr2).setDenom(denom1);
+
+    cout << "  Enter num2: ";
+    cin >> num2;
+    (*frPtr1).setNum(num2);
+
+    cout << "  Enter denom2: ";
+    cin >> denom2;
+    (*frPtr2).setDenom(denom2);
+
+    cout << endl;
 }
 
-void add() {
+void add(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
+    int num;
+    int denom;
+    int gcd;
+    
+    if (frPtr1) {
+        num = (*frPtr1).getNum() * (*frPtr2).getDenom() + (*frPtr2).getNum() * (*frPtr1).getDenom();
+        denom = (*frPtr1).getDenom() * (*frPtr2).getDenom();
 
+        gcd = getGCD(num, denom);
+
+        num /= gcd;
+        denom /= gcd;
+
+        (*frPtr3).setNum(num);
+        (*frPtr3).setDenom(denom);
+
+        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+    }
+    else
+        cout << "  Not a proper call as no Fractions are available!\n" << endl;
 }
 
-void subtract() {
+void subtract(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
+    int num;
+    int denom;
+    int gcd;
 
+    if (frPtr1) {
+        num = (*frPtr1).getNum() * (*frPtr2).getDenom() - (*frPtr2).getNum() * (*frPtr1).getDenom();
+        denom = (*frPtr1).getDenom() * (*frPtr2).getDenom();
+
+        gcd = getGCD(num, denom);
+
+        num /= gcd;
+        denom /= gcd;
+
+        (*frPtr3).setNum(num);
+        (*frPtr3).setDenom(denom);
+
+        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+    }
+    else
+        cout << "  Not a proper call as no Fractions are available!\n" << endl;
 }
 
-void multiply() {
+void multiply(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
+    int num;
+    int denom;
+    int gcd;
 
+    if (frPtr1) {
+        num = (*frPtr1).getNum() * (*frPtr2).getNum();
+        denom = (*frPtr1).getDenom() * (*frPtr2).getDenom();
+
+        gcd = getGCD(num, denom);
+
+        num /= gcd;
+        denom /= gcd;
+
+        (*frPtr3).setNum(num);
+        (*frPtr3).setDenom(denom);
+
+        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+    }
+    else
+        cout << "  Not a proper call as no Fractions are available!\n" << endl;
 }
 
-void divide() {
+void divide(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2, FractionRussellJ* frPtr3) {
+    int num;
+    int denom;
+    int gcd;
 
+    if (frPtr1) {
+        num = (*frPtr1).getNum() * (*frPtr2).getDenom();
+        denom = (*frPtr1).getDenom() * (*frPtr2).getNum();
+
+        gcd = getGCD(num, denom);
+
+        num /= gcd;
+        denom /= gcd;
+
+        (*frPtr3).setNum(num);
+        (*frPtr3).setDenom(denom);
+
+        cout << "Fraction 3: " << (*frPtr3).getNum() << "/" << (*frPtr3).getDenom() << endl << endl;
+    }
+    else
+        cout << "  Not a proper call as no Fractions are available!\n" << endl;
 }
 
-void print() {
+void print(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
+    if (frPtr1) {
+        cout << "Fraction 1: " << (*frPtr1).getNum() << "/" << (*frPtr1).getDenom() << endl;
+        cout << "Fraction 2: " << (*frPtr2).getNum() << "/" << (*frPtr2).getDenom() << endl << endl;
+    }
+    else
+        cout << "  No Fractions are available!\n" << endl;
+}
 
+
+int getGCD(int arg1, int arg2) {
+    int gcd = 1;
+    int i;
+
+    for (i = 2; i <= arg1 && i <= arg2; i++) {
+        if (arg1 % i == 0 && arg2 % i == 0)
+            gcd = i;
+    }
+
+    return gcd;
 }
 
 /*  PROGRAM OUTPUT

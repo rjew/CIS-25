@@ -18,5 +18,13 @@
     <ClCompile Include="cis25Spring2015RussellJewLab4Ex1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cis25Spring2015RussellJewFractionRussellJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cis25Spring2015RussellJewFractionRussellJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
