@@ -32,6 +32,15 @@ FractionRussellJ::FractionRussellJ(int arg) {
     denom = 1;
 }
 
+FractionRussellJ::FractionRussellJ(int arg1, int arg2) {
+    num = arg1;
+
+    if (arg2 != 0)
+        denom = arg2;
+    else
+        denom = 1;
+}
+
 int FractionRussellJ::getNum() const {
     return num;
 }

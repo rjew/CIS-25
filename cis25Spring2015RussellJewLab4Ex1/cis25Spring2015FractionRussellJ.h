@@ -13,6 +13,7 @@ public:
     FractionRussellJ();
     FractionRussellJ(const FractionRussellJ&);
     FractionRussellJ(int);
+    FractionRussellJ(int, int);
 
     int getNum(void) const;
     void setNum(int);

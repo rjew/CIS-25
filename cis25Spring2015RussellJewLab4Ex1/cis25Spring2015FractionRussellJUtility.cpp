@@ -234,3 +234,32 @@ int getGCD(int arg1, int arg2) {
 
     return gcd;
 }
+
+void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
+    int num;
+    int denom;
+
+    if (*frPtr1Addr == nullptr) {
+        
+        cout << "  Enter num1: ";
+        cin >> num;
+
+        cout << "  Enter denom1: ";
+        cin >> denom;
+
+        *frPtr1Addr = new FractionRussellJ(num, denom);
+    }
+
+    if (*frPtr2Addr == nullptr) {
+
+        cout << "  Enter num2: ";
+        cin >> num;
+
+        cout << "  Enter denom2: ";
+        cin >> denom;
+
+        *frPtr2Addr = new FractionRussellJ(num, denom);
+    }
+
+    cout << endl;
+}

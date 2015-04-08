@@ -11,6 +11,7 @@
 void displayInfo(void);
 void displayMenu(void);
 void init(FractionRussellJ*, FractionRussellJ*);
+void init(FractionRussellJ**, FractionRussellJ**);
 void add(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
 void subtract(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
 void multiply(FractionRussellJ*, FractionRussellJ*, FractionRussellJ*);
