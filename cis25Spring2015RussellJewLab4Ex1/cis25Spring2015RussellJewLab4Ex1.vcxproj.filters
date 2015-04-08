@@ -18,12 +18,18 @@
     <ClCompile Include="cis25Spring2015RussellJewLab4Ex1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cis25Spring2015RussellJewFractionRussellJ.cpp">
+    <ClCompile Include="cis25Spring2015FractionRussellJ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cis25Spring2015FractionRussellJUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cis25Spring2015RussellJewFractionRussellJ.h">
+    <ClInclude Include="cis25Spring2015FractionRussellJ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cis25Spring2015FractionRussellJUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

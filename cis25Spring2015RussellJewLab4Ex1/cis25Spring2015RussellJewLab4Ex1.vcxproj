@@ -78,11 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cis25Spring2015RussellJewFractionRussellJ.cpp" />
+    <ClCompile Include="cis25Spring2015FractionRussellJ.cpp" />
+    <ClCompile Include="cis25Spring2015FractionRussellJUtility.cpp" />
     <ClCompile Include="cis25Spring2015RussellJewLab4Ex1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cis25Spring2015RussellJewFractionRussellJ.h" />
+    <ClInclude Include="cis25Spring2015FractionRussellJ.h" />
+    <ClInclude Include="cis25Spring2015FractionRussellJUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

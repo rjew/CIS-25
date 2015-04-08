@@ -1,12 +1,12 @@
 /**
- * Program Name: cis25Spring2015RussellJewFractionRussellJ.cpp
+ * Program Name: cis25Spring2015FractionRussellJ.cpp
  * Discussion:   Implementation file for FractionRussellJ
  * Written By:   Russell Jew
  * Date:         2015/04/06
  */
 
 #include <iostream>
-#include "cis25Spring2015RussellJewFractionRussellJ.h"
+#include "cis25Spring2015FractionRussellJ.h"
 using namespace std;
 
 //Function Prototype
@@ -49,7 +49,10 @@ int FractionRussellJ::getDenom() const {
 }
 
 void FractionRussellJ::setDenom(int arg) {
-    denom = arg;
+	if (arg != 0)
+		denom = arg;
+	else
+		denom = 1;
 }
 
 void FractionRussellJ::printFraction() {
