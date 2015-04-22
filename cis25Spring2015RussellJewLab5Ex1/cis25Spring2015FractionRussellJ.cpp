@@ -67,14 +67,7 @@ void FractionRussellJ::setDenom(int arg) {
     }
 }
 
-void FractionRussellJ::printFraction() {
-    int gcd;
-
-    gcd = getGCD(num, denom);
-
-    num /= gcd;
-    denom /= gcd;
-
+void FractionRussellJ::printFraction() const {
     cout << num << "/" << denom << endl;
 }
 

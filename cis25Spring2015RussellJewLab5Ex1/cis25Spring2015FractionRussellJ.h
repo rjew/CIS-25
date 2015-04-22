@@ -21,7 +21,7 @@ public:
     int getDenom(void) const;
     void setDenom(int);
 
-    void printFraction(void);
+    void printFraction(void) const;
 
     FractionRussellJ add(const FractionRussellJ&);
     FractionRussellJ subtract(const FractionRussellJ&);
