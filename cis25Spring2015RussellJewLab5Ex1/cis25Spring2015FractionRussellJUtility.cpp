@@ -73,22 +73,40 @@ void displayMenu() {
 
                     switch (option) {
                     case 1:
+                        cout << "      Calling member add()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(frPtr1->add(*frPtr2));
+                        else
+                            (*resultPtr) = frPtr1->add(*frPtr2);
+                        cout << "        Fraction1 + Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
                         break;
                     case 2:
+                        cout << "      Calling stand alone add()\n" << endl;
                         if (resultPtr == nullptr)
                             resultPtr = new FractionRussellJ(add(frPtr1, frPtr2));
                         else
                             (*resultPtr) = add(frPtr1, frPtr2);
-                        cout << "    Fraction1 + Fraction2 = ";
+                        cout << "        Fraction1 + Fraction2 = ";
                         resultPtr->printFraction();
                         cout << endl;
                         break;
                     case 3:
+                        cout << "      Calling member operator+()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(*frPtr1 + *frPtr2);
+                        else
+                            (*resultPtr) = *frPtr1 + *frPtr2;
+                        cout << "        Fraction1 + Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
                         break;
                     case 4:
+                        cout << endl;
                         break;
                     default:
-                        cout << "    WRONG OPTION ...\n" << endl;
+                        cout << "      WRONG OPTION ...\n" << endl;
                     }
                 } while (option != 4);
             }
@@ -161,19 +179,22 @@ void displayMenu() {
 
                     switch (option) {
                     case 1:
-                        cout << "    Fraction 1: ";
+                        cout << "      Calling member print()\n" << endl;
+                        cout << "        Fraction 1: ";
                         frPtr1->printFraction();
-                        cout << "    Fraction 2: ";
+                        cout << "        Fraction 2: ";
                         frPtr2->printFraction();
                         cout << endl;
                         break;
                     case 2:
+                        cout << "      Calling stand alone print()\n" << endl;
                         print(frPtr1, frPtr2);
                         break;
                     case 3:
+                        cout << endl;
                         break;
                     default:
-                        cout << "    WRONG OPTION ...\n" << endl;
+                        cout << "      WRONG OPTION ...\n" << endl;
                     }
                 } while (option != 3);
             }
@@ -194,6 +215,7 @@ void displayMenu() {
 void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
     int num;
     int denom;
+    int gcd;
     int option;
 
     do {
@@ -272,8 +294,10 @@ void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
                     num = -num;
                 }
 
-                (*frPtr1Addr)->setNum(num);
-                (*frPtr1Addr)->setDenom(denom);
+                gcd = getGCD(num, denom);
+
+                (*frPtr1Addr)->setNum(num / gcd);
+                (*frPtr1Addr)->setDenom(denom / gcd);
 
                 cout << "    Update num2: ";
                 cin >> num;
@@ -291,8 +315,10 @@ void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
                     num = -num;
                 }
 
-                (*frPtr2Addr)->setNum(num);
-                (*frPtr2Addr)->setDenom(denom);
+                gcd = getGCD(num, denom);
+
+                (*frPtr2Addr)->setNum(num / gcd);
+                (*frPtr2Addr)->setDenom(denom / gcd);
 
                 cout << endl;
             } else {
@@ -314,7 +340,7 @@ void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
             cout << endl;
             break;
         default:
-            cout << "    WRONG OPTION!\n" << endl;
+            cout << "      WRONG OPTION ...\n" << endl;
         }
     } while (option != 4);
 }
@@ -341,10 +367,12 @@ FractionRussellJ divide(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
 
 void print(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
     if (frPtr1 != nullptr) {
-        cout << "    Fraction 1: ";
+        cout << "        Fraction 1: ";
         cout << frPtr1->getNum() << "/" << frPtr1->getDenom() << endl;
-        cout << "    Fraction 2: ";
+
+        cout << "        Fraction 2: ";
         cout << frPtr2->getNum() << "/" << frPtr2->getDenom() << endl;
+
         cout << endl;
     } else {
         cout << "    Not a proper call as no Fractions are available!\n" << endl;

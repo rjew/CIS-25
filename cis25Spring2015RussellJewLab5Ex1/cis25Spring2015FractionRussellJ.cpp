@@ -33,12 +33,16 @@ FractionRussellJ::FractionRussellJ(int arg) {
 }
 
 FractionRussellJ::FractionRussellJ(int arg1, int arg2) {
+    int gcd;
+    
+    gcd = getGCD(arg1, arg2);
+
     if (arg2 < 0) {
-        num = -arg1;
-        denom = -arg2;
+        num = -arg1 / gcd;
+        denom = -arg2 / gcd;
     } else {
-        num = arg1;
-        denom = arg2;
+        num = arg1 / gcd;
+        denom = arg2 / gcd;
     }
 }
 
