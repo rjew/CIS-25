@@ -29,18 +29,18 @@ void displayMenu() {
     FractionRussellJ* resultPtr = nullptr;
 
     do {
-        cout << "***************************" << endl;
-        cout << "*          MENU           *" << endl;
-        cout << "*                         *" << endl;
-        cout << "* 1. Calling init()       *" << endl;
-        cout << "* 2. Calling add()        *" << endl;
-        cout << "* 3. Calling subtract()   *" << endl;
-        cout << "* 4. Calling multiply()   *" << endl;
-        cout << "* 5. Calling divide()     *" << endl;
-        cout << "* 6. Calling print()      *" << endl;
-        cout << "* 7. Quit                 *" << endl;
-        cout << "*                         *" << endl;
-        cout << "***************************" << endl;
+        cout << "**************************" << endl;
+        cout << "*          MENU          *" << endl;
+        cout << "*                        *" << endl;
+        cout << "* 1. Initializing        *" << endl;
+        cout << "* 2. Adding              *" << endl;
+        cout << "* 3. Subtracting         *" << endl;
+        cout << "* 4. Multiplying         *" << endl;
+        cout << "* 5. Dividing            *" << endl;
+        cout << "* 6. Printing            *" << endl;
+        cout << "* 7. Quit                *" << endl;
+        cout << "*                        *" << endl;
+        cout << "**************************" << endl;
 
         cout << "Select an option (use integer value only) : ";
         cin >> option;
@@ -48,11 +48,11 @@ void displayMenu() {
 
         switch (option) {
         case 1:
-            cout << "Calling init() --" << endl << endl;
+            cout << "INITIALIZING Option --" << endl << endl;
             init(&frPtr1, &frPtr2);
             break;
         case 2:
-            cout << "Calling add() --" << endl << endl;
+            cout << "ADDING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
                 cout << "  Not a proper call as no Fractions are available!\n" << endl;
             } else {
@@ -66,7 +66,7 @@ void displayMenu() {
             }
             break;
         case 3:
-            cout << "Calling subtract() --" << endl << endl;
+            cout << "SUBTRACTING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
                 cout << "  Not a proper call as no Fractions are available!\n" << endl;
             }
@@ -81,7 +81,7 @@ void displayMenu() {
             }
             break;
         case 4:
-            cout << "Calling multiply() --" << endl << endl;
+            cout << "MULTIPLYING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
                 cout << "  Not a proper call as no Fractions are available!\n" << endl;
             }
@@ -96,7 +96,7 @@ void displayMenu() {
             }
             break;
         case 5:
-            cout << "Calling divide() --" << endl << endl;
+            cout << "DIVIDING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
                 cout << "  Not a proper call as no Fractions are available!\n" << endl;
             }
@@ -114,7 +114,7 @@ void displayMenu() {
             }
             break;
         case 6:
-            cout << "Calling print() --" << endl << endl;
+            cout << "PRINTING Option --" << endl << endl;
             print(frPtr1, frPtr2);
             break;
         case 7:
