@@ -48,64 +48,92 @@ void displayMenu() {
 
         switch (option) {
         case 1:
-            cout << "INITIALIZING Option --" << endl << endl;
+            cout << "  INITIALIZING Option --" << endl << endl;
             init(&frPtr1, &frPtr2);
             break;
         case 2:
-            cout << "ADDING Option --" << endl << endl;
+            cout << "  ADDING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
-                cout << "  Not a proper call as no Fractions are available!\n" << endl;
-            } else {
-                if (resultPtr == nullptr)
-                    resultPtr = new FractionRussellJ(add(frPtr1, frPtr2));
-                else
-                    (*resultPtr) = add(frPtr1, frPtr2);
-                cout << "  Fraction1 + Fraction2 = ";
-                resultPtr->printFraction();
-                cout << endl;
+                cout << "    Not a proper call as no Fractions are available!\n" << endl;
+            }
+            else {
+                do {
+                    cout << "    ******************************" << endl;
+                    cout << "    *      ADDING MENU           *" << endl;
+                    cout << "    *                            *" << endl;
+                    cout << "    * 1. add() - Member          *" << endl;
+                    cout << "    * 2. add() - Stand Alone     *" << endl;
+                    cout << "    * 3. operator+() - Member    *" << endl;
+                    cout << "    * 4. Return to Previous MENU *" << endl;
+                    cout << "    ******************************" << endl;
+
+                    cout << "    Select an option (1, 2, 3, or 4): ";
+                    cin >> option;
+                    cout << endl;
+
+                    switch (option) {
+                    case 1:
+                        break;
+                    case 2:
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(add(frPtr1, frPtr2));
+                        else
+                            (*resultPtr) = add(frPtr1, frPtr2);
+                        cout << "    Fraction1 + Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        cout << "    WRONG OPTION ...\n" << endl;
+                    }
+                } while (option != 4);
             }
             break;
         case 3:
-            cout << "SUBTRACTING Option --" << endl << endl;
+            cout << "  SUBTRACTING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
-                cout << "  Not a proper call as no Fractions are available!\n" << endl;
+                cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
                 if (resultPtr == nullptr)
                     resultPtr = new FractionRussellJ(subtract(frPtr1, frPtr2));
                 else
                     (*resultPtr) = subtract(frPtr1, frPtr2);
-                cout << "  Fraction1 - Fraction2 = ";
+                cout << "    Fraction1 - Fraction2 = ";
                 resultPtr->printFraction();
                 cout << endl;
             }
             break;
         case 4:
-            cout << "MULTIPLYING Option --" << endl << endl;
+            cout << "  MULTIPLYING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
-                cout << "  Not a proper call as no Fractions are available!\n" << endl;
+                cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
                 if (resultPtr == nullptr)
                     resultPtr = new FractionRussellJ(multiply(frPtr1, frPtr2));
                 else
                     (*resultPtr) = multiply(frPtr1, frPtr2);
-                cout << "  Fraction1 * Fraction2 = ";
+                cout << "    Fraction1 * Fraction2 = ";
                 resultPtr->printFraction();
                 cout << endl;
             }
             break;
         case 5:
-            cout << "DIVIDING Option --" << endl << endl;
+            cout << "  DIVIDING Option --" << endl << endl;
             if (frPtr1 == nullptr) {
-                cout << "  Not a proper call as no Fractions are available!\n" << endl;
+                cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
                 if (resultPtr == nullptr)
                     resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
                 else
                     (*resultPtr) = divide(frPtr1, frPtr2);
-                cout << "  Fraction1 / Fraction2 = ";
+                cout << "    Fraction1 / Fraction2 = ";
 				if (resultPtr->getDenom() == 0)
 					cout << "Undefined" << endl;
 				else
@@ -114,14 +142,47 @@ void displayMenu() {
             }
             break;
         case 6:
-            cout << "PRINTING Option --" << endl << endl;
-            print(frPtr1, frPtr2);
+            cout << "  PRINTING Option --" << endl << endl;
+            if (frPtr1 == nullptr) {
+                cout << "    Not a proper call as no Fractions are available!\n" << endl;
+            } else {
+                do {
+                    cout << "    ******************************" << endl;
+                    cout << "    *      PRINTING MENU         *" << endl;
+                    cout << "    *                            *" << endl;
+                    cout << "    * 1. print() - Member        *" << endl;
+                    cout << "    * 2. print() - Stand Alone   *" << endl;
+                    cout << "    * 3. Return to Previous MENU *" << endl;
+                    cout << "    ******************************" << endl;
+
+                    cout << "    Select an option (1, 2, or 3): ";
+                    cin >> option;
+                    cout << endl;
+
+                    switch (option) {
+                    case 1:
+                        cout << "    Fraction 1: ";
+                        frPtr1->printFraction();
+                        cout << "    Fraction 2: ";
+                        frPtr2->printFraction();
+                        cout << endl;
+                        break;
+                    case 2:
+                        print(frPtr1, frPtr2);
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        cout << "    WRONG OPTION ...\n" << endl;
+                    }
+                } while (option != 3);
+            }
             break;
         case 7:
             cout << "Having Fun ...!" << endl;
             break;
         default:
-            cout << "WRONG OPTION!\n" << endl;
+            cout << "  WRONG OPTION!\n" << endl;
         }
     } while (option != 7);
 
@@ -136,13 +197,13 @@ void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
     int option;
 
     do {
-        cout << "    *******************************" << endl;
-        cout << "    *           INIT MENU         *" << endl;
-        cout << "    * 1. Set up Fractions         *" << endl;
-        cout << "    * 2. Update Fractions         *" << endl;
-        cout << "    * 3. Delete Fractions         *" << endl;
-        cout << "    * 4. Return to Previous MENU  *" << endl;
-        cout << "    *******************************" << endl;
+        cout << "    ******************************" << endl;
+        cout << "    *      INITIALIZING MENU     *" << endl;
+        cout << "    * 1. Set up Fractions        *" << endl;
+        cout << "    * 2. Update Fractions        *" << endl;
+        cout << "    * 3. Delete Fractions        *" << endl;
+        cout << "    * 4. Return to Previous MENU *" << endl;
+        cout << "    ******************************" << endl;
         cout << "    Select an option (1, 2, 3, or 4): ";
         cin >> option;
         cout << endl;
@@ -280,13 +341,13 @@ FractionRussellJ divide(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
 
 void print(FractionRussellJ* frPtr1, FractionRussellJ* frPtr2) {
     if (frPtr1 != nullptr) {
-        cout << "  Fraction 1: ";
-        frPtr1->printFraction();
-        cout << "  Fraction 2: ";
-        frPtr2->printFraction();
+        cout << "    Fraction 1: ";
+        cout << frPtr1->getNum() << "/" << frPtr1->getDenom() << endl;
+        cout << "    Fraction 2: ";
+        cout << frPtr2->getNum() << "/" << frPtr2->getDenom() << endl;
         cout << endl;
     } else {
-        cout << "  No Fractions are available!\n" << endl;
+        cout << "    Not a proper call as no Fractions are available!\n" << endl;
     }
 }
 
