@@ -22,6 +22,17 @@ public:
     void setDenom(int);
 
     void printFraction(void);
+
+    FractionRussellJ add(const FractionRussellJ&);
+    FractionRussellJ subtract(const FractionRussellJ&);
+    FractionRussellJ multiply(const FractionRussellJ&);
+    FractionRussellJ divide(const FractionRussellJ&);
+
+    void operator=(const FractionRussellJ&);
+    FractionRussellJ operator+(const FractionRussellJ&);
+    FractionRussellJ operator-(const FractionRussellJ&);
+    FractionRussellJ operator*(const FractionRussellJ&);
+    FractionRussellJ operator/(const FractionRussellJ&);
 private:
     int num;
     int denom;

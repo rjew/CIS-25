@@ -73,3 +73,44 @@ void FractionRussellJ::printFraction() {
 
     cout << num << "/" << denom << endl;
 }
+
+FractionRussellJ FractionRussellJ::add(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom + denom * rOp.num,
+        denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::subtract(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom - denom * rOp.num,
+        denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::multiply(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.num, denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::divide(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom, denom * rOp.num);
+}
+
+void FractionRussellJ::operator=(const FractionRussellJ& rOp) {
+    num = rOp.num;
+    denom = rOp.denom;
+}
+
+FractionRussellJ FractionRussellJ::operator+(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom + denom * rOp.num,
+        denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::operator-(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom - denom * rOp.num,
+        denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::operator*(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.num, denom * rOp.denom);
+}
+
+FractionRussellJ FractionRussellJ::operator/(const FractionRussellJ& rOp) {
+    return FractionRussellJ(num * rOp.denom, denom * rOp.num);
+}
