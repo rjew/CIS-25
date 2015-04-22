@@ -1,8 +1,8 @@
 /**
- * Program Name: cis25Spring2015RussellJewLab4Ex1.cpp
- * Discussion:   Lab 4 - Exercise #1
+ * Program Name: cis25Spring2015RussellJewLab5Ex1.cpp
+ * Discussion:   Lab 5 - Exercise #1
  * Written by:   Russell Jew
- * Date:	     2015/04/16
+ * Date:	     2015/04/21
  */
 
 #include <iostream>
@@ -24,10 +24,10 @@ Laney College
 Russell Jew
 
 Assignment Information --
-  Assignment Number:  Lab 04,
+  Assignment Number:  Lab 5,
                       Exercise #1
   Written by:         Russell Jew
-  Due Date:           2015/04/16
+  Due Date:           2015/04/28
 
 ***************************
 *          MENU           *
