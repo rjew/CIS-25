@@ -117,13 +117,58 @@ void displayMenu() {
                 cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
-                if (resultPtr == nullptr)
-                    resultPtr = new FractionRussellJ(subtract(frPtr1, frPtr2));
-                else
-                    (*resultPtr) = subtract(frPtr1, frPtr2);
-                cout << "    Fraction1 - Fraction2 = ";
-                resultPtr->printFraction();
-                cout << endl;
+                do {
+                    cout << "    *******************************" << endl;
+                    cout << "    *      SUBTRACTING MENU       *" << endl;
+                    cout << "    *                             *" << endl;
+                    cout << "    * 1. subtract() - Member      *" << endl;
+                    cout << "    * 2. subtract() - Stand Alone *" << endl;
+                    cout << "    * 3. operator-() - Member     *" << endl;
+                    cout << "    * 4. Return to Previous MENU  *" << endl;
+                    cout << "    *******************************" << endl;
+
+                    cout << "    Select an option (1, 2, 3, or 4): ";
+                    cin >> option;
+                    cout << endl;
+
+                    switch (option) {
+                    case 1:
+                        cout << "      Calling member subtract()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(frPtr1->subtract(*frPtr2));
+                        else
+                            (*resultPtr) = frPtr1->subtract(*frPtr2);
+                        cout << "        Fraction1 - Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 2:
+                        cout << "      Calling stand alone subtract()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(subtract(frPtr1, frPtr2));
+                        else
+                            (*resultPtr) = subtract(frPtr1, frPtr2);
+                        cout << "        Fraction1 - Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 3:
+                        cout << "      Calling member operator-()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(*frPtr1 - *frPtr2);
+                        else
+                            (*resultPtr) = *frPtr1 - *frPtr2;
+                        cout << "        Fraction1 - Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 4:
+                        cout << endl;
+                        break;
+                    default:
+                        cout << "      WRONG OPTION ...\n" << endl;
+                    }
+                } while (option != 4);
             }
             break;
         case 4:
