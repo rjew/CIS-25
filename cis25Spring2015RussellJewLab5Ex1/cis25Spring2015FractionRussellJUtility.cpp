@@ -177,13 +177,58 @@ void displayMenu() {
                 cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
-                if (resultPtr == nullptr)
-                    resultPtr = new FractionRussellJ(multiply(frPtr1, frPtr2));
-                else
-                    (*resultPtr) = multiply(frPtr1, frPtr2);
-                cout << "    Fraction1 * Fraction2 = ";
-                resultPtr->printFraction();
-                cout << endl;
+                do {
+                    cout << "    *******************************" << endl;
+                    cout << "    *      MULTIPLYING MENU       *" << endl;
+                    cout << "    *                             *" << endl;
+                    cout << "    * 1. multiply() - Member      *" << endl;
+                    cout << "    * 2. multiply() - Stand Alone *" << endl;
+                    cout << "    * 3. operator*() - Member     *" << endl;
+                    cout << "    * 4. Return to Previous MENU  *" << endl;
+                    cout << "    *******************************" << endl;
+
+                    cout << "    Select an option (1, 2, 3, or 4): ";
+                    cin >> option;
+                    cout << endl;
+
+                    switch (option) {
+                    case 1:
+                        cout << "      Calling member multiply()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(frPtr1->multiply(*frPtr2));
+                        else
+                            (*resultPtr) = frPtr1->multiply(*frPtr2);
+                        cout << "        Fraction1 * Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 2:
+                        cout << "      Calling stand alone multiply()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(multiply(frPtr1, frPtr2));
+                        else
+                            (*resultPtr) = multiply(frPtr1, frPtr2);
+                        cout << "        Fraction1 * Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 3:
+                        cout << "      Calling member operator*()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ((*frPtr1) * (*frPtr2));
+                        else
+                            (*resultPtr) = (*frPtr1) * (*frPtr2);
+                        cout << "        Fraction1 * Fraction2 = ";
+                        resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 4:
+                        cout << endl;
+                        break;
+                    default:
+                        cout << "      WRONG OPTION ...\n" << endl;
+                    }
+                } while (option != 4);
             }
             break;
         case 5:
