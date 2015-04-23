@@ -237,16 +237,67 @@ void displayMenu() {
                 cout << "    Not a proper call as no Fractions are available!\n" << endl;
             }
             else {
-                if (resultPtr == nullptr)
-                    resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
-                else
-                    (*resultPtr) = divide(frPtr1, frPtr2);
-                cout << "    Fraction1 / Fraction2 = ";
-				if (resultPtr->getDenom() == 0)
-					cout << "Undefined" << endl;
-				else
-					resultPtr->printFraction();
-                cout << endl;
+                do {
+                    cout << "    ******************************" << endl;
+                    cout << "    *      DIVIDING MENU         *" << endl;
+                    cout << "    *                            *" << endl;
+                    cout << "    * 1. divide() - Member       *" << endl;
+                    cout << "    * 2. divide() - Stand Alone  *" << endl;
+                    cout << "    * 3. operator/() - Member    *" << endl;
+                    cout << "    * 4. Return to Previous MENU *" << endl;
+                    cout << "    ******************************" << endl;
+
+                    cout << "    Select an option (1, 2, 3, or 4): ";
+                    cin >> option;
+                    cout << endl;
+
+                    switch (option) {
+                    case 1:
+                        cout << "      Calling member divide()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(frPtr1->divide(*frPtr2));
+                        else
+                            (*resultPtr) = frPtr1->divide(*frPtr2);
+                        cout << "        Fraction1 / Fraction2 = ";
+                        if (resultPtr->getDenom() == 0)
+                            cout << "Undefined" << endl;
+                        else
+                            resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 2:
+                        cout << "      Calling stand alone divide()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
+                        else
+                            (*resultPtr) = divide(frPtr1, frPtr2);
+                        cout << "        Fraction1 / Fraction2 = ";
+                        if (resultPtr->getDenom() == 0)
+                            cout << "Undefined" << endl;
+                        else
+                            resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 3:
+                        cout << "      Calling member operator/()\n" << endl;
+                        if (resultPtr == nullptr)
+                            resultPtr = new FractionRussellJ(*frPtr1 / *frPtr2);
+                        else
+                            (*resultPtr) = *frPtr1 / *frPtr2;
+                        cout << "        Fraction1 / Fraction2 = ";
+                        if (resultPtr->getDenom() == 0)
+                            cout << "Undefined" << endl;
+                        else
+                            resultPtr->printFraction();
+                        cout << endl;
+                        break;
+                    case 4:
+                        cout << endl;
+                        break;
+                    default:
+                        cout << "      WRONG OPTION ...\n" << endl;
+                    }
+                } while (option != 4);
             }
             break;
         case 6:
