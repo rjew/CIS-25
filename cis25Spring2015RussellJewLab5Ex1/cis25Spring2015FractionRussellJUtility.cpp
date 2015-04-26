@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015FractionRussellJUtility.cpp
  * Discussion:   Implementation file for FractionRussellJUtility
  * Written By:   Russell Jew
- * Date:         2015/04/21
+ * Date:         2015/04/25
  */
 
 #include <iostream>
@@ -18,7 +18,7 @@ void displayInfo() {
     cout << "  Assignment Number:  Lab 5," << endl;
     cout << "                      Exercise #1" << endl;
     cout << "  Written by:         Russell Jew" << endl;
-    cout << "  Due Date:           2015/04/28" << endl << endl;
+    cout << "  Due Date:           2015/04/30" << endl << endl;
 }
 
 void displayMenu() {

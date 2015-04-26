@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015FractionRussellJ.h
  * Discussion:   Specification file for FractionRussellJ
  * Written By:   Russell Jew
- * Date:         2015/04/21
+ * Date:         2015/04/25
  */
 
 #ifndef FRACTIONRUSSELLJ_H
