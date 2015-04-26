@@ -254,41 +254,44 @@ void displayMenu() {
                     switch (option) {
                     case 1:
                         cout << "      Calling member divide()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(frPtr1->divide(*frPtr2));
-                        else
-                            (*resultPtr) = frPtr1->divide(*frPtr2);
-                        cout << "        Fraction1 / Fraction2 = ";
-                        if (resultPtr->getDenom() == 0)
-                            cout << "Undefined" << endl;
-                        else
+                        if (frPtr2->getNum() == 0)
+                            cout << "        Cannot divide by zero!" << endl;
+                        else {
+                            if (resultPtr == nullptr)
+                                resultPtr = new FractionRussellJ(frPtr1->divide(*frPtr2));
+                            else
+                                (*resultPtr) = frPtr1->divide(*frPtr2);
+                            cout << "        Fraction1 / Fraction2 = ";
                             resultPtr->printFraction();
+                        }
                         cout << endl;
                         break;
                     case 2:
                         cout << "      Calling stand alone divide()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
-                        else
-                            (*resultPtr) = divide(frPtr1, frPtr2);
-                        cout << "        Fraction1 / Fraction2 = ";
-                        if (resultPtr->getDenom() == 0)
-                            cout << "Undefined" << endl;
-                        else
+                        if (frPtr2->getNum() == 0)
+                            cout << "        Cannot divide by zero!" << endl;
+                        else {
+                            if (resultPtr == nullptr)
+                                resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
+                            else
+                                (*resultPtr) = divide(frPtr1, frPtr2);
+                            cout << "        Fraction1 / Fraction2 = ";
                             resultPtr->printFraction();
+                        }
                         cout << endl;
                         break;
                     case 3:
                         cout << "      Calling member operator/()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(*frPtr1 / *frPtr2);
-                        else
-                            (*resultPtr) = *frPtr1 / *frPtr2;
-                        cout << "        Fraction1 / Fraction2 = ";
-                        if (resultPtr->getDenom() == 0)
-                            cout << "Undefined" << endl;
-                        else
+                        if (frPtr2->getNum() == 0)
+                            cout << "        Cannot divide by zero!" << endl;
+                        else {
+                            if (resultPtr == nullptr)
+                                resultPtr = new FractionRussellJ(*frPtr1 / *frPtr2);
+                            else
+                                (*resultPtr) = *frPtr1 / *frPtr2;
+                            cout << "        Fraction1 / Fraction2 = ";
                             resultPtr->printFraction();
+                        }
                         cout << endl;
                         break;
                     case 4:
