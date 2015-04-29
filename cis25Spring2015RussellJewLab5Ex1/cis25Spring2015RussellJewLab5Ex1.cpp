@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015RussellJewLab5Ex1.cpp
  * Discussion:   Lab 5 - Exercise #1
  * Written by:   Russell Jew
- * Date:	     2015/04/25
+ * Date:	     2015/04/29
  */
 
 #include <iostream>

@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015FractionRussellJ.cpp
  * Discussion:   Implementation file for FractionRussellJ
  * Written By:   Russell Jew
- * Date:         2015/04/25
+ * Date:         2015/04/29
  */
 
 #include <iostream>
@@ -89,9 +89,11 @@ FractionRussellJ FractionRussellJ::divide(const FractionRussellJ& rOp) {
     return FractionRussellJ(num * rOp.denom, denom * rOp.num);
 }
 
-void FractionRussellJ::operator=(const FractionRussellJ& rOp) {
+FractionRussellJ& FractionRussellJ::operator=(const FractionRussellJ& rOp) {
     num = rOp.num;
     denom = rOp.denom;
+
+    return *this;
 }
 
 FractionRussellJ FractionRussellJ::operator+(const FractionRussellJ& rOp) {

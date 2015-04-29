@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015FractionRussellJ.h
  * Discussion:   Specification file for FractionRussellJ
  * Written By:   Russell Jew
- * Date:         2015/04/25
+ * Date:         2015/04/29
  */
 
 #ifndef FRACTIONRUSSELLJ_H
@@ -28,7 +28,7 @@ public:
     FractionRussellJ multiply(const FractionRussellJ&);
     FractionRussellJ divide(const FractionRussellJ&);
 
-    void operator=(const FractionRussellJ&);
+    FractionRussellJ& operator=(const FractionRussellJ&);
     FractionRussellJ operator+(const FractionRussellJ&);
     FractionRussellJ operator-(const FractionRussellJ&);
     FractionRussellJ operator*(const FractionRussellJ&);
