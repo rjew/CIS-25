@@ -5,9 +5,13 @@
  * Date:         2015/04/29
  */
 
+void displayInfo(void);
+void displayMenu(void);
+void init(FractionRussellJ**, FractionRussellJ**);
+int getGCD(int, int);
+
 #include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
-#include "cis25Spring2015FractionRussellJUtility.h"
 using namespace std;
 
 void displayInfo() {
@@ -15,10 +19,10 @@ void displayInfo() {
     cout << "Laney College" << endl;
     cout << "Russell Jew" << endl << endl;
     cout << "Assignment Information --" << endl;
-    cout << "  Assignment Number:  Lab 5," << endl;
+    cout << "  Assignment Number:  Lab 6," << endl;
     cout << "                      Exercise #1" << endl;
     cout << "  Written by:         Russell Jew" << endl;
-    cout << "  Due Date:           2015/04/30" << endl << endl;
+    cout << "  Due Date:           2015/05/07" << endl << endl;
 }
 
 void displayMenu() {

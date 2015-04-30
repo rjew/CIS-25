@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
-#include "cis25Spring2015FractionRussellJUtility.h"
 using namespace std;
 
 int main() {
