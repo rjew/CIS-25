@@ -5,10 +5,6 @@
  * Date:	     2015/05/01
  */
 
-/*
-add << and >> overload
-*/
-
 void displayInfo(void);
 void displayMenu(void);
 

@@ -5,7 +5,10 @@
  * Date:         2015/05/01
  */
 
+#include <iostream>
+#include "cis25Spring2015FractionRussellJ.h"
 #include "cis25Spring2015FractionRussellJUtility.h"
+using namespace std;
 
 int getGCD(int arg1, int arg2) {
     int gcd = 1;
@@ -20,4 +23,27 @@ int getGCD(int arg1, int arg2) {
     }
 
     return gcd;
+}
+
+ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
+    out << fr.num << "/" << fr.denom << endl;
+    return out;
+}
+
+istream& operator >>(istream& in, FractionRussellJ& fr) {
+    cout << "    Enter num: ";
+    cin >> fr.num;
+
+    cout << "    Enter denom: ";
+    cin >> fr.denom;
+
+    while (fr.denom == 0) {
+        cout << "    denom cannot be 0. Enter a non-zero integer: ";
+        cin >> fr.denom;
+    }
+
+    if (fr.denom < 0) {
+        fr.denom = -fr.denom;
+        fr.num = -fr.num;
+    }
 }

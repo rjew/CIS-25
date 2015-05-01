@@ -8,6 +8,9 @@
 #ifndef FRACTIONRUSSELLJ_H
 #define FRACTIONRUSSELLJ_H
 
+#include <iostream>
+using namespace std;
+
 class FractionRussellJ {
 public:
     FractionRussellJ();
@@ -33,6 +36,9 @@ public:
     FractionRussellJ operator-(const FractionRussellJ&) const;
     FractionRussellJ operator*(const FractionRussellJ&) const;
     FractionRussellJ operator/(const FractionRussellJ&) const;
+
+    friend ostream& operator<<(ostream&, const FractionRussellJ&);
+    friend istream& operator>>(istream&, FractionRussellJ&);
 private:
     int num;
     int denom;
