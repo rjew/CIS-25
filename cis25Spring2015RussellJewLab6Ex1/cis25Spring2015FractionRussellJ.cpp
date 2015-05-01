@@ -2,11 +2,12 @@
  * Program Name: cis25Spring2015FractionRussellJ.cpp
  * Discussion:   Implementation file for FractionRussellJ
  * Written By:   Russell Jew
- * Date:         2015/04/29
+ * Date:         2015/05/01
  */
 
 #include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
+#include "cis25Spring2015FractionRussellJUtility.h"
 using namespace std;
 
 FractionRussellJ::FractionRussellJ() {
