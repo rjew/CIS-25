@@ -25,335 +25,116 @@ void displayInfo() {
 }
 
 void displayMenu() {
-    int option;
+    int option1;
+    int option2;
 
     FractionRussellJ* frPtr1 = nullptr;
     FractionRussellJ* frPtr2 = nullptr;
     FractionRussellJ* resultPtr = nullptr;
 
     do {
-        cout << "**************************" << endl;
-        cout << "*          MENU          *" << endl;
-        cout << "*                        *" << endl;
-        cout << "* 1. Initializing        *" << endl;
-        cout << "* 2. Adding              *" << endl;
-        cout << "* 3. Subtracting         *" << endl;
-        cout << "* 4. Multiplying         *" << endl;
-        cout << "* 5. Dividing            *" << endl;
-        cout << "* 6. Printing            *" << endl;
-        cout << "* 7. Quit                *" << endl;
-        cout << "*                        *" << endl;
-        cout << "**************************" << endl;
+        cout << "MAIN MENU" << endl;
+        cout << "(1) Rectangle Tasks" << endl;
+        cout << "(2) Circle Tasks" << endl;
+        cout << "(3) Mixed Retangle & Circle Tasks" << endl;
+        cout << "(4) Quit" << endl;
 
-        cout << "Select an option (use integer value only) : ";
-        cin >> option;
+        cout << "Enter your option (1, 2, 3 or 4): ";
+        cin >> option1;
         cout << endl;
 
-        switch (option) {
+        switch (option1) {
         case 1:
-            cout << "  INITIALIZING Option --" << endl << endl;
-            init(&frPtr1, &frPtr2);
+            do {
+                cout << "  RECTANGLE MENU" << endl;
+                cout << "  1. Create two Rectangle objects" << endl;
+                cout << "  2. Compare by volume" << endl;
+                cout << "  3. Compare by area" << endl;
+                cout << "  4. Print two Rectangle objects" << endl;
+                cout << "  5. Quit" << endl;
+                cout << "Enter your option (between 1 through 5): ";
+                cin >> option2;
+                cout << endl;
+
+                switch (option2) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    cout << endl;
+                    break;
+                default:
+                    cout << "    WRONG OPTION ...\n" << endl;
+                }
+            } while (option2 != 5);
             break;
         case 2:
-            cout << "  ADDING Option --" << endl << endl;
-            if (frPtr1 == nullptr) {
-                cout << "    Not a proper call as no Fractions are available!\n" << endl;
-            }
-            else {
-                do {
-                    cout << "    ******************************" << endl;
-                    cout << "    *      ADDING MENU           *" << endl;
-                    cout << "    *                            *" << endl;
-                    cout << "    * 1. add() - Member          *" << endl;
-                    cout << "    * 2. add() - Stand Alone     *" << endl;
-                    cout << "    * 3. operator+() - Member    *" << endl;
-                    cout << "    * 4. Return to Previous MENU *" << endl;
-                    cout << "    ******************************" << endl;
+            do {
+                cout << "  CIRCLE MENU" << endl;
+                cout << "  1. Create two Circle objects" << endl;
+                cout << "  2. Compare by volume" << endl;
+                cout << "  3. Compare by area" << endl;
+                cout << "  4. Print two Circle objects" << endl;
+                cout << "  5. Quit" << endl;
+                cout << "Enter your option (between 1 through 5): ";
+                cin >> option2;
+                cout << endl;
 
-                    cout << "    Select an option (1, 2, 3, or 4): ";
-                    cin >> option;
+                switch (option2) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
                     cout << endl;
-
-                    switch (option) {
-                    case 1:
-                        cout << "      Calling member add()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(frPtr1->add(*frPtr2));
-                        else
-                            (*resultPtr) = frPtr1->add(*frPtr2);
-                        cout << "        Fraction1 + Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 2:
-                        cout << "      Calling stand alone add()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(add(frPtr1, frPtr2));
-                        else
-                            (*resultPtr) = add(frPtr1, frPtr2);
-                        cout << "        Fraction1 + Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 3:
-                        cout << "      Calling member operator+()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(*frPtr1 + *frPtr2);
-                        else
-                            (*resultPtr) = *frPtr1 + *frPtr2;
-                        cout << "        Fraction1 + Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 4:
-                        cout << endl;
-                        break;
-                    default:
-                        cout << "      WRONG OPTION ...\n" << endl;
-                    }
-                } while (option != 4);
-            }
+                    break;
+                default:
+                    cout << "    WRONG OPTION ...\n" << endl;
+                }
+            } while (option2 != 5);
             break;
         case 3:
-            cout << "  SUBTRACTING Option --" << endl << endl;
-            if (frPtr1 == nullptr) {
-                cout << "    Not a proper call as no Fractions are available!\n" << endl;
-            }
-            else {
-                do {
-                    cout << "    *******************************" << endl;
-                    cout << "    *      SUBTRACTING MENU       *" << endl;
-                    cout << "    *                             *" << endl;
-                    cout << "    * 1. subtract() - Member      *" << endl;
-                    cout << "    * 2. subtract() - Stand Alone *" << endl;
-                    cout << "    * 3. operator-() - Member     *" << endl;
-                    cout << "    * 4. Return to Previous MENU  *" << endl;
-                    cout << "    *******************************" << endl;
+            do {
+                cout << "  MIXED RECTANGLE & CIRCLE MENU" << endl;
+                cout << "  1. Compare by area" << endl;
+                cout << "  2. Compare by volume" << endl;
+                cout << "  3. Print ALL objects" << endl;
+                cout << "  4. Quit" << endl;
+                cout << "Enter your option (between 1 through 4): ";
+                cin >> option2;
+                cout << endl;
 
-                    cout << "    Select an option (1, 2, 3, or 4): ";
-                    cin >> option;
+                switch (option2) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
                     cout << endl;
-
-                    switch (option) {
-                    case 1:
-                        cout << "      Calling member subtract()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(frPtr1->subtract(*frPtr2));
-                        else
-                            (*resultPtr) = frPtr1->subtract(*frPtr2);
-                        cout << "        Fraction1 - Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 2:
-                        cout << "      Calling stand alone subtract()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(subtract(frPtr1, frPtr2));
-                        else
-                            (*resultPtr) = subtract(frPtr1, frPtr2);
-                        cout << "        Fraction1 - Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 3:
-                        cout << "      Calling member operator-()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(*frPtr1 - *frPtr2);
-                        else
-                            (*resultPtr) = *frPtr1 - *frPtr2;
-                        cout << "        Fraction1 - Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 4:
-                        cout << endl;
-                        break;
-                    default:
-                        cout << "      WRONG OPTION ...\n" << endl;
-                    }
-                } while (option != 4);
-            }
+                    break;
+                default:
+                    cout << "    WRONG OPTION ...\n" << endl;
+                }
+            } while (option2 != 4);
             break;
         case 4:
-            cout << "  MULTIPLYING Option --" << endl << endl;
-            if (frPtr1 == nullptr) {
-                cout << "    Not a proper call as no Fractions are available!\n" << endl;
-            }
-            else {
-                do {
-                    cout << "    *******************************" << endl;
-                    cout << "    *      MULTIPLYING MENU       *" << endl;
-                    cout << "    *                             *" << endl;
-                    cout << "    * 1. multiply() - Member      *" << endl;
-                    cout << "    * 2. multiply() - Stand Alone *" << endl;
-                    cout << "    * 3. operator*() - Member     *" << endl;
-                    cout << "    * 4. Return to Previous MENU  *" << endl;
-                    cout << "    *******************************" << endl;
-
-                    cout << "    Select an option (1, 2, 3, or 4): ";
-                    cin >> option;
-                    cout << endl;
-
-                    switch (option) {
-                    case 1:
-                        cout << "      Calling member multiply()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(frPtr1->multiply(*frPtr2));
-                        else
-                            (*resultPtr) = frPtr1->multiply(*frPtr2);
-                        cout << "        Fraction1 * Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 2:
-                        cout << "      Calling stand alone multiply()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ(multiply(frPtr1, frPtr2));
-                        else
-                            (*resultPtr) = multiply(frPtr1, frPtr2);
-                        cout << "        Fraction1 * Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 3:
-                        cout << "      Calling member operator*()\n" << endl;
-                        if (resultPtr == nullptr)
-                            resultPtr = new FractionRussellJ((*frPtr1) * (*frPtr2));
-                        else
-                            (*resultPtr) = (*frPtr1) * (*frPtr2);
-                        cout << "        Fraction1 * Fraction2 = ";
-                        resultPtr->printFraction();
-                        cout << endl;
-                        break;
-                    case 4:
-                        cout << endl;
-                        break;
-                    default:
-                        cout << "      WRONG OPTION ...\n" << endl;
-                    }
-                } while (option != 4);
-            }
-            break;
-        case 5:
-            cout << "  DIVIDING Option --" << endl << endl;
-            if (frPtr1 == nullptr) {
-                cout << "    Not a proper call as no Fractions are available!\n" << endl;
-            }
-            else {
-                do {
-                    cout << "    ******************************" << endl;
-                    cout << "    *      DIVIDING MENU         *" << endl;
-                    cout << "    *                            *" << endl;
-                    cout << "    * 1. divide() - Member       *" << endl;
-                    cout << "    * 2. divide() - Stand Alone  *" << endl;
-                    cout << "    * 3. operator/() - Member    *" << endl;
-                    cout << "    * 4. Return to Previous MENU *" << endl;
-                    cout << "    ******************************" << endl;
-
-                    cout << "    Select an option (1, 2, 3, or 4): ";
-                    cin >> option;
-                    cout << endl;
-
-                    switch (option) {
-                    case 1:
-                        cout << "      Calling member divide()\n" << endl;
-                        if (frPtr2->getNum() == 0)
-                            cout << "        Cannot divide by zero!" << endl;
-                        else {
-                            if (resultPtr == nullptr)
-                                resultPtr = new FractionRussellJ(frPtr1->divide(*frPtr2));
-                            else
-                                (*resultPtr) = frPtr1->divide(*frPtr2);
-                            cout << "        Fraction1 / Fraction2 = ";
-                            resultPtr->printFraction();
-                        }
-                        cout << endl;
-                        break;
-                    case 2:
-                        cout << "      Calling stand alone divide()\n" << endl;
-                        if (frPtr2->getNum() == 0)
-                            cout << "        Cannot divide by zero!" << endl;
-                        else {
-                            if (resultPtr == nullptr)
-                                resultPtr = new FractionRussellJ(divide(frPtr1, frPtr2));
-                            else
-                                (*resultPtr) = divide(frPtr1, frPtr2);
-                            cout << "        Fraction1 / Fraction2 = ";
-                            resultPtr->printFraction();
-                        }
-                        cout << endl;
-                        break;
-                    case 3:
-                        cout << "      Calling member operator/()\n" << endl;
-                        if (frPtr2->getNum() == 0)
-                            cout << "        Cannot divide by zero!" << endl;
-                        else {
-                            if (resultPtr == nullptr)
-                                resultPtr = new FractionRussellJ(*frPtr1 / *frPtr2);
-                            else
-                                (*resultPtr) = *frPtr1 / *frPtr2;
-                            cout << "        Fraction1 / Fraction2 = ";
-                            resultPtr->printFraction();
-                        }
-                        cout << endl;
-                        break;
-                    case 4:
-                        cout << endl;
-                        break;
-                    default:
-                        cout << "      WRONG OPTION ...\n" << endl;
-                    }
-                } while (option != 4);
-            }
-            break;
-        case 6:
-            cout << "  PRINTING Option --" << endl << endl;
-            if (frPtr1 == nullptr) {
-                cout << "    Not a proper call as no Fractions are available!\n" << endl;
-            }
-            else {
-                do {
-                    cout << "    ******************************" << endl;
-                    cout << "    *      PRINTING MENU         *" << endl;
-                    cout << "    *                            *" << endl;
-                    cout << "    * 1. print() - Member        *" << endl;
-                    cout << "    * 2. print() - Stand Alone   *" << endl;
-                    cout << "    * 3. Return to Previous MENU *" << endl;
-                    cout << "    ******************************" << endl;
-
-                    cout << "    Select an option (1, 2, or 3): ";
-                    cin >> option;
-                    cout << endl;
-
-                    switch (option) {
-                    case 1:
-                        cout << "      Calling member print()\n" << endl;
-                        cout << "        Fraction 1: ";
-                        frPtr1->printFraction();
-                        cout << "        Fraction 2: ";
-                        frPtr2->printFraction();
-                        cout << endl;
-                        break;
-                    case 2:
-                        cout << "      Calling stand alone print()\n" << endl;
-                        print(frPtr1, frPtr2);
-                        break;
-                    case 3:
-                        cout << endl;
-                        break;
-                    default:
-                        cout << "      WRONG OPTION ...\n" << endl;
-                    }
-                } while (option != 3);
-            }
-            break;
-        case 7:
-            cout << "Having Fun ...!" << endl;
+            cout << "  Have fun and good bye!" << endl;
             break;
         default:
             cout << "  WRONG OPTION!\n" << endl;
         }
-    } while (option != 7);
+    } while (option1 != 4);
 
     delete frPtr1;
     delete frPtr2;
