@@ -23,16 +23,16 @@ public:
 
     void printFraction(void) const;
 
-    FractionRussellJ add(const FractionRussellJ&);
-    FractionRussellJ subtract(const FractionRussellJ&);
-    FractionRussellJ multiply(const FractionRussellJ&);
-    FractionRussellJ divide(const FractionRussellJ&);
+    FractionRussellJ add(const FractionRussellJ&) const;
+    FractionRussellJ subtract(const FractionRussellJ&) const;
+    FractionRussellJ multiply(const FractionRussellJ&) const;
+    FractionRussellJ divide(const FractionRussellJ&) const;
 
     FractionRussellJ& operator=(const FractionRussellJ&);
-    FractionRussellJ operator+(const FractionRussellJ&);
-    FractionRussellJ operator-(const FractionRussellJ&);
-    FractionRussellJ operator*(const FractionRussellJ&);
-    FractionRussellJ operator/(const FractionRussellJ&);
+    FractionRussellJ operator+(const FractionRussellJ&) const;
+    FractionRussellJ operator-(const FractionRussellJ&) const;
+    FractionRussellJ operator*(const FractionRussellJ&) const;
+    FractionRussellJ operator/(const FractionRussellJ&) const;
 private:
     int num;
     int denom;

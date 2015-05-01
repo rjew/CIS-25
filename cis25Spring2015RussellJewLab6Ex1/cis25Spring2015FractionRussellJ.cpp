@@ -71,21 +71,21 @@ void FractionRussellJ::printFraction() const {
     cout << num << "/" << denom << endl;
 }
 
-FractionRussellJ FractionRussellJ::add(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::add(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom + denom * rOp.num,
         denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::subtract(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::subtract(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom - denom * rOp.num,
         denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::multiply(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::multiply(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.num, denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::divide(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::divide(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom, denom * rOp.num);
 }
 
@@ -96,20 +96,20 @@ FractionRussellJ& FractionRussellJ::operator=(const FractionRussellJ& rOp) {
     return *this;
 }
 
-FractionRussellJ FractionRussellJ::operator+(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::operator+(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom + denom * rOp.num,
         denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::operator-(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::operator-(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom - denom * rOp.num,
         denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::operator*(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::operator*(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.num, denom * rOp.denom);
 }
 
-FractionRussellJ FractionRussellJ::operator/(const FractionRussellJ& rOp) {
+FractionRussellJ FractionRussellJ::operator/(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom, denom * rOp.num);
 }

@@ -6,7 +6,6 @@
  */
 
 /*
-make operator functions const
 add << and >> overload
 */
 
