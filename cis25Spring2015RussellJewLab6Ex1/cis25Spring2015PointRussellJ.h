@@ -8,34 +8,41 @@
 #ifndef POINTRUSSELLJ_H
 #define POINTRUSSELLJ_H
 
+#include <iostream>
+#include "cis25Spring2015FractionRussellJ.h"
+using namespace std;
+
 class PointRussellJ {
 public:
     PointRussellJ();
     PointRussellJ(const PointRussellJ&);
-    PointRussellJ(int);
-    PointRussellJ(int, int);
 
-    int getNum(void) const;
-    void setNum(int);
-
-    int getDenom(void) const;
-    void setDenom(int);
-
-    void printFraction(void) const;
-
-    PointRussellJ add(const PointRussellJ&);
-    PointRussellJ subtract(const PointRussellJ&);
-    PointRussellJ multiply(const PointRussellJ&);
-    PointRussellJ divide(const PointRussellJ&);
+    ~PointRussellJ();
 
     PointRussellJ& operator=(const PointRussellJ&);
-    PointRussellJ operator+(const PointRussellJ&);
-    PointRussellJ operator-(const PointRussellJ&);
-    PointRussellJ operator*(const PointRussellJ&);
-    PointRussellJ operator/(const PointRussellJ&);
+
+    void moveBy(FractionRussellJ, FractionRussellJ);
+    void moveBy(int);
+    void flipByX(void);
+    void flipByY(void);
+    void flipThroughOrigin(void);
+    void print(void) const;
+
+    friend ostream& operator <<(ostream&, const PointRussellJ&);
+    friend istream& operator >>(istream&, PointRussellJ&);
 private:
-    int num;
-    int denom;
+    FractionRussellJ x;
+    FractionRussellJ y;
 };
+
+ostream& operator <<(ostream& out, const PointRussellJ& pt) {
+    out << pt.x << ", " << pt.y << endl;
+    return out;
+}
+
+istream& operator >>(istream& in, PointRussellJ& fr) {
+
+    return in;
+}
 
 #endif 

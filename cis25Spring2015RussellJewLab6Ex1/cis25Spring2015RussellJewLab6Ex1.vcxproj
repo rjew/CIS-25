@@ -80,7 +80,6 @@
   <ItemGroup>
     <ClCompile Include="cis25Spring2015CircleRussellJ.cpp" />
     <ClCompile Include="cis25Spring2015FractionRussellJ.cpp" />
-    <ClCompile Include="cis25Spring2015FractionRussellJUtility.cpp" />
     <ClCompile Include="cis25Spring2015PointRussellJ.cpp" />
     <ClCompile Include="cis25Spring2015RectangleRussellJ.cpp" />
     <ClCompile Include="cis25Spring2015RussellJewLab6Ex1.cpp" />
@@ -89,7 +88,6 @@
   <ItemGroup>
     <ClInclude Include="cis25Spring2015CircleRussellJ.h" />
     <ClInclude Include="cis25Spring2015FractionRussellJ.h" />
-    <ClInclude Include="cis25Spring2015FractionRussellJUtility.h" />
     <ClInclude Include="cis25Spring2015PointRussellJ.h" />
     <ClInclude Include="cis25Spring2015RectangleRussellJ.h" />
   </ItemGroup>

@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
-#include "cis25Spring2015FractionRussellJUtility.h"
 #include "cis25Spring2015CircleRussellJ.h"
 #include "cis25Spring2015PointRussellJ.h"
 #include "cis25Spring2015RectangleRussellJ.h"
@@ -27,10 +26,6 @@ void displayInfo() {
 void displayMenu() {
     int option1;
     int option2;
-
-    FractionRussellJ* frPtr1 = nullptr;
-    FractionRussellJ* frPtr2 = nullptr;
-    FractionRussellJ* resultPtr = nullptr;
 
     do {
         cout << "MAIN MENU" << endl;
@@ -135,143 +130,4 @@ void displayMenu() {
             cout << "  WRONG OPTION!\n" << endl;
         }
     } while (option1 != 4);
-
-    delete frPtr1;
-    delete frPtr2;
-    delete resultPtr;
-}
-
-void init(FractionRussellJ** frPtr1Addr, FractionRussellJ** frPtr2Addr) {
-    int num;
-    int denom;
-    int gcd;
-    int option;
-
-    do {
-        cout << "    ******************************" << endl;
-        cout << "    *      INITIALIZING MENU     *" << endl;
-        cout << "    * 1. Set up Fractions        *" << endl;
-        cout << "    * 2. Update Fractions        *" << endl;
-        cout << "    * 3. Delete Fractions        *" << endl;
-        cout << "    * 4. Return to Previous MENU *" << endl;
-        cout << "    ******************************" << endl;
-        cout << "    Select an option (1, 2, 3, or 4): ";
-        cin >> option;
-        cout << endl;
-
-        switch (option) {
-        case 1:
-            if (*frPtr1Addr == nullptr) {
-
-                cout << "    Enter num1: ";
-                cin >> num;
-
-                cout << "    Enter denom1: ";
-                cin >> denom;
-
-                while (denom == 0) {
-                    cout << "    denom1 cannot be 0. Enter a non-zero integer: ";
-                    cin >> denom;
-                }
-
-                if (denom < 0) {
-                    denom = -denom;
-                    num = -num;
-                }
-
-                *frPtr1Addr = new FractionRussellJ(num, denom);
-
-                cout << "    Enter num2: ";
-                cin >> num;
-
-                cout << "    Enter denom2: ";
-                cin >> denom;
-
-                while (denom == 0) {
-                    cout << "    denom2 cannot be 0. Enter a non-zero integer: ";
-                    cin >> denom;
-                }
-
-                if (denom < 0) {
-                    denom = -denom;
-                    num = -num;
-                }
-
-                *frPtr2Addr = new FractionRussellJ(num, denom);
-
-                cout << endl;
-            }
-            else {
-                cout << "    Fraction1 and Fraction2 are already created!\n" << endl;
-            }
-            break;
-        case 2:
-            if (*frPtr1Addr != nullptr) {
-                cout << "    Update num1: ";
-                cin >> num;
-
-                cout << "    Update denom1: ";
-                cin >> denom;
-
-                while (denom == 0) {
-                    cout << "    denom1 cannot be 0. Enter a non-zero integer: ";
-                    cin >> denom;
-                }
-
-                if (denom < 0) {
-                    denom = -denom;
-                    num = -num;
-                }
-
-                gcd = getGCD(num, denom);
-
-                (*frPtr1Addr)->setNum(num / gcd);
-                (*frPtr1Addr)->setDenom(denom / gcd);
-
-                cout << "    Update num2: ";
-                cin >> num;
-
-                cout << "    Update denom2: ";
-                cin >> denom;
-
-                while (denom == 0) {
-                    cout << "    denom2 cannot be 0. Enter a non-zero integer: ";
-                    cin >> denom;
-                }
-
-                if (denom < 0) {
-                    denom = -denom;
-                    num = -num;
-                }
-
-                gcd = getGCD(num, denom);
-
-                (*frPtr2Addr)->setNum(num / gcd);
-                (*frPtr2Addr)->setDenom(denom / gcd);
-
-                cout << endl;
-            }
-            else {
-                cout << "    No Fractions are available!\n" << endl;
-            }
-            break;
-        case 3:
-            if (*frPtr1Addr != nullptr) {
-                delete *frPtr1Addr;
-                *frPtr1Addr = nullptr;
-                delete *frPtr2Addr;
-                *frPtr2Addr = nullptr;
-                cout << "    Fraction1 and Fraction2 have been deleted.\n" << endl;
-            }
-            else {
-                cout << "    No Fractions to delete!\n" << endl;
-            }
-            break;
-        case 4:
-            cout << endl;
-            break;
-        default:
-            cout << "      WRONG OPTION ...\n" << endl;
-        }
-    } while (option != 4);
 }

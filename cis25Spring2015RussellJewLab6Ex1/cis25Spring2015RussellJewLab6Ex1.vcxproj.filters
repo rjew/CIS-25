@@ -33,9 +33,6 @@
     <ClCompile Include="cis25Spring2015PointRussellJ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cis25Spring2015FractionRussellJUtility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cis25Spring2015FractionRussellJ.h">
@@ -48,9 +45,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cis25Spring2015CircleRussellJ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cis25Spring2015FractionRussellJUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

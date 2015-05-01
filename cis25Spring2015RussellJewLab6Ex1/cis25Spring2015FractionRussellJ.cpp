@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
-#include "cis25Spring2015FractionRussellJUtility.h"
 using namespace std;
 
 FractionRussellJ::FractionRussellJ() {
@@ -44,6 +43,9 @@ FractionRussellJ::FractionRussellJ(int arg1, int arg2) {
         num = arg1 / gcd;
         denom = arg2 / gcd;
     }
+}
+
+FractionRussellJ::~FractionRussellJ() {
 }
 
 int FractionRussellJ::getNum() const {

@@ -6,3 +6,19 @@
  */
 
 #include "cis25Spring2015CircleRussellJ.h"
+
+CircleRussellJ::CircleRussellJ() {
+
+}
+
+CircleRussellJ::CircleRussellJ(const CircleRussellJ&) {
+
+}
+
+CircleRussellJ::~CircleRussellJ() {
+
+}
+
+CircleRussellJ& CircleRussellJ::operator=(const CircleRussellJ&) {
+
+}
