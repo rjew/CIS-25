@@ -32,18 +32,20 @@ ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
 
 istream& operator >>(istream& in, FractionRussellJ& fr) {
     cout << "    Enter num: ";
-    cin >> fr.num;
+    in >> fr.num;
 
     cout << "    Enter denom: ";
-    cin >> fr.denom;
+    in >> fr.denom;
 
     while (fr.denom == 0) {
         cout << "    denom cannot be 0. Enter a non-zero integer: ";
-        cin >> fr.denom;
+        in >> fr.denom;
     }
 
     if (fr.denom < 0) {
         fr.denom = -fr.denom;
         fr.num = -fr.num;
     }
+
+    return in;
 }
