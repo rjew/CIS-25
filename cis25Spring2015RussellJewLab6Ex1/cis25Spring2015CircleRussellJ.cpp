@@ -79,8 +79,7 @@ istream& operator >>(istream& in, CircleRussellJ& circle) {
     cout << "Enter the radius:" << endl;
     in >> circle.r;
 
-    if (circle.r.getNum() < 0)
-    {
+    while (circle.r.getNum() < 0) {
         cout << "The radius cannot be negative. Enter the radius:" << endl;
         in >> circle.r;
     }

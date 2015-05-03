@@ -16,7 +16,7 @@ public:
     CircleRussellJ();
     CircleRussellJ(const CircleRussellJ&);
     CircleRussellJ(const PointRussellJ&, const FractionRussellJ&);
-    CircleRussellJ::CircleRussellJ(const PointRussellJ&, int);
+    CircleRussellJ(const PointRussellJ&, int);
 
     ~CircleRussellJ();
 

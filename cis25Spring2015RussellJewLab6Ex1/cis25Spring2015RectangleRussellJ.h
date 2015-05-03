@@ -15,8 +15,21 @@ class RectangleRussellJ {
 public:
     RectangleRussellJ();
     RectangleRussellJ(const RectangleRussellJ&);
+    RectangleRussellJ(const FractionRussellJ&, const FractionRussellJ&, const PointRussellJ&);
+    RectangleRussellJ(int, int, const PointRussellJ&);
 
     ~RectangleRussellJ();
+
+    FractionRussellJ getLength(void) const;
+    void setLength(int);
+    void setLength(const FractionRussellJ&);
+
+    FractionRussellJ getWidth(void) const;
+    void setWidth(int);
+    void setWidth(const FractionRussellJ&);
+
+    PointRussellJ getLowerLeftPoint(void) const;
+    void setLowerLeftPoint(const PointRussellJ&);
 
     RectangleRussellJ& operator=(const RectangleRussellJ&);
 
