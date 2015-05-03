@@ -41,7 +41,7 @@ void CircleRussellJ::setRadius(int arg) {
 }
 
 void CircleRussellJ::setRadius(const FractionRussellJ& arg) {
-    if (arg.getNum < 0) {
+    if (arg.getNum() < 0) {
         cout << "The radius cannot be negative. Cannot set radius." << endl;
     } else {
         r = arg;
@@ -66,7 +66,7 @@ CircleRussellJ& CircleRussellJ::operator=(const CircleRussellJ& rOp) {
 }
 
 ostream& operator <<(ostream& out, const CircleRussellJ& circle) {
-    out << "Center: " << circle.c << endl;
+    out << "Center: " << circle.c;
     out << "Radius: " << circle.r << endl;
 
     return out;
@@ -79,7 +79,7 @@ istream& operator >>(istream& in, CircleRussellJ& circle) {
     cout << "Enter the radius:" << endl;
     in >> circle.r;
 
-    if (circle.r.getNum < 0)
+    if (circle.r.getNum() < 0)
     {
         cout << "The radius cannot be negative. Enter the radius:" << endl;
         in >> circle.r;
