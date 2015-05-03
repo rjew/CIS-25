@@ -5,10 +5,6 @@
  * Date:	     2015/05/01
  */
 
-#include "cis25Spring2015PointRussellJ.h"
-#include "cis25Spring2015FractionRussellJ.h"
-#include "cis25Spring2015CircleRussellJ.h"
-
 void displayInfo(void);
 void displayMenu(void);
 

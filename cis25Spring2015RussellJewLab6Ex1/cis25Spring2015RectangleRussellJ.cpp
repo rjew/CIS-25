@@ -93,9 +93,9 @@ RectangleRussellJ& RectangleRussellJ::operator=(const RectangleRussellJ& rOp) {
 }
 
 ostream& operator <<(ostream& out, const RectangleRussellJ& rect) {
-    out << "Length: " << rect.len;
-    out << "Width: " << rect.wid;
-    out << "Lower Left Point: " << rect.ll;
+    out << "Length: " << rect.len << endl;
+    out << "Width: " << rect.wid << endl;
+    out << "Lower Left Point: " << rect.ll << endl;
 
     return out;
 }
