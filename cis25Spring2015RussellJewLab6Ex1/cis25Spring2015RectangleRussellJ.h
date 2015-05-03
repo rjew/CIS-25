@@ -8,10 +8,8 @@
 #ifndef RECTANGLERUSSELLJ_H
 #define RECTANGLERUSSELLJ_H
 
-#include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
 #include "cis25Spring2015PointRussellJ.h"
-using namespace std;
 
 class RectangleRussellJ {
 public:
@@ -29,15 +27,5 @@ private:
     FractionRussellJ wid;
     PointRussellJ ll;
 };
-
-ostream& operator <<(ostream& out, const RectangleRussellJ& rect) {
-
-    return out;
-}
-
-istream& operator >>(istream& in, RectangleRussellJ& fr) {
-
-    return in;
-}
 
 #endif 

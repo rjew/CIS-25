@@ -20,5 +20,15 @@ CircleRussellJ::~CircleRussellJ() {
 }
 
 CircleRussellJ& CircleRussellJ::operator=(const CircleRussellJ&) {
+    return *this;
+}
 
+ostream& operator <<(ostream& out, const CircleRussellJ& circle) {
+
+    return out;
+}
+
+istream& operator >>(istream& in, CircleRussellJ& circle) {
+
+    return in;
 }

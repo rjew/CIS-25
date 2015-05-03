@@ -20,5 +20,15 @@ RectangleRussellJ::~RectangleRussellJ() {
 }
 
 RectangleRussellJ& RectangleRussellJ::operator=(const RectangleRussellJ&) {
+    return *this;
+}
 
+ostream& operator <<(ostream& out, const RectangleRussellJ& rect) {
+
+    return out;
+}
+
+istream& operator >>(istream& in, RectangleRussellJ& rect) {
+
+    return in;
 }

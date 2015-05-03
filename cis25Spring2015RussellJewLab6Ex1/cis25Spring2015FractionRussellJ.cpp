@@ -5,9 +5,7 @@
  * Date:         2015/05/01
  */
 
-#include <iostream>
 #include "cis25Spring2015FractionRussellJ.h"
-using namespace std;
 
 FractionRussellJ::FractionRussellJ() {
     num = 0;
@@ -114,4 +112,51 @@ FractionRussellJ FractionRussellJ::operator*(const FractionRussellJ& rOp) const 
 
 FractionRussellJ FractionRussellJ::operator/(const FractionRussellJ& rOp) const {
     return FractionRussellJ(num * rOp.denom, denom * rOp.num);
+}
+
+int getGCD(int arg1, int arg2) {
+    int gcd = 1;
+    int i;
+
+    arg1 = arg1 < 0 ? -arg1 : arg1;
+    arg2 = arg2 < 0 ? -arg2 : arg2;
+
+    for (i = 2; i <= arg1 && i <= arg2; i++) {
+        if (arg1 % i == 0 && arg2 % i == 0)
+            gcd = i;
+    }
+
+    return gcd;
+}
+
+ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
+    out << fr.num << "/" << fr.denom << endl;
+    return out;
+}
+
+istream& operator >>(istream& in, FractionRussellJ& fr) {
+    int gcd;
+
+    cout << "Enter num: ";
+    in >> fr.num;
+
+    cout << "Enter denom: ";
+    in >> fr.denom;
+
+    while (fr.denom == 0) {
+        cout << "denom cannot be 0. Enter a non-zero integer: ";
+        in >> fr.denom;
+    }
+
+    if (fr.denom < 0) {
+        fr.denom = -fr.denom;
+        fr.num = -fr.num;
+    }
+
+    gcd = getGCD(fr.num, fr.denom);
+
+    fr.num /= gcd;
+    fr.denom /= gcd;
+
+    return in;
 }

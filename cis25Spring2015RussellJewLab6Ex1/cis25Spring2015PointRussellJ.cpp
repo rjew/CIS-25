@@ -5,9 +5,7 @@
  * Date:         2015/05/01
  */
 
-#include <iostream>
 #include "cis25Spring2015PointRussellJ.h"
-using namespace std;
 
 PointRussellJ::PointRussellJ() {
     x = 0;
@@ -30,6 +28,7 @@ PointRussellJ::~PointRussellJ() {
 FractionRussellJ PointRussellJ::getX() const {
     return x;
 }
+
 void PointRussellJ::setX(int arg) {
     x = arg;
 }
@@ -38,7 +37,7 @@ FractionRussellJ PointRussellJ::getY() const {
     return y;
 }
 
-void PointRussellJ::setX(int arg) {
+void PointRussellJ::setY(int arg) {
     y = arg;
 }
 
@@ -73,4 +72,20 @@ void PointRussellJ::flipThroughOrigin() {
 
 void PointRussellJ::print() const {
     cout << *this;
+}
+
+
+ostream& operator <<(ostream& out, const PointRussellJ& pt) {
+    out << "(" << pt.x << ", " << pt.y << ")" << endl;
+    return out;
+}
+
+istream& operator >>(istream& in, PointRussellJ& pt) {
+    cout << "Enter the x-coordinate: ";
+    in >> pt.x;
+
+    cout << "Enter y-coordinate: ";
+    in >> pt.y;
+
+    return in;
 }
