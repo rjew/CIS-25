@@ -130,7 +130,7 @@ int getGCD(int arg1, int arg2) {
 }
 
 ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
-    out << fr.num << "/" << fr.denom << endl;
+    out << fr.num << "/" << fr.denom;
     return out;
 }
 

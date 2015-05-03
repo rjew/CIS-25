@@ -48,7 +48,7 @@ PointRussellJ& PointRussellJ::operator=(const PointRussellJ& pt) {
     return *this;
 }
 
-void PointRussellJ::moveBy(FractionRussellJ delX, FractionRussellJ delY) { //Overload += operator?
+void PointRussellJ::moveBy(FractionRussellJ delX, FractionRussellJ delY) {
     x = x + delX;
     y = y + delY;
 }
