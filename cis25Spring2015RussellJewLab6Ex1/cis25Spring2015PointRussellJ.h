@@ -16,8 +16,15 @@ class PointRussellJ {
 public:
     PointRussellJ();
     PointRussellJ(const PointRussellJ&);
+    PointRussellJ(int arg1, int arg2);
 
     ~PointRussellJ();
+
+    FractionRussellJ getX(void) const;
+    void setX(int);
+
+    FractionRussellJ getY(void) const;
+    void setX(int);
 
     PointRussellJ& operator=(const PointRussellJ&);
 
@@ -36,11 +43,18 @@ private:
 };
 
 ostream& operator <<(ostream& out, const PointRussellJ& pt) {
-    out << pt.x << ", " << pt.y << endl;
+    out << "(" << pt.x << ", " << pt.y << ")" << endl;
     return out;
 }
 
-istream& operator >>(istream& in, PointRussellJ& fr) {
+istream& operator >>(istream& in, PointRussellJ& pt) {
+    int gcd;
+
+    cout << "Enter the x-coordinate: ";
+    in >> pt.x;
+
+    cout << "Enter y-coordinate: ";
+    in >> pt.y;
 
     return in;
 }
