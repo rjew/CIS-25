@@ -14,15 +14,18 @@ class PointRussellJ {
 public:
     PointRussellJ();
     PointRussellJ(const PointRussellJ&);
-    PointRussellJ(int arg1, int arg2);
+    PointRussellJ(int, int);
+    PointRussellJ(const FractionRussellJ&, const FractionRussellJ&);
 
     ~PointRussellJ();
 
     FractionRussellJ getX(void) const;
     void setX(int);
+    void setX(const FractionRussellJ&);
 
     FractionRussellJ getY(void) const;
     void setY(int);
+    void setY(const FractionRussellJ&);
 
     PointRussellJ& operator=(const PointRussellJ&);
 

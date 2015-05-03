@@ -12,12 +12,17 @@ PointRussellJ::PointRussellJ() {
     y = 0;
 }
 
-PointRussellJ::PointRussellJ(const PointRussellJ& pt) {
-    x = pt.x;
-    y = pt.y;
+PointRussellJ::PointRussellJ(const PointRussellJ& ref) {
+    x = ref.x;
+    y = ref.y;
 }
 
 PointRussellJ::PointRussellJ(int arg1, int arg2) {
+    x = arg1;
+    y = arg2;
+}
+
+PointRussellJ::PointRussellJ(const FractionRussellJ& arg1, const FractionRussellJ& arg2) {
     x = arg1;
     y = arg2;
 }
@@ -33,6 +38,10 @@ void PointRussellJ::setX(int arg) {
     x = arg;
 }
 
+void PointRussellJ::setX(const FractionRussellJ& arg) {
+    x = arg;
+}
+
 FractionRussellJ PointRussellJ::getY() const {
     return y;
 }
@@ -41,9 +50,13 @@ void PointRussellJ::setY(int arg) {
     y = arg;
 }
 
-PointRussellJ& PointRussellJ::operator=(const PointRussellJ& pt) {
-    x = pt.x;
-    y = pt.y;
+void PointRussellJ::setY(const FractionRussellJ& arg) {
+    y = arg;
+}
+
+PointRussellJ& PointRussellJ::operator=(const PointRussellJ& rOp) {
+    x = rOp.x;
+    y = rOp.y;
 
     return *this;
 }
@@ -74,17 +87,16 @@ void PointRussellJ::print() const {
     cout << *this;
 }
 
-
 ostream& operator <<(ostream& out, const PointRussellJ& pt) {
     out << "(" << pt.x << ", " << pt.y << ")" << endl;
     return out;
 }
 
 istream& operator >>(istream& in, PointRussellJ& pt) {
-    cout << "Enter the x-coordinate: ";
+    cout << "Enter the x-coordinate:" << endl;
     in >> pt.x;
 
-    cout << "Enter y-coordinate: ";
+    cout << "Enter the y-coordinate:" << endl;
     in >> pt.y;
 
     return in;
