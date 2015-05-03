@@ -58,6 +58,12 @@ CircleRussellJ::CircleRussellJ(const PointRussellJ& arg1, int arg2) {
     r = arg2;
 }
 
+FractionRussellJ CircleRussellJ::getArea() const {
+    const FractionRussellJ PI(22, 7);
+
+    return r * r * PI;
+}
+
 CircleRussellJ& CircleRussellJ::operator=(const CircleRussellJ& rOp) {
     c = rOp.c;
     r = rOp.r;

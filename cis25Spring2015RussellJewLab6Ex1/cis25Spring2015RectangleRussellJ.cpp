@@ -84,6 +84,10 @@ void RectangleRussellJ::setLowerLeftPoint(const PointRussellJ& arg) {
     ll = arg;
 }
 
+FractionRussellJ RectangleRussellJ::getArea(void) const {
+    return len * wid;
+}
+
 RectangleRussellJ& RectangleRussellJ::operator=(const RectangleRussellJ& rOp) {
     len = rOp.len;
     wid = rOp.wid;

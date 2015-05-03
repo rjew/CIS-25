@@ -27,6 +27,8 @@ public:
     void setRadius(int);
     void setRadius(const FractionRussellJ&);
 
+    FractionRussellJ getArea(void) const;
+
     CircleRussellJ& operator=(const CircleRussellJ&);
 
     friend ostream& operator <<(ostream&, const CircleRussellJ&);

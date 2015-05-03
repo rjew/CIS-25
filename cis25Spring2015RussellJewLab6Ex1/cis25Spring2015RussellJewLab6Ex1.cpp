@@ -26,6 +26,10 @@ void displayInfo() {
 void displayMenu() {
     int option1;
     int option2;
+    RectangleRussellJ* rectPtr1 = nullptr;
+    RectangleRussellJ* rectPtr2 = nullptr;
+    CircleRussellJ* circlePtr1 = nullptr;
+    CircleRussellJ* circlePtr2 = nullptr;
 
     do {
         cout << "MAIN MENU" << endl;
@@ -53,12 +57,36 @@ void displayMenu() {
 
                 switch (option2) {
                 case 1:
+                    if (rectPtr1 == nullptr) {
+
+                    }
                     break;
                 case 2:
+                    if (rectPtr1 == nullptr) {
+                        cout << "Cannot compare volume as no Rectangle objects are available!\n" << endl;
+                    } else {
+                        // A rectangle has no volume
+                        cout << "Both volumes are 0 so they are equal." << endl;
+                    }
                     break;
                 case 3:
+                    if (rectPtr1 == nullptr) {
+                        cout << "Cannot compare volume as no Rectangle objects are available!\n" << endl;
+                    } else {
+                        if (rectPtr1->getArea > rectPtr2->getArea) {
+                            cout << "Rectangle 1 is has a greater area than Rectangle 2 by "
+                                << rectPtr1->getArea - rectPtr2->getArea << " units squared." << endl;
+                        } else {
+                            cout << "Rectangle 2 is has a greater area than Rectangle 1 by "
+                                << rectPtr2->getArea - rectPtr1->getArea << " units squared." << endl;
+                        }
+                    }
                     break;
                 case 4:
+                    cout << "Rectangle 1" << endl;
+                    cout << *rectPtr1;
+                    cout << "Rectangle 2" << endl;
+                    cout << *rectPtr2;
                     break;
                 case 5:
                     cout << endl;
@@ -82,12 +110,49 @@ void displayMenu() {
 
                 switch (option2) {
                 case 1:
+                    if (circlePtr1 == nullptr) {
+                        circlePtr1 = new CircleRussellJ();
+                        cout << "Circle 1" << endl;
+                        cin >> *circlePtr1;
+                        
+                        circlePtr2 = new CircleRussellJ();
+                        cout << "Circle 2" << endl;
+                        cin >> *circlePtr2;
+                    } else {
+                        cout << "Circle objects already created. Updating circle objects..." << endl;
+                        cout << "Circle 1" << endl;
+                        cin >> *circlePtr1;
+
+                        cout << "Circle 2" << endl;
+                        cin >> *circlePtr2;
+                    }
                     break;
                 case 2:
+                    if (circlePtr1 == nullptr) {
+                        cout << "Cannot compare volume as no Circle objects are available!\n" << endl;
+                    } else {
+                        // A circle has no volume
+                        cout << "Both volumes are 0 so they are equal." << endl;
+                    }
                     break;
                 case 3:
+                    if (circlePtr1 == nullptr) {
+                        cout << "Cannot compare area as no Circle objects are available!\n" << endl;
+                    } else {
+                        if (circlePtr1->getArea > circlePtr2->getArea) {
+                            cout << "Circle 1 is has a greater area than Circle 2 by "
+                                << circlePtr1->getArea - circlePtr2->getArea << " units squared." << endl;
+                        } else {
+                            cout << "Circle 2 is has a greater area than Circle 1 by "
+                                << circlePtr2->getArea - circlePtr1->getArea << " units squared." << endl;
+                        }
+                    }
                     break;
                 case 4:
+                    cout << "Circle 1" << endl;
+                    cout << *circlePtr1;
+                    cout << "Circle 2" << endl;
+                    cout << *circlePtr2;
                     break;
                 case 5:
                     cout << endl;

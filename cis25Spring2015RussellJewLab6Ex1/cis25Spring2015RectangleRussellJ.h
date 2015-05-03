@@ -31,6 +31,8 @@ public:
     PointRussellJ getLowerLeftPoint(void) const;
     void setLowerLeftPoint(const PointRussellJ&);
 
+    FractionRussellJ getArea(void) const;
+
     RectangleRussellJ& operator=(const RectangleRussellJ&);
 
     friend ostream& operator <<(ostream&, const RectangleRussellJ&);
