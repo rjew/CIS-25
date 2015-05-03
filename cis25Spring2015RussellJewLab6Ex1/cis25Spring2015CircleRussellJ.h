@@ -15,8 +15,17 @@ class CircleRussellJ {
 public:
     CircleRussellJ();
     CircleRussellJ(const CircleRussellJ&);
+    CircleRussellJ(const PointRussellJ&, const FractionRussellJ&);
+    CircleRussellJ::CircleRussellJ(const PointRussellJ&, int);
 
     ~CircleRussellJ();
+
+    PointRussellJ getCenter(void) const;
+    void setCenter(const PointRussellJ&);
+
+    FractionRussellJ getRadius(void) const;
+    void setRadius(int);
+    void setRadius(const FractionRussellJ&);
 
     CircleRussellJ& operator=(const CircleRussellJ&);
 
