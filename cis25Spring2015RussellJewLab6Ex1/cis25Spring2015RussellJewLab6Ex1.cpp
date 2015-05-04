@@ -30,6 +30,9 @@ void displayMenu() {
     RectangleRussellJ* rectPtr2 = nullptr;
     CircleRussellJ* circlePtr1 = nullptr;
     CircleRussellJ* circlePtr2 = nullptr;
+    PointRussellJ* ulPointPtr = nullptr;
+    PointRussellJ* lrPointPtr = nullptr;
+    PointRussellJ* llPointPtr = nullptr;
 
     do {
         cout << "MAIN MENU" << endl;
@@ -58,7 +61,65 @@ void displayMenu() {
                 switch (option2) {
                 case 1:
                     if (rectPtr1 == nullptr) {
+                        cout << "Rectangle 1" << endl;
+                        ulPointPtr = new PointRussellJ;
+                        cout << "Upper Left Point" << endl;
+                        cin >> *ulPointPtr;
 
+                        lrPointPtr = new PointRussellJ;
+                        cout << "Lower Right Point" << endl;
+                        cin >> *lrPointPtr;
+
+                        llPointPtr = new PointRussellJ(ulPointPtr->getX(), lrPointPtr->getY());
+
+                        cout << "Creating Rectangle 1 ..." << endl;
+                        rectPtr1 = new RectangleRussellJ(ulPointPtr->getY() - lrPointPtr->getY(),
+                            lrPointPtr->getX() - ulPointPtr->getX(), *llPointPtr);
+
+                        cout << "Rectangle 2" << endl;
+                        cout << "Upper Left Point" << endl;
+                        cin >> *ulPointPtr;
+
+                        cout << "Lower Right Point" << endl;
+                        cin >> *lrPointPtr;
+
+                        llPointPtr->setX(ulPointPtr->getX());
+                        llPointPtr->setY(lrPointPtr->getY());
+
+                        cout << "Creating Rectangle 2 ..." << endl;
+                        rectPtr2 = new RectangleRussellJ(ulPointPtr->getY() - lrPointPtr->getY(),
+                            lrPointPtr->getX() - ulPointPtr->getX(), *llPointPtr);
+                    } else {
+                        cout << "Rectangle objects already created. Update Rectangle objects." << endl;
+                        cout << "Rectangle 1" << endl;
+                        cout << "Upper Left Point" << endl;
+                        cin >> *ulPointPtr;
+
+                        cout << "Lower Right Point" << endl;
+                        cin >> *lrPointPtr;
+
+                        llPointPtr->setX(ulPointPtr->getX());
+                        llPointPtr->setY(lrPointPtr->getY());
+
+                        cout << "Updating Rectangle 1 ..." << endl;
+                        rectPtr1->setLength(ulPointPtr->getY() - lrPointPtr->getY());
+                        rectPtr1->setWidth(lrPointPtr->getX() - ulPointPtr->getX());
+                        rectPtr1->setLowerLeftPoint(*llPointPtr);
+
+                        cout << "Rectangle 2" << endl;
+                        cout << "Upper Left Point" << endl;
+                        cin >> *ulPointPtr;
+
+                        cout << "Lower Right Point" << endl;
+                        cin >> *lrPointPtr;
+
+                        llPointPtr->setX(ulPointPtr->getX());
+                        llPointPtr->setY(lrPointPtr->getY());
+
+                        cout << "Updating Rectangle 2 ..." << endl;
+                        rectPtr2->setLength(ulPointPtr->getY() - lrPointPtr->getY());
+                        rectPtr2->setWidth(lrPointPtr->getX() - ulPointPtr->getX());
+                        rectPtr2->setLowerLeftPoint(*llPointPtr);
                     }
                     break;
                 case 2:
@@ -73,12 +134,12 @@ void displayMenu() {
                     if (rectPtr1 == nullptr) {
                         cout << "Cannot compare volume as no Rectangle objects are available!\n" << endl;
                     } else {
-                        if (rectPtr1->getArea > rectPtr2->getArea) {
+                        if (rectPtr1->getArea() > rectPtr2->getArea()) {
                             cout << "Rectangle 1 is has a greater area than Rectangle 2 by "
-                                << rectPtr1->getArea - rectPtr2->getArea << " units squared." << endl;
+                                << rectPtr1->getArea() - rectPtr2->getArea() << " units squared." << endl;
                         } else {
                             cout << "Rectangle 2 is has a greater area than Rectangle 1 by "
-                                << rectPtr2->getArea - rectPtr1->getArea << " units squared." << endl;
+                                << rectPtr2->getArea() - rectPtr1->getArea() << " units squared." << endl;
                         }
                     }
                     break;
@@ -111,15 +172,15 @@ void displayMenu() {
                 switch (option2) {
                 case 1:
                     if (circlePtr1 == nullptr) {
-                        circlePtr1 = new CircleRussellJ();
+                        circlePtr1 = new CircleRussellJ;
                         cout << "Circle 1" << endl;
                         cin >> *circlePtr1;
-                        
-                        circlePtr2 = new CircleRussellJ();
+
+                        circlePtr2 = new CircleRussellJ;
                         cout << "Circle 2" << endl;
                         cin >> *circlePtr2;
                     } else {
-                        cout << "Circle objects already created. Updating circle objects..." << endl;
+                        cout << "Circle objects already created. Update Circle objects." << endl;
                         cout << "Circle 1" << endl;
                         cin >> *circlePtr1;
 
@@ -139,12 +200,12 @@ void displayMenu() {
                     if (circlePtr1 == nullptr) {
                         cout << "Cannot compare area as no Circle objects are available!\n" << endl;
                     } else {
-                        if (circlePtr1->getArea > circlePtr2->getArea) {
+                        if (circlePtr1->getArea() > circlePtr2->getArea()) {
                             cout << "Circle 1 is has a greater area than Circle 2 by "
-                                << circlePtr1->getArea - circlePtr2->getArea << " units squared." << endl;
+                                << circlePtr1->getArea() - circlePtr2->getArea() << " units squared." << endl;
                         } else {
                             cout << "Circle 2 is has a greater area than Circle 1 by "
-                                << circlePtr2->getArea - circlePtr1->getArea << " units squared." << endl;
+                                << circlePtr2->getArea() - circlePtr1->getArea() << " units squared." << endl;
                         }
                     }
                     break;
@@ -195,4 +256,12 @@ void displayMenu() {
             cout << "  WRONG OPTION!\n" << endl;
         }
     } while (option1 != 4);
+
+    delete rectPtr1;
+    delete rectPtr2;
+    delete circlePtr1;
+    delete circlePtr2;
+    delete ulPointPtr;
+    delete lrPointPtr;
+    delete llPointPtr;
 }
