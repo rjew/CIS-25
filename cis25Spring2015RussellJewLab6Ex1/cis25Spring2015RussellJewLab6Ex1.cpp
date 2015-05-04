@@ -132,9 +132,11 @@ void displayMenu() {
                     break;
                 case 3:
                     if (rectPtr1 == nullptr) {
-                        cout << "Cannot compare volume as no Rectangle objects are available!\n" << endl;
+                        cout << "Cannot compare area as no Rectangle objects are available!\n" << endl;
                     } else {
-                        if (rectPtr1->getArea() > rectPtr2->getArea()) {
+                        if (rectPtr1->getArea() == rectPtr2->getArea()) {
+                            cout << "Rectangle 1 has the same area as Rectangle 2." << endl;
+                        } else if (rectPtr1->getArea() > rectPtr2->getArea()) {
                             cout << "Rectangle 1 is has a greater area than Rectangle 2 by "
                                 << rectPtr1->getArea() - rectPtr2->getArea() << " units squared." << endl;
                         } else {
@@ -200,7 +202,9 @@ void displayMenu() {
                     if (circlePtr1 == nullptr) {
                         cout << "Cannot compare area as no Circle objects are available!\n" << endl;
                     } else {
-                        if (circlePtr1->getArea() > circlePtr2->getArea()) {
+                        if (circlePtr1->getArea() == circlePtr2->getArea()) {
+                            cout << "Circle 1 has the same area as Circle 2." << endl;
+                        } else if (circlePtr1->getArea() > circlePtr2->getArea()) {
                             cout << "Circle 1 is has a greater area than Circle 2 by "
                                 << circlePtr1->getArea() - circlePtr2->getArea() << " units squared." << endl;
                         } else {
