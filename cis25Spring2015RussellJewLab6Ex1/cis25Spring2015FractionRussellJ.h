@@ -41,6 +41,10 @@ public:
     FractionRussellJ operator*(const FractionRussellJ&) const;
     FractionRussellJ operator/(const FractionRussellJ&) const;
 
+    bool operator==(const FractionRussellJ&) const;
+    bool operator>(const FractionRussellJ&) const;
+    bool operator<(const FractionRussellJ&) const;
+
     friend ostream& operator<<(ostream&, const FractionRussellJ&);
     friend istream& operator>>(istream&, FractionRussellJ&);
 private:

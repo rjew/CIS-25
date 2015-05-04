@@ -114,6 +114,39 @@ FractionRussellJ FractionRussellJ::operator/(const FractionRussellJ& rOp) const 
     return FractionRussellJ(num * rOp.denom, denom * rOp.num);
 }
 
+bool FractionRussellJ::operator==(const FractionRussellJ& rOp) const {
+    bool status;
+
+    if (num == rOp.num && denom == rOp.denom)
+        status = true;
+    else
+        status = false;
+
+    return status;
+}
+
+bool FractionRussellJ::operator>(const FractionRussellJ& rOp) const {
+    bool status;
+
+    if (num * rOp.denom > denom * rOp.num)
+        status = true;
+    else
+        status = false;
+
+    return status;
+}
+
+bool FractionRussellJ::operator<(const FractionRussellJ& rOp) const {
+    bool status;
+
+    if (num * rOp.denom < denom * rOp.num)
+        status = true;
+    else
+        status = false;
+
+    return status;
+}
+
 int getGCD(int arg1, int arg2) {
     int gcd = 1;
     int i;
