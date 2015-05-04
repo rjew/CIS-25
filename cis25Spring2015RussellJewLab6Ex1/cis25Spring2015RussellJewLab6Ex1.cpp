@@ -61,62 +61,62 @@ void displayMenu() {
                 switch (option2) {
                 case 1:
                     if (rectPtr1 == nullptr) {
-                        cout << "Rectangle 1" << endl;
+                        cout << "Rectangle 1\n" << endl;
                         ulPointPtr = new PointRussellJ;
-                        cout << "Upper Left Point" << endl;
+                        cout << "UPPER LEFT POINT" << endl;
                         cin >> *ulPointPtr;
 
                         lrPointPtr = new PointRussellJ;
-                        cout << "Lower Right Point" << endl;
+                        cout << "LOWER RIGHT POINT" << endl;
                         cin >> *lrPointPtr;
 
                         llPointPtr = new PointRussellJ(ulPointPtr->getX(), lrPointPtr->getY());
 
-                        cout << "Creating Rectangle 1 ..." << endl;
+                        cout << "Creating Rectangle 1 ...\n" << endl;
                         rectPtr1 = new RectangleRussellJ(ulPointPtr->getY() - lrPointPtr->getY(),
                             lrPointPtr->getX() - ulPointPtr->getX(), *llPointPtr);
 
-                        cout << "Rectangle 2" << endl;
-                        cout << "Upper Left Point" << endl;
+                        cout << "Rectangle 2\n" << endl;
+                        cout << "UPPER LEFT POINT" << endl;
                         cin >> *ulPointPtr;
 
-                        cout << "Lower Right Point" << endl;
+                        cout << "LOWER RIGHT POINT" << endl;
                         cin >> *lrPointPtr;
 
                         llPointPtr->setX(ulPointPtr->getX());
                         llPointPtr->setY(lrPointPtr->getY());
 
-                        cout << "Creating Rectangle 2 ..." << endl;
+                        cout << "Creating Rectangle 2 ...\n" << endl;
                         rectPtr2 = new RectangleRussellJ(ulPointPtr->getY() - lrPointPtr->getY(),
                             lrPointPtr->getX() - ulPointPtr->getX(), *llPointPtr);
                     } else {
                         cout << "Rectangle objects already created. Update Rectangle objects." << endl;
-                        cout << "Rectangle 1" << endl;
-                        cout << "Upper Left Point" << endl;
+                        cout << "Rectangle 1\n" << endl;
+                        cout << "UPPER LEFT POINT" << endl;
                         cin >> *ulPointPtr;
 
-                        cout << "Lower Right Point" << endl;
+                        cout << "LOWER RIGHT POINT" << endl;
                         cin >> *lrPointPtr;
 
                         llPointPtr->setX(ulPointPtr->getX());
                         llPointPtr->setY(lrPointPtr->getY());
 
-                        cout << "Updating Rectangle 1 ..." << endl;
+                        cout << "Updating Rectangle 1 ...\n" << endl;
                         rectPtr1->setLength(ulPointPtr->getY() - lrPointPtr->getY());
                         rectPtr1->setWidth(lrPointPtr->getX() - ulPointPtr->getX());
                         rectPtr1->setLowerLeftPoint(*llPointPtr);
 
-                        cout << "Rectangle 2" << endl;
-                        cout << "Upper Left Point" << endl;
+                        cout << "Rectangle 2\n" << endl;
+                        cout << "UPPER LEFT POINT" << endl;
                         cin >> *ulPointPtr;
 
-                        cout << "Lower Right Point" << endl;
+                        cout << "LOWER RIGHT POINT" << endl;
                         cin >> *lrPointPtr;
 
                         llPointPtr->setX(ulPointPtr->getX());
                         llPointPtr->setY(lrPointPtr->getY());
 
-                        cout << "Updating Rectangle 2 ..." << endl;
+                        cout << "Updating Rectangle 2 ...\n" << endl;
                         rectPtr2->setLength(ulPointPtr->getY() - lrPointPtr->getY());
                         rectPtr2->setWidth(lrPointPtr->getX() - ulPointPtr->getX());
                         rectPtr2->setLowerLeftPoint(*llPointPtr);
@@ -146,9 +146,9 @@ void displayMenu() {
                     }
                     break;
                 case 4:
-                    cout << "Rectangle 1" << endl;
+                    cout << "RECTANGLE 1\n" << endl;
                     cout << *rectPtr1;
-                    cout << "Rectangle 2" << endl;
+                    cout << "RECTANGLE 2\n" << endl;
                     cout << *rectPtr2;
                     break;
                 case 5:
@@ -175,18 +175,18 @@ void displayMenu() {
                 case 1:
                     if (circlePtr1 == nullptr) {
                         circlePtr1 = new CircleRussellJ;
-                        cout << "Circle 1" << endl;
+                        cout << "CIRCLE 1\n" << endl;
                         cin >> *circlePtr1;
 
                         circlePtr2 = new CircleRussellJ;
-                        cout << "Circle 2" << endl;
+                        cout << "CIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
                     } else {
                         cout << "Circle objects already created. Update Circle objects." << endl;
-                        cout << "Circle 1" << endl;
+                        cout << "CIRCLE 1\n" << endl;
                         cin >> *circlePtr1;
 
-                        cout << "Circle 2" << endl;
+                        cout << "CIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
                     }
                     break;
@@ -214,9 +214,9 @@ void displayMenu() {
                     }
                     break;
                 case 4:
-                    cout << "Circle 1" << endl;
+                    cout << "CIRCLE 1\n" << endl;
                     cout << *circlePtr1;
-                    cout << "Circle 2" << endl;
+                    cout << "CIRCLE 2\n" << endl;
                     cout << *circlePtr2;
                     break;
                 case 5:
