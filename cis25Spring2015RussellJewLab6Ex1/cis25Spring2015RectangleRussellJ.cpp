@@ -88,31 +88,31 @@ RectangleRussellJ& RectangleRussellJ::operator=(const RectangleRussellJ& rOp) {
 }
 
 ostream& operator <<(ostream& out, const RectangleRussellJ& rect) {
-    out << "  Length: " << rect.len << endl;
-    out << "  Width: " << rect.wid << endl;
-    out << "  Lower Left Point: " << rect.ll << endl;
+    out << "    Length: " << rect.len << endl;
+    out << "    Width: " << rect.wid << endl;
+    out << "    Lower Left Point: " << rect.ll << endl;
 
     return out;
 }
 
 istream& operator >>(istream& in, RectangleRussellJ& rect) {
-    cout << "  Enter the length:\n" << endl;
+    cout << "    Enter the length:\n" << endl;
     in >> rect.len;
 
     while (rect.len.getNum() < 0) {
-        cout << "\n  The length cannot be negative. Enter the length:\n" << endl;
+        cout << "\n    The length cannot be negative. Enter the length:\n" << endl;
         in >> rect.len;
     }
 
-    cout << "\n  Enter the width:\n" << endl;
+    cout << "\n    Enter the width:\n" << endl;
     in >> rect.wid;
 
     while (rect.wid.getNum() < 0) {
-        cout << "\n  The width cannot be negative. Enter the width:\n" << endl;
+        cout << "\n    The width cannot be negative. Enter the width:\n" << endl;
         in >> rect.wid;
     }
 
-    cout << "\n  Enter the lower left point:\n" << endl;
+    cout << "\n    Enter the lower left point:\n" << endl;
     in >> rect.ll;
 
     return in;

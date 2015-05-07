@@ -158,14 +158,14 @@ ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
 istream& operator >>(istream& in, FractionRussellJ& fr) {
     int gcd;
 
-    cout << "  Enter num: ";
+    cout << "    Enter num: ";
     in >> fr.num;
 
-    cout << "  Enter denom: ";
+    cout << "    Enter denom: ";
     in >> fr.denom;
 
     while (fr.denom == 0) {
-        cout << "  denom cannot be 0. Enter a non-zero integer: ";
+        cout << "    denom cannot be 0. Enter a non-zero integer: ";
         in >> fr.denom;
     }
 

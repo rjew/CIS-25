@@ -87,10 +87,10 @@ ostream& operator <<(ostream& out, const PointRussellJ& pt) {
 }
 
 istream& operator >>(istream& in, PointRussellJ& pt) {
-    cout << "  Enter the x-coordinate:" << endl;
+    cout << "    Enter the x-coordinate:" << endl;
     in >> pt.x;
 
-    cout << "\n  Enter the y-coordinate:" << endl;
+    cout << "\n    Enter the y-coordinate:" << endl;
     in >> pt.y;
 
     return in;
