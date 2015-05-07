@@ -62,21 +62,21 @@ void displayMenu() {
                 switch (option2) {
                 case 1:
                     if (rectPtr1 == nullptr) {
-                        cout << "RECTANGLE 1\n" << endl;
+                        cout << "  RECTANGLE 1\n" << endl;
                         rectPtr1 = new RectangleRussellJ();
                         cin >> *rectPtr1;
 
-                        cout << "\nRECTANGLE 2\n" << endl;
+                        cout << "\n  RECTANGLE 2\n" << endl;
                         rectPtr2 = new RectangleRussellJ();
                         cin >> *rectPtr2;
 
                         cout << endl;
                     } else {
-                        cout << "Rectangle objects already created. Updating Rectangle objects...\n" << endl;
-                        cout << "RECTANGLE 1\n" << endl;
+                        cout << "  Rectangle objects already created. Updating Rectangle objects...\n" << endl;
+                        cout << "  RECTANGLE 1\n" << endl;
                         cin >> *rectPtr1;
 
-                        cout << "\nRECTANGLE 2\n" << endl;
+                        cout << "\n  RECTANGLE 2\n" << endl;
                         cin >> *rectPtr2;
                         
                         cout << endl;
@@ -110,9 +110,9 @@ void displayMenu() {
                     if (rectPtr1 == nullptr) {
                         cout << "  Cannot print Rectangle objects as no Rectangle objects are available!\n" << endl;
                     } else {
-                        cout << "RECTANGLE 1\n" << endl;
+                        cout << "  RECTANGLE 1\n" << endl;
                         cout << *rectPtr1;
-                        cout << "RECTANGLE 2\n" << endl;
+                        cout << "  RECTANGLE 2\n" << endl;
                         cout << *rectPtr2;
                     }
                     break;
@@ -140,20 +140,20 @@ void displayMenu() {
                 case 1:
                     if (circlePtr1 == nullptr) {
                         circlePtr1 = new CircleRussellJ;
-                        cout << "CIRCLE 1\n" << endl;
+                        cout << "  CIRCLE 1\n" << endl;
                         cin >> *circlePtr1;
 
                         circlePtr2 = new CircleRussellJ;
-                        cout << "\nCIRCLE 2\n" << endl;
+                        cout << "\n  CIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
                         
                         cout << endl;
                     } else {
-                        cout << "Circle objects already created. Updating Circle objects...\n" << endl;
-                        cout << "CIRCLE 1\n" << endl;
+                        cout << "  Circle objects already created. Updating Circle objects...\n" << endl;
+                        cout << "  CIRCLE 1\n" << endl;
                         cin >> *circlePtr1;
 
-                        cout << "\nCIRCLE 2\n" << endl;
+                        cout << "\n  CIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
 
                         cout << endl;
@@ -187,9 +187,9 @@ void displayMenu() {
                     if (circlePtr1 == nullptr) {
                         cout << "  Cannot print Circle objects as no Circle objects are available!\n" << endl;
                     } else {
-                        cout << "CIRCLE 1\n" << endl;
+                        cout << "  CIRCLE 1\n" << endl;
                         cout << *circlePtr1;
-                        cout << "CIRCLE 2\n" << endl;
+                        cout << "  CIRCLE 2\n" << endl;
                         cout << *circlePtr2;
                     }
                     break;
@@ -300,13 +300,13 @@ void displayMenu() {
                     if (rectPtr1 == nullptr || circlePtr1 == nullptr) {
                         cout << "    Cannot print objects as not all objects are available!\n" << endl;
                     } else {
-                        cout << "RECTANGLE 1" << endl;
+                        cout << "  RECTANGLE 1" << endl;
                         cout << *rectPtr1;
-                        cout << "RECTANGLE 2" << endl;
+                        cout << "  RECTANGLE 2" << endl;
                         cout << *rectPtr2;
-                        cout << "CIRCLE 1" << endl;
+                        cout << "  CIRCLE 1" << endl;
                         cout << *circlePtr1;
-                        cout << "\nCIRCLE 2" << endl;
+                        cout << "\n  CIRCLE 2" << endl;
                         cout << *circlePtr2;
                         cout << endl;
                     }

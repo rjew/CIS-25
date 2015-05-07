@@ -68,21 +68,21 @@ CircleRussellJ& CircleRussellJ::operator=(const CircleRussellJ& rOp) {
 }
 
 ostream& operator <<(ostream& out, const CircleRussellJ& circle) {
-    out << "Center: " << circle.c;
-    out << "Radius: " << circle.r << endl;
+    out << "  Center: " << circle.c;
+    out << "  Radius: " << circle.r << endl << endl;
 
     return out;
 }
 
 istream& operator >>(istream& in, CircleRussellJ& circle) {
-    cout << "Enter the center:\n" << endl;
+    cout << "  Enter the center:\n" << endl;
     in >> circle.c;
 
-    cout << "\nEnter the radius:\n" << endl;
+    cout << "\n  Enter the radius:\n" << endl;
     in >> circle.r;
 
     while (circle.r.getNum() < 0) {
-        cout << "\nThe radius cannot be negative. Enter the radius:\n" << endl;
+        cout << "\n  The radius cannot be negative. Enter the radius:\n" << endl;
         in >> circle.r;
     }
 
