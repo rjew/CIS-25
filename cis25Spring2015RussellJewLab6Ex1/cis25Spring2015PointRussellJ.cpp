@@ -96,7 +96,7 @@ istream& operator >>(istream& in, PointRussellJ& pt) {
     cout << "Enter the x-coordinate:" << endl;
     in >> pt.x;
 
-    cout << "Enter the y-coordinate:" << endl;
+    cout << "\nEnter the y-coordinate:" << endl;
     in >> pt.y;
 
     return in;

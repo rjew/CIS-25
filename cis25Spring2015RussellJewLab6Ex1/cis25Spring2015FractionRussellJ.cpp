@@ -119,6 +119,8 @@ bool FractionRussellJ::operator==(const FractionRussellJ& rOp) const {
 
     if (num == rOp.num && denom == rOp.denom)
         status = true;
+    else if (num == 0 && rOp.num == 0)
+        status = true;
     else
         status = false;
 
