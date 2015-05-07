@@ -217,6 +217,7 @@ void displayMenu() {
                     if (rectPtr1 == nullptr || circlePtr1 == nullptr) {
                         cout << "    Cannot compare area as not all objects are available!\n" << endl;
                     } else {
+                        //To hold the two object areas being compared
                         if (mixedObjectPtr == nullptr)
                             mixedObjectPtr = new FractionRussellJ[2];
 
