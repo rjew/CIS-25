@@ -96,23 +96,23 @@ ostream& operator <<(ostream& out, const RectangleRussellJ& rect) {
 }
 
 istream& operator >>(istream& in, RectangleRussellJ& rect) {
-    cout << "Enter the length:" << endl;
+    cout << "Enter the length:\n" << endl;
     in >> rect.len;
 
     while (rect.len.getNum() < 0) {
-        cout << "The length cannot be negative. Enter the length:" << endl;
+        cout << "\nThe length cannot be negative. Enter the length:\n" << endl;
         in >> rect.len;
     }
 
-    cout << "Enter the width:" << endl;
+    cout << "\nEnter the width:\n" << endl;
     in >> rect.wid;
 
     while (rect.wid.getNum() < 0) {
-        cout << "The width cannot be negative. Enter the width:" << endl;
+        cout << "\nThe width cannot be negative. Enter the width:\n" << endl;
         in >> rect.wid;
     }
 
-    cout << "Enter the lower left point:" << endl;
+    cout << "\nEnter the lower left point:\n" << endl;
     in >> rect.ll;
 
     return in;

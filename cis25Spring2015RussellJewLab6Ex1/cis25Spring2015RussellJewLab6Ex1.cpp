@@ -34,9 +34,6 @@ void displayMenu() {
     RectangleRussellJ* rectPtr2 = nullptr;
     CircleRussellJ* circlePtr1 = nullptr;
     CircleRussellJ* circlePtr2 = nullptr;
-    FractionRussellJ* fracLengthPtr = nullptr;
-    FractionRussellJ* fracWidthPtr = nullptr;
-    PointRussellJ* llPointPtr = nullptr;
 
     do {
         cout << "MAIN MENU" << endl;
@@ -65,105 +62,24 @@ void displayMenu() {
                 switch (option2) {
                 case 1:
                     if (rectPtr1 == nullptr) {
-                        cout << "Rectangle 1\n" << endl;
-                        fracLengthPtr = new FractionRussellJ;
-                        cout << "LENGTH" << endl;
-                        cin >> *fracLengthPtr;
+                        cout << "RECTANGLE 1\n" << endl;
+                        rectPtr1 = new RectangleRussellJ();
+                        cin >> *rectPtr1;
 
-                        while (fracLengthPtr->getNum < 0) {
-                            cout << "Length cannot be negative. Enter a positive length:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
+                        cout << "\nRECTANGLE 2\n" << endl;
+                        rectPtr2 = new RectangleRussellJ();
+                        cin >> *rectPtr2;
 
-                        fracWidthPtr = new FractionRussellJ;
-                        cout << "\nWIDTH" << endl;
-                        cin >> *fracWidthPtr;
-
-                        while (fracWidthPtr->getNum < 0) {
-                            cout << "Width cannot be negative. Enter a positive width:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        llPointPtr = new PointRussellJ();
-                        cout << "LOWER LEFT POINT" << endl;
-                        cin >> *llPointPtr;
-
-                        cout << "Creating Rectangle 1 ...\n" << endl;
-                        rectPtr1 = new RectangleRussellJ(*fracLengthPtr, *fracWidthPtr, *llPointPtr);
-
-                        cout << "Rectangle 2\n" << endl;
-                        cout << "LENGTH" << endl;
-                        cin >> *fracLengthPtr;
-
-                        while (fracLengthPtr->getNum < 0) {
-                            cout << "Length cannot be negative. Enter a positive length:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "\nWIDTH" << endl;
-                        cin >> *fracWidthPtr;
-
-                        while (fracWidthPtr->getNum < 0) {
-                            cout << "Width cannot be negative. Enter a positive width:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "LOWER LEFT POINT" << endl;
-                        cin >> *llPointPtr;
-
-                        cout << "Creating Rectangle 2 ...\n" << endl;
-                        rectPtr2 = new RectangleRussellJ(*fracLengthPtr, *fracWidthPtr, *llPointPtr);
+                        cout << endl;
                     } else {
-                        cout << "Rectangle objects already created. Update Rectangle objects.\n" << endl;
-                        cout << "Rectangle 1\n" << endl;
-                        cout << "LENGTH" << endl;
-                        cin >> *fracLengthPtr;
+                        cout << "Rectangle objects already created. Updating Rectangle objects...\n" << endl;
+                        cout << "RECTANGLE 1\n" << endl;
+                        cin >> *rectPtr1;
 
-                        while (fracLengthPtr->getNum < 0) {
-                            cout << "Length cannot be negative. Enter a positive length:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "\nWIDTH" << endl;
-                        cin >> *fracWidthPtr;
-
-                        while (fracWidthPtr->getNum < 0) {
-                            cout << "Width cannot be negative. Enter a positive width:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "LOWER LEFT POINT" << endl;
-                        cin >> *llPointPtr;
-
-                        cout << "Updating Rectangle 1 ...\n" << endl;
-                        rectPtr1->setLength(*fracLengthPtr);
-                        rectPtr1->setWidth(*fracLengthPtr);
-                        rectPtr1->setLowerLeftPoint(*llPointPtr);
-
-                        cout << "Rectangle 2\n" << endl;
-                        cout << "LENGTH" << endl;
-                        cin >> *fracLengthPtr;
-
-                        while (fracLengthPtr->getNum < 0) {
-                            cout << "Length cannot be negative. Enter a positive length:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "\nWIDTH" << endl;
-                        cin >> *fracWidthPtr;
-
-                        while (fracWidthPtr->getNum < 0) {
-                            cout << "Width cannot be negative. Enter a positive width:" << endl;
-                            cin >> *fracLengthPtr;
-                        }
-
-                        cout << "LOWER LEFT POINT" << endl;
-                        cin >> *llPointPtr;
-
-                        cout << "Updating Rectangle 2 ...\n" << endl;
-                        rectPtr2->setLength(*fracLengthPtr);
-                        rectPtr2->setWidth(*fracLengthPtr);
-                        rectPtr2->setLowerLeftPoint(*llPointPtr);
+                        cout << "\nRECTANGLE 2\n" << endl;
+                        cin >> *rectPtr2;
+                        
+                        cout << endl;
                     }
                     break;
                 case 2:
@@ -417,7 +333,4 @@ void displayMenu() {
     delete rectPtr2;
     delete circlePtr1;
     delete circlePtr2;
-    delete fracLengthPtr;
-    delete fracWidthPtr;
-    delete llPointPtr;
 }
