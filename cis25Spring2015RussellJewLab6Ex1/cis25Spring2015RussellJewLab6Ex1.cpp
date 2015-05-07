@@ -220,40 +220,35 @@ void displayMenu() {
                         if (mixedObjectPtr == nullptr)
                             mixedObjectPtr = new FractionRussellJ[2];
 
-                        i = 0;
+                        for (i = 0; i < 2; i++) {
+                            do {
+                                cout << "    RECTANGLE & CIRCLE OBJECTS" << endl;
+                                cout << "    1. Rectangle 1" << endl;
+                                cout << "    2. Rectangle 2" << endl;
+                                cout << "    3. Circle 1" << endl;
+                                cout << "    4. Circle 2" << endl;
+                                cout << "    Pick object #" << i + 1 << " (Select between 1 through 4): ";
+                                cin >> objectOption;
+                                cout << endl;
 
-                        do {
-                            cout << "    RECTANGLE & CIRCLE OBJECTS" << endl;
-                            cout << "    1. Rectangle 1" << endl;
-                            cout << "    2. Rectangle 2" << endl;
-                            cout << "    3. Circle 1" << endl;
-                            cout << "    4. Circle 2" << endl;
-                            cout << "    Pick object #" << i + 1 << " (Select between 1 through 4): ";
-                            cin >> objectOption;
-                            cout << endl;
-
-                            switch (objectOption) {
-                            case 1:
-                                *(mixedObjectPtr + i) = rectPtr1->getArea();
-                                i++;
-                                break;
-                            case 2:
-                                *(mixedObjectPtr + i) = rectPtr2->getArea();
-                                i++;
-                                break;
-                            case 3:
-                                *(mixedObjectPtr + i) = circlePtr1->getArea();
-                                i++;
-                                break;
-                            case 4:
-                                *(mixedObjectPtr + i) = circlePtr2->getArea();
-                                i++;
-                                break;
-                            default:
-                                cout << "      WRONG OPTION ...\n" << endl;
-                            }
-                        } while (i != 2);
-
+                                switch (objectOption) {
+                                case 1:
+                                    *(mixedObjectPtr + i) = rectPtr1->getArea();
+                                    break;
+                                case 2:
+                                    *(mixedObjectPtr + i) = rectPtr2->getArea();
+                                    break;
+                                case 3:
+                                    *(mixedObjectPtr + i) = circlePtr1->getArea();
+                                    break;
+                                case 4:
+                                    *(mixedObjectPtr + i) = circlePtr2->getArea();
+                                    break;
+                                default:
+                                    cout << "      WRONG OPTION ...\n" << endl;
+                                }
+                            } while (objectOption < 1 || objectOption > 4);
+                        }
                         cout << "    OBJECT 1 AREA: " << *(mixedObjectPtr + 0) << endl;
                         cout << "    OBJECT 2 AREA: " << *(mixedObjectPtr + 1) << endl;
 
@@ -271,35 +266,31 @@ void displayMenu() {
                         cout << "    Cannot compare volume as not all objects are available!\n" << endl;
                     }
                     else {
-                        i = 0;
+                        for (i = 0; i < 2; i++) {
+                            do {
+                                cout << "    RECTANGLE & CIRCLE OBJECTS" << endl;
+                                cout << "    1. Rectangle 1" << endl;
+                                cout << "    2. Rectangle 2" << endl;
+                                cout << "    3. Circle 1" << endl;
+                                cout << "    4. Circle 2" << endl;
+                                cout << "    Pick object #" << i + 1 << " (Select between 1 through 4): ";
+                                cin >> objectOption;
+                                cout << endl;
 
-                        do {
-                            cout << "    RECTANGLE & CIRCLE OBJECTS" << endl;
-                            cout << "    1. Rectangle 1" << endl;
-                            cout << "    2. Rectangle 2" << endl;
-                            cout << "    3. Circle 1" << endl;
-                            cout << "    4. Circle 2" << endl;
-                            cout << "    Pick object #" << i + 1 << " (Select between 1 through 4): ";
-                            cin >> objectOption;
-                            cout << endl;
-
-                            switch (objectOption) {
-                            case 1:
-                                i++;
-                                break;
-                            case 2:
-                                i++;
-                                break;
-                            case 3:
-                                i++;
-                                break;
-                            case 4:
-                                i++;
-                                break;
-                            default:
-                                cout << "      WRONG OPTION ...\n" << endl;
-                            }
-                        } while (i != 2);
+                                switch (objectOption) {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                default:
+                                    cout << "      WRONG OPTION ...\n" << endl;
+                                }
+                            } while (objectOption < 1 || objectOption > 4);
+                        }
 
                         //Rectangles and circles have no volumes, both volumes are 0
                         cout << "    Object 1 has the same volume as Object 2.\n" << endl;
