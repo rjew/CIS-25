@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015RectangleRussellJ.h
  * Discussion:   Specification file for RectangleRussellJ
  * Written By:   Russell Jew
- * Date:         2015/05/01
+ * Date:         2015/05/07
  */
 
 #ifndef RECTANGLERUSSELLJ_H

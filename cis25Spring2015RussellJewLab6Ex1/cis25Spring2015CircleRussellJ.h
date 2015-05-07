@@ -2,7 +2,7 @@
  * Program Name: cis25Spring2015CircleRussellJ.h
  * Discussion:   Specification file for CircleRussellJ
  * Written By:   Russell Jew
- * Date:         2015/05/01
+ * Date:         2015/05/07
  */
 
 #ifndef CIRCLERUSSELLJ_H
