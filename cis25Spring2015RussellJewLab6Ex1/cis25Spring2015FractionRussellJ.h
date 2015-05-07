@@ -11,8 +11,6 @@
 #include <iostream>
 using namespace std;
 
-int getGCD(int, int);
-
 class FractionRussellJ {
 public:
     FractionRussellJ();

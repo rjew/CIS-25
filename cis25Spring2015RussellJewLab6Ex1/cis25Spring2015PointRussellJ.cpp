@@ -7,24 +7,17 @@
 
 #include "cis25Spring2015PointRussellJ.h"
 
-PointRussellJ::PointRussellJ() {
-    x = 0;
-    y = 0;
+PointRussellJ::PointRussellJ() : x(FractionRussellJ()), y(FractionRussellJ()) {
 }
 
-PointRussellJ::PointRussellJ(const PointRussellJ& ref) {
-    x = ref.x;
-    y = ref.y;
+PointRussellJ::PointRussellJ(const PointRussellJ& ref) : x(ref.x), y(ref.y) {
 }
 
-PointRussellJ::PointRussellJ(int arg1, int arg2) {
-    x = arg1;
-    y = arg2;
+PointRussellJ::PointRussellJ(int iArg1, int iArg2) : x(iArg1), y(iArg2) {
 }
 
-PointRussellJ::PointRussellJ(const FractionRussellJ& arg1, const FractionRussellJ& arg2) {
-    x = arg1;
-    y = arg2;
+PointRussellJ::PointRussellJ(const FractionRussellJ& fracArg1, const FractionRussellJ& fracArg2) :
+    x(fracArg1), y(fracArg2) {
 }
 
 PointRussellJ::~PointRussellJ() {
@@ -34,24 +27,24 @@ FractionRussellJ PointRussellJ::getX() const {
     return x;
 }
 
-void PointRussellJ::setX(int arg) {
-    x = arg;
+void PointRussellJ::setX(int iArg) {
+    x = iArg;
 }
 
-void PointRussellJ::setX(const FractionRussellJ& arg) {
-    x = arg;
+void PointRussellJ::setX(const FractionRussellJ& fracArg) {
+    x = fracArg;
 }
 
 FractionRussellJ PointRussellJ::getY() const {
     return y;
 }
 
-void PointRussellJ::setY(int arg) {
-    y = arg;
+void PointRussellJ::setY(int iArg) {
+    y = iArg;
 }
 
-void PointRussellJ::setY(const FractionRussellJ& arg) {
-    y = arg;
+void PointRussellJ::setY(const FractionRussellJ& fracArg) {
+    y = fracArg;
 }
 
 PointRussellJ& PointRussellJ::operator=(const PointRussellJ& rOp) {
@@ -68,6 +61,7 @@ void PointRussellJ::moveBy(FractionRussellJ delX, FractionRussellJ delY) {
 
 void PointRussellJ::moveBy(int iOld) {
     x = x + iOld;
+    y = y + iOld;
 }
 
 void PointRussellJ::flipByX() {

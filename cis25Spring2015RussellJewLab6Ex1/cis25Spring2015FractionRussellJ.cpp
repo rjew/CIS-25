@@ -6,6 +6,7 @@
  */
 
 #include "cis25Spring2015FractionRussellJ.h"
+#include "cis25Spring2015FractionRussellJUtility.h"
 
 FractionRussellJ::FractionRussellJ() {
     num = 0;
@@ -147,21 +148,6 @@ bool FractionRussellJ::operator<(const FractionRussellJ& rOp) const {
         status = false;
 
     return status;
-}
-
-int getGCD(int arg1, int arg2) {
-    int gcd = 1;
-    int i;
-
-    arg1 = arg1 < 0 ? -arg1 : arg1;
-    arg2 = arg2 < 0 ? -arg2 : arg2;
-
-    for (i = 2; i <= arg1 && i <= arg2; i++) {
-        if (arg1 % i == 0 && arg2 % i == 0)
-            gcd = i;
-    }
-
-    return gcd;
 }
 
 ostream& operator <<(ostream& out, const FractionRussellJ& fr) {
