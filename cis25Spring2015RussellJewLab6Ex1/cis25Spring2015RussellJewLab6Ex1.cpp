@@ -94,14 +94,15 @@ void displayMenu() {
                     if (rectPtr1 == nullptr) {
                         cout << "  Cannot compare area as no Rectangle objects are available!\n" << endl;
                     } else {
+                        cout << "  RECTANGLE 1 AREA: " << rectPtr1->getArea() << endl;
+                        cout << "  RECTANGLE 2 AREA: " << rectPtr2->getArea() << endl;
+
                         if (rectPtr1->getArea() == rectPtr2->getArea()) {
-                            cout << "  Rectangle 1 has the same area as Rectangle 2.\n" << endl;
+                            cout << "\n  Rectangle 1 has the same area as Rectangle 2.\n" << endl;
                         } else if (rectPtr1->getArea() > rectPtr2->getArea()) {
-                            cout << "  Rectangle 1 is has a greater area than Rectangle 2 by "
-                                << rectPtr1->getArea() - rectPtr2->getArea() << " units squared.\n" << endl;
+                            cout << "\n  Rectangle 1 is has a greater area than Rectangle 2.\n" << endl;
                         } else {
-                            cout << "  Rectangle 2 is has a greater area than Rectangle 1 by "
-                                << rectPtr2->getArea() - rectPtr1->getArea() << " units squared.\n" << endl;
+                            cout << "\n  Rectangle 2 is has a greater area than Rectangle 1.\n" << endl;
                         }
                     }
                     break;
@@ -143,15 +144,19 @@ void displayMenu() {
                         cin >> *circlePtr1;
 
                         circlePtr2 = new CircleRussellJ;
-                        cout << "CIRCLE 2\n" << endl;
+                        cout << "\nCIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
+                        
+                        cout << endl;
                     } else {
-                        cout << "Circle objects already created. Update Circle objects.\n" << endl;
+                        cout << "Circle objects already created. Updating Circle objects...\n" << endl;
                         cout << "CIRCLE 1\n" << endl;
                         cin >> *circlePtr1;
 
-                        cout << "CIRCLE 2\n" << endl;
+                        cout << "\nCIRCLE 2\n" << endl;
                         cin >> *circlePtr2;
+
+                        cout << endl;
                     }
                     break;
                 case 2:
@@ -166,14 +171,15 @@ void displayMenu() {
                     if (circlePtr1 == nullptr) {
                         cout << "  Cannot compare area as no Circle objects are available!\n" << endl;
                     } else {
+                        cout << "  CIRCLE 1 AREA: " << circlePtr1->getArea() << endl;
+                        cout << "  CIRCLE 2 AREA: " << circlePtr2->getArea() << endl;
+
                         if (circlePtr1->getArea() == circlePtr2->getArea()) {
-                            cout << "  Circle 1 has the same area as Circle 2.\n" << endl;
+                            cout << "\n  Circle 1 has the same area as Circle 2.\n" << endl;
                         } else if (circlePtr1->getArea() > circlePtr2->getArea()) {
-                            cout << "  Circle 1 is has a greater area than Circle 2 by "
-                                << circlePtr1->getArea() - circlePtr2->getArea() << " units squared.\n" << endl;
+                            cout << "\n  Circle 1 is has a greater area than Circle 2.\n" << endl;
                         } else {
-                            cout << "  Circle 2 is has a greater area than Circle 1 by "
-                                << circlePtr2->getArea() - circlePtr1->getArea() << " units squared.\n" << endl;
+                            cout << "\n  Circle 2 is has a greater area than Circle 1.\n" << endl;
                         }
                     }
                     break;

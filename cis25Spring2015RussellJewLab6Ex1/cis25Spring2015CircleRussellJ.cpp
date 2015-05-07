@@ -75,14 +75,14 @@ ostream& operator <<(ostream& out, const CircleRussellJ& circle) {
 }
 
 istream& operator >>(istream& in, CircleRussellJ& circle) {
-    cout << "Enter the center:" << endl;
+    cout << "Enter the center:\n" << endl;
     in >> circle.c;
 
-    cout << "Enter the radius:" << endl;
+    cout << "\nEnter the radius:\n" << endl;
     in >> circle.r;
 
     while (circle.r.getNum() < 0) {
-        cout << "The radius cannot be negative. Enter the radius:" << endl;
+        cout << "\nThe radius cannot be negative. Enter the radius:\n" << endl;
         in >> circle.r;
     }
 
