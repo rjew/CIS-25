@@ -13,6 +13,14 @@ CircleRussellJ::CircleRussellJ() : c(PointRussellJ()), r(FractionRussellJ()) {
 CircleRussellJ::CircleRussellJ(const CircleRussellJ& ref) : c(ref.c), r(ref.r) {
 }
 
+CircleRussellJ::CircleRussellJ(const PointRussellJ& ptArg1, const FractionRussellJ& fracArg2) :
+    c(ptArg1), r(fracArg2) {
+}
+
+CircleRussellJ::CircleRussellJ(const PointRussellJ& ptArg1, int iArg2) :
+    c(ptArg1), r(iArg2) {
+}
+
 CircleRussellJ::~CircleRussellJ() {
 }
 
@@ -42,16 +50,6 @@ void CircleRussellJ::setRadius(const FractionRussellJ& fracArg) {
     } else {
         r = fracArg;
     }
-}
-
-CircleRussellJ::CircleRussellJ(const PointRussellJ& ptArg1, const FractionRussellJ& fracArg2) {
-    c = ptArg1;
-    r = fracArg2;
-}
-
-CircleRussellJ::CircleRussellJ(const PointRussellJ& ptArg1, int iArg2) {
-    c = ptArg1;
-    r = iArg2;
 }
 
 FractionRussellJ CircleRussellJ::getArea() const {
