@@ -254,14 +254,15 @@ void displayMenu() {
                             }
                         } while (i != 2);
 
+                        cout << "    OBJECT 1 AREA: " << *(mixedObjectPtr + 0) << endl;
+                        cout << "    OBJECT 2 AREA: " << *(mixedObjectPtr + 1) << endl;
+
                         if (*(mixedObjectPtr + 0) == *(mixedObjectPtr + 1)) {
-                            cout << "      Object 1 has the same area as Object 2.\n" << endl;
+                            cout << "\n    Object 1 has the same area as Object 2.\n" << endl;
                         } else if (*(mixedObjectPtr + 0) > *(mixedObjectPtr + 1)) {
-                            cout << "      Object 1 is has a greater area than Object 2 by "
-                                << *(mixedObjectPtr + 0) - *(mixedObjectPtr + 1) << " units squared.\n" << endl;
+                            cout << "\n    Object 1 is has a greater area than Object 2.\n" << endl;
                         } else {
-                            cout << "      Object 2 is has a greater area than Object 1 by "
-                                << *(mixedObjectPtr + 1) - *(mixedObjectPtr + 0) << " units squared.\n" << endl;
+                            cout << "\n    Object 2 is has a greater area than Object 1.\n" << endl;
                         }
                     }
                     break;
@@ -301,21 +302,22 @@ void displayMenu() {
                         } while (i != 2);
 
                         //Rectangles and circles have no volumes, both volumes are 0
-                        cout << "      Object 1 has the same volume as Object 2.\n" << endl;
+                        cout << "    Object 1 has the same volume as Object 2.\n" << endl;
                     }
                     break;
                 case 3:
                     if (rectPtr1 == nullptr || circlePtr1 == nullptr) {
                         cout << "    Cannot print objects as not all objects are available!\n" << endl;
                     } else {
-                        cout << "    RECTANGLE 1" << endl;
+                        cout << "RECTANGLE 1" << endl;
                         cout << *rectPtr1;
-                        cout << "    RECTANGLE 2" << endl;
+                        cout << "RECTANGLE 2" << endl;
                         cout << *rectPtr2;
-                        cout << "    CIRCLE 1" << endl;
+                        cout << "CIRCLE 1" << endl;
                         cout << *circlePtr1;
-                        cout << "    CIRCLE 2" << endl;
+                        cout << "\nCIRCLE 2" << endl;
                         cout << *circlePtr2;
+                        cout << endl;
                     }
                     break;
                 case 4:
@@ -334,7 +336,7 @@ void displayMenu() {
         }
     } while (option1 != 4);
 
-    delete mixedObjectPtr;
+    delete[] mixedObjectPtr;
     delete rectPtr1;
     delete rectPtr2;
     delete circlePtr1;
