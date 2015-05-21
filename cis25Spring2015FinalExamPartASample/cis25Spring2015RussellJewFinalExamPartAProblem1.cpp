@@ -33,7 +33,7 @@ int main() {
     int i;
     int smallestDigit;
 
-    cout << "Ener the size of the array of AnotherBadFraction objects: ";
+    cout << "Enter the size of the array of AnotherBadFraction objects: ";
     cin >> size;
     cout << endl;
 
@@ -96,7 +96,7 @@ int analyzeLargestAndSecondLargest(AnotherBadFraction* AnotherBadFractionPtr, in
     }
 
     cout << "Max: " << max.num << "/" << max.denom << endl;
-    cout << "Second Max: " << secondMax.num << "/" << secondMax.denom << endl;
+    cout << "Second Max: " << secondMax.num << "/" << secondMax.denom << endl << endl;
 
     extractDigits(secondMax.num, digits);
     extractDigits(secondMax.denom, digits);
@@ -104,7 +104,7 @@ int analyzeLargestAndSecondLargest(AnotherBadFraction* AnotherBadFractionPtr, in
     extractDigits(max.denom, digits);
 
     for (i = 0; i < 10; i++) {
-        if (digits[i] = 1)
+        if (digits[i] == 1)
             return i;
     }
 }
@@ -122,31 +122,41 @@ void extractDigits(int number, int digits[]) {
 }
 
 /* PROGRAM OUTPUT
-Ener the size of the array of AnotherBadFraction objects: 6
+Enter the size of the array of AnotherBadFraction objects: 6
+
 Enter zeroFlag for object #1: 0
 Enter positiveFlag for object #1: 1
 Enter num for object #1: 123
 Enter denom for object #1: 456
+
 Enter zeroFlag for object #2: 0
 Enter positiveFlag for object #2: 0
 Enter num for object #2: 27
 Enter denom for object #2: -5
+
 Enter zeroFlag for object #3: 1
 Enter positiveFlag for object #3: -1
 Enter num for object #3: -45
 Enter denom for object #3: 0
+
 Enter zeroFlag for object #4: 0
 Enter positiveFlag for object #4: 0
 Enter num for object #4: -568
 Enter denom for object #4: 9
+
 Enter zeroFlag for object #5: 1
 Enter positiveFlag for object #5: -1
 Enter num for object #5: 18
 Enter denom for object #5: 0
+
 Enter zeroFlag for object #6: 0
 Enter positiveFlag for object #6: -1
 Enter num for object #6: 0
 Enter denom for object #6: 9
-The smallest digit from the largest and second largest AnotherBadFraction object
-s is 0.
+
+Max: 123/456
+Second Max: 0/9
+
+The smallest digit from the largest and second largest
+AnotherBadFraction objects is 0.
 */
